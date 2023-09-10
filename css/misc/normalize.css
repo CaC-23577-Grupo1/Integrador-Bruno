@@ -1,0 +1,35 @@
+
+/* Normalizacion de Estilos General */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--primary-font);
+    font-size: 62.5%;
+    color: var(--dark-color-solid);
+}
+
+a {
+    font-family: inherit;
+    text-decoration: none;
+    font-size: 2em;
+    color: inherit;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+p{
+    font-size: 1.8em;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0px auto;
+}

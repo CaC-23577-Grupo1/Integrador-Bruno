@@ -1,0 +1,7 @@
+
+/* Desarrollo de estilos para el Footer */
+footer{
+    font-family: var(--alternative-font);
+    color: var(--light-color-solid);
+    background-color: var(--dark-bg-color-solid);
+}
