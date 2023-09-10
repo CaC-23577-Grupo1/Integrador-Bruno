@@ -194,3 +194,110 @@
 }
 
 /* FIN ARTICULOS */
+
+
+
+
+/* INICIO SLIDER */
+
+.slider__container{
+    width: 85%;
+    position: relative;
+    margin-bottom: var(--spacing-68);
+}
+
+.slider__title{
+    color: var(--dark-color-solid);
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-68)
+}
+
+.slider__list{
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-68);
+}
+
+.slider__items{
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: var(--spacing-18);
+}
+
+.slider__imagecontainer{
+    position: relative;
+}
+
+.slider__itemsimage{
+    width: 360px;
+    /* padding: var(--spacing-8); */
+}
+
+.slider__newitem{
+    position: absolute;
+    right: 0;
+    background-color: var(--primary-color-solid);
+    color: var(--light-color-solid);
+    padding: var(--spacing-8) var(--spacing-24);
+}
+
+.slider__itemsfamily{
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    font-weight: 500;
+}
+
+.slider__itemsname{
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-medium);
+    font-weight: 700;
+}
+
+.slider__itemsprice{
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 400;
+}
+
+.slider__itemsbill{
+    color: var(--secondary-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);  /* Aqui el FIGMA indicana 12px y se puso 14px */
+    font-weight: 700;
+}
+
+.slider__button{
+    display: inline-block;
+    position: absolute;
+    /* background-color: brown; */
+    padding: var(--spacing-8);
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+}
+
+.left{
+    left: 0;
+    top: 50%;
+    transform: translate(0%, 50%)
+}
+
+.right{
+    right: 0;
+    top: 50%;
+    transform: translate(0%, 50%)
+}
+
+.slider__buttonicon{
+    font-size: var(--font-large);
+}
+
+/* FIN SLIDER */
