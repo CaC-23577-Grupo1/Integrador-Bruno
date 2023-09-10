@@ -53,3 +53,66 @@
 }
 
 /* FIN HEADER */
+
+
+
+
+/* INICIO BANNER */
+
+.banner__container{
+    background-image: url(../../images/funkos-banner.webp);
+    /* background: lightgray 50%; No pude hacer que funcione esto*/
+    backdrop-filter: blur(3px);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 378px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner__subcontainer{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner__title{
+    color: var(--light-color-solid);
+    font-family: var(--alternative-font);
+    font-size: var(--font-jumbo);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.banner__text{
+    color: var(--light-color-solid);
+    font-family: var(--alternative-font);
+    font-size: var(--font-medium);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: var(--spacing-8);
+    margin-bottom: var(--spacing-36);  /* Este Margen segun figma es 48px pero puse spacing de 36px */
+}
+
+.banner__button{
+    width: 211px;
+    height: 47px;
+    border-radius: 50px;
+    background-color: var(--light-color-solid);
+    color: var(--dark-color-solid);
+    text-align: center;
+    line-height: 47px;
+    transition: all .3s ease-in-out;
+}
+
+.banner__button:hover{
+    background-color: var(--primary-color-solid);
+    color: var(--light-color-solid);
+    transition: all .3s ease-in-out;
+}
+
+/* FIN BANNER */
