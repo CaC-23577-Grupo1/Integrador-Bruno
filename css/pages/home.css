@@ -17,6 +17,7 @@
 }
 
 .header__menu{
+    position: relative;
     display: flex;
     align-items: center;
     gap: var(--spacing-36);  /* Este GAP segun figma es 49px pero puse spacing de 36px */
@@ -51,6 +52,33 @@
 .arrowsize{
     font-size: var(--font-medium);
 }
+
+.header__submenu{
+    display: none;
+}
+
+.header__menu:hover .header__submenu{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    transform: translate(0%, 100%);
+    flex-direction: column;
+    z-index: 1;
+}
+
+.header__submenu-itemtext{
+    display: inline-block;
+    width: 300px;
+    background-color: var(--dark-bg-color-solid);
+    padding: var(--spacing-8) var(--spacing-18);
+    transition: all .3s ease-in-out;
+}
+
+.header__submenu-itemtext:hover{
+    background-color: var(--primary-color-900);
+    transition: all .3s ease-in-out;
+}
+
 
 /* FIN HEADER */
 
