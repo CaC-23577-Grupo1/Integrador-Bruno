@@ -10,35 +10,41 @@
 </head>
 <body>
     
-    <header class="header__container">
-        <nav class="header__navbar">
+    <header>
+        <nav class="header__navbar container">
             <picture class="header__logo">
                 <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
             </picture>
             <ul class="header__menu">
-                <li>
-                    <a class="header__menu-itemtexticon arrow" href="./shop.html">SHOP<iconify-icon class="arrowsize" icon="tabler:chevron-down"></iconify-icon></a>
-               </li>
-                <li>
-                    <a class="header__menu-itemtext" href="#">CONTACTO</a>
-                </li>
-                <li>
-                    <a class="header__menu-itemtext" href="./login.html">LOGIN</a>
-                </li>
-                <li>
-                    <a class="header__menu-itemicon" href="./cart.html"><img src="../images/icons/cart-icon.svg" alt=""></a>
-                </li>
-                    <ul class="header__submenu">
-                        <li>
-                            <a class="header__submenu-itemtext" href="#">Funkos</a>
-                        </li>
-                        <li>
-                            <a class="header__submenu-itemtext" href="#">Remeras</a>
-                        </li>
-                        <li>
-                            <a class="header__submenu-itemtext" href="#">LLaveros</a>
-                        </li>
-                    </ul>
+                    <li class="header__menubtn submenuopen">
+                        <a class="header__menubtn-link chevron" href="./shop.html">SHOP<iconify-icon class="chevronsize" icon="tabler:chevron-down"></iconify-icon></a>
+                        
+                            <!-- Sub Menu del boton "Shop" -->
+                            <ul class="header__submenu">
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">Funkos</a>
+                                </li>
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">Remeras</a>
+                                </li>
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">LLaveros</a>
+                                </li>
+                            </ul>                    
+                    
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="#">CONTACTO</a>
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="./login.html">LOGIN</a>
+                    </li>
+                    <li class="header__menucart">
+                        <a class="header__menu-itemicon" href="./cart.html"><img src="../images/icons/cart-icon.svg" alt=""></a>
+                    </li>
+
+
+
             </ul>
         </nav>
     </header>

@@ -1,84 +1,86 @@
+/* Corresponde a normalize.css */
+
+img{
+    width: 100%;
+}
+
+
 
 /* INICIO HEADER */
 
-.header__container{
-    height: 144px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+/* Esta primer propiedad se suma a las que se encuentran en header.css */
+header{
+    padding: var(--spacing-36);
 }
 
+
+
 .header__navbar{
-    width: 85%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.header__logo{
+    max-width: 372px;
+    /* min-width: 60px;    Si quiero que el logo del home no desaparezca al achicar la VW */
+}
+
 .header__menu{
-    position: relative;
     display: flex;
     align-items: center;
     gap: var(--spacing-36);  /* Este GAP segun figma es 49px pero puse spacing de 36px */
+    position: relative; /* para que el submenu sea relativo a este elemento */
 }
 
-.header__menu-itemtexticon{
-    padding: calc(var(--spacing-8) * 0.25) var(--spacing-18);   /*  Tener cuidado si se cambian los tamaños que no queden desparejos los botones */
-    transition: all .3s ease-in-out;
-}
-
-.header__menu-itemtexticon:hover{
-    background-color: var(--primary-color-900);
-    transition: all .3s ease-in-out;
-}
-
-.header__menu-itemtext{
+.header__menubtn-link{
+    font-size: var(--font-inter);
+    font-family: var(--alternative-font);
     padding: var(--spacing-8) var(--spacing-18);
     transition: all .3s ease-in-out;
 }
 
-.header__menu-itemtext:hover{
+.header__menubtn-link:hover{
     background-color: var(--primary-color-900);
-    transition: all .3s ease-in-out;
 }
 
-.arrow{
+.chevron{
+    padding: calc(var(--spacing-8) / 4) var(--spacing-18);
     display: flex;
     align-items: center;
     gap: var(--spacing-8);
 }
 
-.arrowsize{
+.chevronsize{
     font-size: var(--font-medium);
+}
+
+.submenuopen:hover .header__submenu{
+    display: inline-block;
 }
 
 .header__submenu{
     display: none;
-}
-
-.header__menu:hover .header__submenu{
-    display: flex;
     position: absolute;
-    bottom: 0;
-    transform: translate(0%, 100%);
-    flex-direction: column;
     z-index: 1;
 }
 
-.header__submenu-itemtext{
-    display: inline-block;
+.header__submenubtn{
     width: 300px;
     background-color: var(--dark-bg-color-solid);
     padding: var(--spacing-8) var(--spacing-18);
     transition: all .3s ease-in-out;
 }
 
-.header__submenu-itemtext:hover{
+.header__submenubtn:hover{
     background-color: var(--primary-color-900);
-    transition: all .3s ease-in-out;
 }
 
+.header__submenubtn-link{
+    font-size: var(--font-inter);
+    font-family: var(--alternative-font);
+}
 
 /* FIN HEADER */
 
