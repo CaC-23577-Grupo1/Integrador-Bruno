@@ -368,17 +368,15 @@ header{
 
 /* INICIO FOOTER */
 
-.footer__container{
-    height: 343px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+/* Esta primer propiedad se suma a las que se encuentran en footer.css */
+footer{
+    padding: var(--spacing-68);
 }
 
-.footer__div{
-    width: 85%;
+
+
+.footer__navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -387,20 +385,24 @@ header{
 .footer__menu{
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-18);  /* Este GAP segun figma es 49px pero puse spacing de 36px */
+    gap: var(--spacing-16);
 }
 
-.footer__menu-item{
+.footer__menubtn-link{
     padding: var(--spacing-8) var(--spacing-18);
     transition: all .3s ease-in-out;
 }
 
-.footer__menu-item:hover{
+.footer__menubtn-link:hover{
     background-color: var(--primary-color-900);
-    transition: all .3s ease-in-out;
+}
+
+.footer__logo{
+    max-width: 140px;
 }
 
 .footer__derechos{
+    text-align: center;
     margin-top: var(--spacing-36);
 }
 
