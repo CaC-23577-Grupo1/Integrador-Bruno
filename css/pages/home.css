@@ -91,58 +91,89 @@ header{
 
 .banner__container{
     background-image: url(../../images/funkos-banner.webp);
-    /* background: lightgray 50%; No pude hacer que funcione esto*/
-    backdrop-filter: blur(3px);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
-    height: 378px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.banner__subcontainer{
-    width: 85%;
+.banner__bgfilter{
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    /* background-color: rgba(211, 211, 211, 0.5); */
+    backdrop-filter: blur(3px);
+    backdrop-filter: brightness(0.5);
+}
+
+
+/* Inicio Media Query OPCION 1  (Asi lo arme inicialmente, tratando de controlar el padding en cada situacion (ancho de pantalla) */
+/*
+.banner__contenido{
     display: flex;
     flex-direction: column;
+    align-items: start;
+    transition: padding 1s ease-in-out;
 }
+
+@media screen and (max-width: 1200px){
+    .banner__contenido{
+        padding: calc(var(--spacing-128) * 0.9);  
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .banner__contenido{
+        padding: calc(var(--spacing-128) * 0.9) 0;  
+    }
+}
+*/
+/* Fin Media Query OPCION 1 */
+
+/* Inicio Media Query OPCION 2  (Simplificado y con menos repeticion de lineas) */
+.banner__contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: calc(var(--spacing-128) * 0.9);  
+    transition: padding 1s ease-in-out;
+}
+
+@media screen and (min-width: 1201px){
+    .banner__contenido{
+        padding-left: 0;  
+        padding-right: 0;  
+    }
+}
+/* Fin Media Query OPCION 2 */
+
 
 .banner__title{
     color: var(--light-color-solid);
     font-family: var(--alternative-font);
     font-size: var(--font-jumbo);
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
 }
 
 .banner__text{
     color: var(--light-color-solid);
     font-family: var(--alternative-font);
     font-size: var(--font-medium);
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
     margin-top: var(--spacing-8);
     margin-bottom: var(--spacing-36);  /* Este Margen segun figma es 48px pero puse spacing de 36px */
 }
 
 .banner__button{
-    width: 211px;
-    height: 47px;
-    border-radius: 50px;
-    background-color: var(--light-color-solid);
     color: var(--dark-color-solid);
-    text-align: center;
-    line-height: 47px;
+    font-family: var(--primary-font);
+    font-size: var(--font-inter);
+    font-weight: 500;
+    background-color: var(--light-color-solid);
+    padding: var(--spacing-12) var(--spacing-68);
+    border-radius: 50px;
     transition: all .3s ease-in-out;
 }
 
 .banner__button:hover{
     background-color: var(--primary-color-solid);
     color: var(--light-color-solid);
-    transition: all .3s ease-in-out;
 }
 
 /* FIN BANNER */
