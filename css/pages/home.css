@@ -6,14 +6,15 @@ img{
 
 
 
-/* INICIO HEADER */
 
+
+
+/* INICIO HEADER */
 
 /* Esta primer propiedad se suma a las que se encuentran en header.css */
 header{
     padding: var(--spacing-36);
 }
-
 
 
 .header__navbar{
@@ -30,8 +31,8 @@ header{
 .header__menu{
     display: flex;
     align-items: center;
-    gap: var(--spacing-36);  /* Este GAP segun figma es 49px pero puse spacing de 36px */
-    position: relative; /* para que el submenu sea relativo a este elemento */
+    gap: var(--spacing-36);
+    position: relative;
 }
 
 .header__menubtn-link{
@@ -205,7 +206,7 @@ header{
     flex-direction: column;
     justify-content: center;
     gap: var(--spacing-28);
-    align-items: start;     /* Esta la vi en el video, y anule el ancho del button "ver coleccion" */
+    align-items: start;
 }
 
 .article__detailstitle{
@@ -226,7 +227,6 @@ header{
 }
 
 .article__detailsbutton{
-    /* width: 292px; */  /* Propiedad anulada por lo visto en el video */
     padding: var(--spacing-18) var(--spacing-36);
     border-radius: 50px;
     background: var(--dark-bg-color-solid);
@@ -254,15 +254,14 @@ header{
 /* INICIO SLIDER */
 
 .slider__container{
-    width: 85%;
     position: relative;
     margin-bottom: var(--spacing-68);
 }
 
 .slider__title{
-    color: var(--dark-color-solid);
     font-family: var(--alternative-font);
     font-size: var(--font-display);
+    color: var(--dark-color-solid);
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: var(--spacing-68)
@@ -274,67 +273,109 @@ header{
     gap: var(--spacing-68);
 }
 
-.slider__items{
-    height: 520px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: var(--spacing-18);
+
+/* INICIO Card del Slider */
+
+/* Animacion para el cambio de imagen suave de la card */
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
-.slider__imagecontainer{
+
+.card__imagecontainer{
     position: relative;
 }
 
-.slider__itemsimage{
-    width: 360px;
-    /* padding: var(--spacing-8); */
+.card__prodimage, .card__boximage{
+    max-width: 355px;
+    animation: fade 0.9s;
 }
 
-.slider__newitem{
+.card__prodimage{
+    display: inline-block; 
+}
+
+.card__boximage{
+    display: none;
+}
+
+.card__imagecontainer:hover{
+    .card__prodimage{
+        display: none;
+    }
+    .card__boximage{
+        display: inline-block;
+    }
+
+}
+
+.card__newprod{
     position: absolute;
     right: 0;
     background-color: var(--primary-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
     color: var(--light-color-solid);
+    font-weight: 500;
     padding: var(--spacing-8) var(--spacing-24);
+    z-index: 2;
 }
 
-.slider__itemsfamily{
+.card__detailscontainer{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+    padding: var(--spacing-16);
+}
+
+.card__prodfamily{
     color: var(--dark-color-solid);
     font-family: var(--primary-font);
     font-size: var(--font-xsmall);
     font-weight: 500;
 }
 
-.slider__itemsname{
+.card__prodname{
     color: var(--dark-color-solid);
     font-family: var(--primary-font);
     font-size: var(--font-medium);
     font-weight: 700;
 }
 
-.slider__itemsprice{
+.card__prodprice{
     color: var(--dark-color-solid);
     font-family: var(--primary-font);
     font-size: var(--font-small);
     font-weight: 400;
 }
 
-.slider__itemsbill{
+.card__prodbill{
     color: var(--secondary-color-solid);
     font-family: var(--primary-font);
-    font-size: var(--font-xsmall);  /* Aqui el FIGMA indicana 12px y se puso 14px */
+    font-size: var(--font-xsmall);
     font-weight: 700;
 }
+/* FIN Card del Slider */
+
 
 .slider__button{
     display: inline-block;
     position: absolute;
-    /* background-color: brown; */
     padding: var(--spacing-8);
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    z-index: 1;
+    border: solid 2px var(--dark-color-300);
+    transition: all .1s ease-in-out;
+}
 
+.slider__button:hover{
+    border: solid 2px var(--secondary-color-900);
 }
 
 .left{
@@ -360,12 +401,10 @@ header{
 
 /* INICIO FOOTER */
 
-
 /* Esta primer propiedad se suma a las que se encuentran en footer.css */
 footer{
     padding: var(--spacing-68);
 }
-
 
 
 .footer__navbar{
