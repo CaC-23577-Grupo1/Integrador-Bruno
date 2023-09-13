@@ -1,11 +1,17 @@
-/* Corresponde a normalize.css */
+/* Corresponde a correcciones en normalize.css */
 
+/* Agregar esta normalizacion */
 img{
     width: 100%;
 }
 
 
-
+/* en la normalizacion del elemento "a" debi anular la propiedad "font-size */
+/* ya que el elemento A me heredaba el tamaño sobre los H2 H3 y P teniendo mayor precedencia */
+/*
+a{
+    font-size: 2em;
+} */
 
 
 
@@ -44,6 +50,10 @@ header{
 
 .header__menubtn-link:hover{
     background-color: var(--primary-color-900);
+}
+
+.header__menu-itemicon{
+    font-size: var(--font-inter);
 }
 
 .chevron{
@@ -420,6 +430,10 @@ footer{
 }
 
 .footer__menubtn-link{
+
+
+    font-size: var(--font-inter);
+
     padding: var(--spacing-8) var(--spacing-18);
     transition: all .3s ease-in-out;
 }
