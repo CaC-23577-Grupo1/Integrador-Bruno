@@ -183,25 +183,24 @@ header{
 
 /* INICIO ARTICULOS */
 
-.main__container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.article__container{
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    padding-top: var(--spacing-36);
+.articles__container{
+  padding-top: var(--spacing-68);
 }
 
 .article__item{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Ordena en forma "invertida" los hijos pares del "articles_container" */
+/* cambia de posicion solamente el contenedor de la imagen */
+.articles__container :nth-child(even){
+    .article__image{
+        order: -1;
+    }
 }
 
 .article__details{
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -209,29 +208,19 @@ header{
     align-items: start;     /* Esta la vi en el video, y anule el ancho del button "ver coleccion" */
 }
 
-.article__container :nth-child(even){
-    .article__details{
-        order: 1;
-    }
-}
-
 .article__detailstitle{
-    color: var(--dark-color-solid);
     font-family: var(--alternative-font);
     font-size: var(--font-display);
-    font-style: normal;
+    color: var(--dark-color-solid);
     font-weight: 500;
-    line-height: normal;
     text-transform: uppercase;
 }
 
 .article__detailstext{
-    color: var(--dark-color-solid);
     font-family: var(--alternative-font);
     font-size: var(--font-large);
-    font-style: normal;
+    color: var(--dark-color-solid);
     font-weight: 400;
-    line-height: normal;
     padding-bottom: var(--spacing-28);
     border-bottom: solid 3px var(--primary-color-solid);
 }
@@ -241,19 +230,22 @@ header{
     padding: var(--spacing-18) var(--spacing-36);
     border-radius: 50px;
     background: var(--dark-bg-color-solid);
-    color: var(--light-color-solid);
     font-family: var(--primary-font);
     font-size: var(--font-large);
+    color: var(--light-color-solid);
     font-weight: 500;
+    text-transform: uppercase;
     transition: all .3s ease-in-out;
 }
 
 .article__detailsbutton:hover{
     background-color: var(--primary-color-solid);
     color: var(--light-color-solid);
-    transition: all .3s ease-in-out;
 }
 
+.article__image{
+    max-width: 600px;
+}
 /* FIN ARTICULOS */
 
 
