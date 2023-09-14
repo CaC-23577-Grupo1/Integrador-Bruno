@@ -1,2 +1,105 @@
+/* Corresponde a correcciones en normalize.css */
 
-/* Desarrollo de Estilos para la Seccion:  */
+/* Agregar esta normalizacion */
+img{
+    width: 100%;
+}
+
+
+/* en la normalizacion del elemento "a" debi anular la propiedad "font-size */
+/* ya que el elemento A me heredaba el tamaño sobre los H2 H3 y P teniendo mayor precedencia */
+/*
+a{
+    font-size: 2em;
+} */
+
+
+
+/* INICIO HEADER */
+
+/* Esta primer propiedad se suma a las que se encuentran en header.css */
+header{
+    padding: var(--spacing-36);
+}
+
+
+.header__navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header__logo{
+    max-width: 372px;
+    /* min-width: 60px;    Si quiero que el logo del home no desaparezca al achicar la VW */
+}
+
+/* Media para que al achicar no desaparezca el logo y pase arriba */
+@media (max-width: 960px){
+    .header__navbar{
+        justify-content: center;
+        gap: var(--spacing-24);
+    }
+}
+
+.header__menu{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-36);
+    position: relative;
+}
+
+.header__menubtn-link{
+    font-size: var(--font-inter);
+    font-family: var(--alternative-font);
+    padding: var(--spacing-8) var(--spacing-18);
+    transition: all .3s ease-in-out;
+}
+
+.header__menubtn-link:hover{
+    background-color: var(--primary-color-900);
+}
+
+.header__menu-itemicon{
+    font-size: var(--font-inter);
+}
+
+.chevron{
+    padding: calc(var(--spacing-8) / 4) var(--spacing-18);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.chevronsize{
+    font-size: var(--font-medium);
+}
+
+.submenuopen:hover .header__submenu{
+    display: inline-block;
+}
+
+.header__submenu{
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.header__submenubtn{
+    width: 300px;
+    background-color: var(--dark-bg-color-solid);
+    padding: var(--spacing-8) var(--spacing-18);
+    transition: all .3s ease-in-out;
+}
+
+.header__submenubtn:hover{
+    background-color: var(--primary-color-900);
+}
+
+.header__submenubtn-link{
+    font-size: var(--font-inter);
+    font-family: var(--alternative-font);
+}
+
+/* FIN HEADER */

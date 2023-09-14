@@ -11,20 +11,40 @@
 <body>
     
     <header>
-        <nav>
-            <picture>
-                <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+        <nav class="header__navbar container">
+            <picture class="header__logo">
+                <a href="./home.html">
+                    <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+                </a>
             </picture>
-            <ul>
-                <li>
-                    <a href="#">VER TIENDA</a>
-                </li>
-                <li>
-                    <a href="#">ADMIN</a>
-                </li>
-                <li>
-                    <a href="#">SALIR</a>
-                </li>
+            <ul class="header__menu">
+                    <li class="header__menubtn submenuopen">
+                        <a class="header__menubtn-link chevron" href="./shop.html">SHOP<iconify-icon class="chevronsize" icon="tabler:chevron-down"></iconify-icon></a>
+                        
+                            <!-- Sub Menu del boton "Shop" -->
+                            <ul class="header__submenu">
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">Funkos</a>
+                                </li>
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">Remeras</a>
+                                </li>
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">LLaveros</a>
+                                </li>
+                            </ul>                    
+                    
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="#">CONTACTO</a>
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="./login.html">LOGIN</a>
+                    </li>
+                    <li class="header__menucart">
+                        <a class="header__menu-itemicon" href="./cart.html"><img src="../images/icons/cart-icon.svg" alt=""></a>
+                    </li>
+
             </ul>
         </nav>
     </header>
