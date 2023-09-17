@@ -5,6 +5,11 @@ img{
     width: 100%;
 }
 
+/* Agregr esta variable de color*/
+:root {
+    --gray-color-solid: rgba(116, 116, 116, 1.0);
+}
+
 
 /* en la normalizacion del elemento "a" debi anular la propiedad "font-size */
 /* ya que el elemento A me heredaba el tamaño sobre los H2 H3 y P teniendo mayor precedencia */
@@ -103,3 +108,279 @@ header{
 }
 
 /* FIN HEADER */
+
+
+
+
+/* INICIO MAIN */
+
+/* Padding que actuara al achicarse el ancho para que no quede pegado al lateral el Main */
+.cartcontainer{
+    padding: var(--spacing-128) 0px;
+}
+
+@media screen and (max-width: 1200px){
+    .cartcontainer{
+        padding: var(--spacing-68) var(--spacing-24);
+    }
+}
+
+
+/* Barras de Titulo */
+.cart__titles{   
+    color: var(--dark-color-solid);
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: var(--spacing-8);
+    border-bottom: 5px solid var(--primary-color-solid);
+}
+
+/* Barra de titulos de detalles de producto */
+.cart__itemstittles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-18);
+    padding: var(--spacing-18) var(--spacing-16);
+    margin-top: var(--spacing-68);
+    margin-bottom: var(--spacing-36);
+
+    border-radius: 10px;
+    background: var(--light-bg-color-solid);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.cart__itemstittles-det{
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+}
+
+.cart__itemstittles-qt{
+    width: 100%;
+    max-width: 115px;
+    text-align: center;
+}
+
+.cart__itemstittles-tot{
+    width: 100%;
+    max-width: 100px;
+    text-align: center;
+}
+
+.cart__itemstittles-act{
+    width: 100%;
+    max-width: calc(var(--font-large) * 0.6);
+}
+
+/* Listado de productos en carrito */
+.cart__item-list{
+    margin-bottom: var(--spacing-68);
+}
+
+/* Barra de detalles de producto */
+.cart__item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-18);
+    padding: var(--spacing-36) var(--spacing-16);
+    /* margin: var(--spacing-18) 0px; */
+
+    border-radius: 25px;
+    background: var(--light-bg-color-solid);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    
+}
+
+.cart__item:not(:last-child){
+    margin-bottom: var(--spacing-28);
+}
+
+/* Detalle del Producto */
+.cart__item-product{
+    width: 100%;
+    max-width: 430px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cart__item-productimg{
+    max-width: 118px;
+    align-self: center;
+}
+
+.cart__item-productdet{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--spacing-16) 0px var(--spacing-16) var(--spacing-18);
+}
+
+.cart__item-productdet-name{
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-large);
+    font-weight: 700;
+}
+
+.cart__item-productdet-categ{
+    color: var(--dark-bg-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    font-weight: 500;
+}
+
+.cart__item-productdet-price{
+    color: var(--dark-bg-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    font-weight: 400;
+}
+
+/* Input Cantidad */
+.cart__item-q{
+    display: flex;
+    gap: var(--spacing-8);
+    align-items: center;
+}
+
+.cart__item-qnum{
+    width: 90px;
+    height: 40px;
+    border: 0.5px solid #c9c9c9;
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-inter);
+    font-weight: 700;
+    text-align: center;
+}
+
+.cart__item-qplusminus{
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-8) * 0.2);
+}
+
+.cart__item-qplus{
+    font-size: var(--font-medium);
+    color: #F24E1E;
+}
+
+.cart__item-qminus{
+    font-size: var(--font-medium);
+    color: #F24E1E;
+}
+
+/* Momentaneamente solucionado de esta forma aunque creo que lo mejor es un Text con validacion para solo numeros */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* deshabilita las flechas en Chrome y Safari */
+  appearance: none; /* deshabilita las flechas en otros navegadores */
+  margin: 0; /* evita el espacio adicional causado por la eliminar las flechas */
+}
+
+/* Precio */
+.cart__item-price{
+    color: var(--dark-bg-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-inter);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+/* Eliminar */
+.cart__item-delete{
+    font-size: var(--font-large);
+    color: #F24E1E;
+}
+
+
+/* Cuadro de Resumen de Carrito */
+.cart__total-container{
+    display: flex;
+}
+
+.cart__total-align{
+    width: 100%;
+}
+
+.cart__total-content{
+    width: 100%;
+    max-width: 570px;
+    text-align: right;
+}
+
+.cart__total-listdetail{
+    background: var(--light-bg-color-solid);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: var(--spacing-24);
+    margin-top: var(--spacing-24);
+    margin-bottom: var(--spacing-36);    
+}
+
+.cart__total-listitem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart__total-listitemDet{
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 600;
+}
+
+.cart__total-listitemDetF{
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-inter);
+    font-weight: 700;
+}
+
+.cart__total-listitemNum{
+    color: var(--gray-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 700;
+}
+
+.cart__total-listitemNumF{
+    color: var(--gray-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-inter);
+    font-weight: 700;
+}
+
+.cart__total-listitem:not(:last-child){
+    margin-bottom: var(--spacing-18);
+}
+
+.cart__total-listitem:last-child{
+    padding-top: var(--spacing-8);
+    border-top: 2px solid var(--primary-color-solid);
+}
+
+.cart__total-paybtn{
+    width: 100%;
+    display: inline-block;
+    padding: var(--spacing-12) 0px;
+    font-family: var(--primary-font);
+    font-size: var(--font-xlarge);
+    font-weight: 700;
+    text-align: center;
+    color: var(--light-bg-color-solid);
+    background-color: var(--primary-color-solid);
+}
+
+/* FIN MAIN */
+
