@@ -11,30 +11,47 @@
 <body>
     
     <header>
-        <nav>
-            <picture>
-                <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+        <nav class="header__navbar container">
+            <picture class="header__logo">
+                <a href="./home.html">
+                    <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+                </a>
             </picture>
-            <ul>
-                <li>
-                    <a href="./shop.html">SHOP</a>
-                </li>
-                <li>
-                    <a href="./contact.html">CONTACTO</a>
-                </li>
-                <li>
-                    <a href="./login.html">LOGIN</a>
-                </li>
-                <li>
-                    <a href="./cart.html"><img src="images/icons/cart-icon.svg" alt=""></a>
-                </li>
+            <ul class="header__menu">
+                    <li class="header__menubtn submenuopen">
+                        <a class="header__menubtn-link chevron" href="./shop.html">SHOP<iconify-icon class="chevronsize" icon="tabler:chevron-down"></iconify-icon></a>
+                        
+                            <!-- Sub Menu del boton "Shop" -->
+                            <ul class="header__submenu">
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">Funkos</a>
+                                </li>
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">Remeras</a>
+                                </li>
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">LLaveros</a>
+                                </li>
+                            </ul>                    
+                    
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="#">CONTACTO</a>
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="./login.html">LOGIN</a>
+                    </li>
+                    <li class="header__menucart">
+                        <a class="header__menu-itemicon" href="./cart.html"><img src="../images/icons/cart-icon.svg" alt=""></a>
+                    </li>
+
             </ul>
         </nav>
     </header>
     
     <main>
         
-        <h1>CARRITO DE COMPRAS</h1>
+        <h2>CARRITO DE COMPRAS</h2>
         
         <div>
             <p>DETALLE DE PRODUCTO</p>
@@ -46,12 +63,12 @@
             <picture>
                 <img src="../images/star-wars/baby-yoda-1.webp" alt="Producto Baby Yoda Blueball">
             </picture>
-            <h2>BABY YOYA BLUEBALL</h2>
+            <h2>BABY YODA BLUEBALL</h2>
             <h3>STAR WARS</h3>
             <p>Precio: $ 1799,99</p>
-            <input type="number">
+            <input type="number"><iconify-icon icon="ph:plus-fill"></iconify-icon><iconify-icon icon="ph:minus-fill"></iconify-icon>
             <p>$ 3599.98</p>
-            <i>X</i>
+            <iconify-icon icon="zondicons:close-outline"></iconify-icon>
         </article>
 
         <article>
@@ -61,20 +78,32 @@
             <h2>PIDGEOTTO</h2>
             <h3>POKEMON</h3>
             <p>Precio: $ 1799,99</p>
-            <input type="number">
+            <input type="number"><iconify-icon icon="ph:plus-fill"></iconify-icon><iconify-icon icon="ph:minus-fill"></iconify-icon>
             <p>$ 1799.99</p>
-            <i>X</i>
+            <iconify-icon icon="zondicons:close-outline"></iconify-icon>
         </article>
 
 
-        <h1>RESUMEN</h1>
+        <h3>RESUMEN</h3>
         <div>
             <ul>
-                <li><span>CANTIDAD DE ELEMENTOS</span><span>3</span></li>
-                <li><span>SUBTOTAL</span><span>$ 5.399,97</span></li>
-                <li><span>ENVIO</span><span>$ 0,00</span></li>
+                <li>
+                    <span>CANTIDAD DE ELEMENTOS</span>
+                    <span>3</span>
+                </li>
+                <li>
+                    <span>SUBTOTAL</span>
+                    <span>$ 5.399,97</span>
+                </li>
+                <li>
+                    <span>ENVIO</span>
+                    <span>$ 0,00</span>
+                </li>
+                <li>
+                    <span>ENVIO</span>
+                    <span>$ 0,00</span>
+                </li>
             </ul>
-            <span><span>ENVIO</span><span>$ 0,00</span></span>  <!-- REVEER ESTA PARTE NO ME GUSTA COMO QUEDO -->
         </div>
         <a href="#">IR A PAGAR</a>
         
@@ -92,8 +121,8 @@
             <img src="../images/branding/isotype.svg" alt="Logo Funkoshop">
         </picture>
         <p>Todos los derechos Resevados 2023 - Funkoshop &copy;</p>
-    </footer>
- 
+    </footer>  
+    
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 </body>
