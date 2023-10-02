@@ -5,8 +5,11 @@ img{
     width: 100%;
 }
 
-
-
+/* Agregr esta variable de color*/
+:root {
+    --gray-color-solid: rgba(116, 116, 116, 1.0);
+    --green-color-900: rgba(30, 136, 51, 0.897);
+}
 
 
 /* en la normalizacion del elemento "a" debi anular la propiedad "font-size */
@@ -15,8 +18,6 @@ img{
 a{
     font-size: 2em;
 } */
-
-
 
 
 
@@ -91,6 +92,12 @@ header{
     color: var(--light-color-solid);
     background-color: var(--primary-color-solid);
     text-align: center;
+}
+
+@media screen and (max-width: 600px){
+    .header__menu-itemicon-cant{
+        display: none;
+    }
 }
 
 .chevron{
@@ -402,7 +409,7 @@ header{
 }
 
 .editbtnicon2:hover{
-    border: solid 2px var(--primary-color-900);
+    border: solid 2px var(--green-color-900);
 }
 
 .deletebtnicon2{
@@ -412,8 +419,9 @@ header{
     padding: calc(var(--spacing-8) * 0.8);
 
     border-radius: 6px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border: solid 2px var(--dark-color-300);
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+    /* border: solid 2px var(--dark-color-300); */
+    border: solid 2px rgba(31, 31, 31, 0.0);
     transition: all .1s ease-in-out;
 }
 
@@ -433,6 +441,19 @@ header{
     justify-content: flex-end;
     gap: var(--spacing-18);
     padding-right: var(--spacing-16);
+}
+
+/* Reducimos el tamaño de fuentes en pantallas chicas */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+    .list-table__iconcontainer2{
+        gap: calc(var(--spacing-18) * 0.8);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .list-table__iconcontainer2{
+        gap: calc(var(--spacing-18) * 0.6);
+    }
 }
 /* fin Propuesta 2 */
 
