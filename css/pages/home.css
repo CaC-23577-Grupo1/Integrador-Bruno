@@ -5,10 +5,10 @@ img{
     width: 100%;
 }
 
-
-
-/* Agregue variable de color en "cart.css" */
-
+/* Agregr esta variable de color*/
+:root {
+    --gray-color-solid: rgba(116, 116, 116, 1.0);
+}
 
 
 /* en la normalizacion del elemento "a" debi anular la propiedad "font-size */
@@ -91,6 +91,12 @@ header{
     color: var(--light-color-solid);
     background-color: var(--primary-color-solid);
     text-align: center;
+}
+
+@media screen and (max-width: 600px){
+    .header__menu-itemicon-cant{
+        display: none;
+    }
 }
 
 .chevron{
