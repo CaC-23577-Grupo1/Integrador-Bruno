@@ -20,6 +20,8 @@ a{
 
 
 
+
+
 /* INICIO HEADER */
 
 /* Esta primer propiedad se suma a las que se encuentran en header.css */
@@ -37,11 +39,13 @@ header{
 
 .header__logo{
     max-width: 372px;
-    /* min-width: 60px;    Si quiero que el logo del home no desaparezca al achicar la VW */
+    /* Activamos si queremos que el logo no desaparezca al achicar el ancho, */
+    /* pero no seria "compatible" con el wrap aplicado al "header__navbar" */
+    /* min-width: 60px; */
 }
 
-/* Media para que al achicar no desaparezca el logo y pase arriba */
-@media (max-width: 960px){
+/* Al wrappear la navbar la centramos y asignamos espaciado */
+@media (max-width: 980px){
     .header__navbar{
         justify-content: center;
         gap: var(--spacing-24);
@@ -82,13 +86,17 @@ header{
     height: 18px;
     width: 18px;
     border-radius: 50%;
-    /* line-height: var(--font-xsmall); */
-    /* padding: var(--spacing-8); */
     font-family: var(--primary-font);
     font-size: var(--font-xsmall);
     color: var(--light-color-solid);
     background-color: var(--primary-color-solid);
     text-align: center;
+}
+
+@media screen and (max-width: 600px){
+    .header__menu-itemicon-cant{
+        display: none;
+    }
 }
 
 .chevron{
@@ -148,7 +156,7 @@ header{
 
 
 /* Barras de Titulo */
-.cart__titles{   
+.cart__titles{
     color: var(--dark-color-solid);
     font-family: var(--alternative-font);
     font-size: var(--font-display);
@@ -217,8 +225,12 @@ header{
     border-radius: 25px;
     background: var(--light-bg-color-solid);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-    
+
+    position: relative;
 }
+
+
+
 
 .cart__item:not(:last-child){
     margin-bottom: var(--spacing-28);
@@ -323,17 +335,32 @@ input[type="number"]::-webkit-outer-spin-button {
     color: #F24E1E;
 }
 
+@media screen and (max-width: 639px){
+    .InItem{
+        display: none;
+    }
+
+    .OutItem{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+}
+
+@media screen and (min-width: 640px){
+    .OutItem{
+        display: none;
+    }
+}
+
 
 /* Cuadro de Resumen de Carrito */
 .cart__total-container{
     display: flex;
+    justify-content: flex-end;
 }
 
-.cart__total-align{
-    width: 100%;
-}
-
-.cart__total-content{
+.cart__total-position{
     width: 100%;
     max-width: 570px;
     text-align: right;
@@ -345,7 +372,7 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 10px;
     padding: var(--spacing-24);
     margin-top: var(--spacing-24);
-    margin-bottom: var(--spacing-36);    
+    margin-bottom: var(--spacing-36);
 }
 
 .cart__total-listitem{
@@ -429,10 +456,7 @@ footer{
 }
 
 .footer__menubtn-link{
-
-
     font-size: var(--font-inter);
-
     padding: var(--spacing-8) var(--spacing-18);
     transition: all .3s ease-in-out;
 }
@@ -445,9 +469,21 @@ footer{
     max-width: 140px;
 }
 
-.footer__derechos{
-    text-align: center;
-    margin-top: var(--spacing-36);
+    .footer__derechos{
+        text-align: center;
+        margin-top: var(--spacing-36);
+    }
+
+@media screen and (max-width: 589px){
+    .CopyMax{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 590px){
+    .CopyMin{
+        display: none;
+    }
 }
 
 /* FIN FOOTER */

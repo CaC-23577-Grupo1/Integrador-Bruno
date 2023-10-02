@@ -61,27 +61,33 @@
         </div>
 
         <ul class="cart__item-list">
+
             <li class="cart__item">
-                <article class="cart__item-product">
-                    <picture class="cart__item-productimg">
-                        <img src="../images/star-wars/baby-yoda-1.webp" alt="Producto Baby Yoda Blueball">
-                    </picture>
-                    <div class="cart__item-productdet">
-                        <h2 class="cart__item-productdet-name">BABY YODA BLUEBALL</h2>
-                        <h3 class="cart__item-productdet-categ">STAR WARS</h3>
-                        <p class="cart__item-productdet-price">Precio: $ 1799,99</p>
+
+                    <article class="cart__item-product">
+                        <picture class="cart__item-productimg">
+                            <img src="../images/star-wars/baby-yoda-1.webp" alt="Producto Baby Yoda Blueball">
+                        </picture>
+                        <div class="cart__item-productdet">
+                            <h2 class="cart__item-productdet-name">BABY YODA BLUEBALL</h2>
+                            <h3 class="cart__item-productdet-categ">STAR WARS</h3>
+                            <p class="cart__item-productdet-price">Precio: $ 1799,99</p>
+                        </div>
+                    </article>
+                    <div class="cart__item-q">
+                        <input class="cart__item-qnum" type="number" value="2">
+                        <div class="cart__item-qplusminus">
+                            <a href="#"><iconify-icon class="cart__item-qplus" icon="ph:plus-fill"></iconify-icon></a>
+                            <a href="#"><iconify-icon class="cart__item-qminus" icon="ph:minus-fill"></iconify-icon></a>
+                        </div>
                     </div>
-                </article>
-                <div class="cart__item-q">
-                    <input class="cart__item-qnum" type="number" value="2">
-                    <div class="cart__item-qplusminus">
-                        <a href="#"><iconify-icon class="cart__item-qplus" icon="ph:plus-fill"></iconify-icon></a>
-                        <a href="#"><iconify-icon class="cart__item-qminus" icon="ph:minus-fill"></iconify-icon></a>
-                    </div>
-                </div>
-                <p class="cart__item-price">$ 3599.98</p>
-                <a href=""><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></a>
+                    <p class="cart__item-price">$ 3599.98</p>
+                    <a href="">
+                        <iconify-icon class="cart__item-delete InItem" icon="zondicons:close-outline"></iconify-icon>
+                        <iconify-icon class="cart__item-delete OutItem" icon="zondicons:close-outline"></iconify-icon>
+                    </a>
             </li>
+
             <li class="cart__item">
                 <article class="cart__item-product">
                     <picture class="cart__item-productimg">
@@ -101,14 +107,18 @@
                     </div>
                 </div>
                 <p class="cart__item-price">$ 1799.99</p>
-                <iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon>
+                <a href="">
+                    <iconify-icon class="cart__item-delete InItem" icon="zondicons:close-outline"></iconify-icon>
+                    <iconify-icon class="cart__item-delete OutItem" icon="zondicons:close-outline"></iconify-icon>
+                </a>
             </li>
+
         </ul>
 
         
         <section class="cart__total-container">
-            <div class="cart__total-align"></div>
-            <div class="cart__total-content">
+
+            <div class="cart__total-position">
 
                 <h3 class="cart__titles">RESUMEN</h3>
 
@@ -150,7 +160,8 @@
                 <img src="../images/branding/isotype.svg" alt="Logo Funkoshop">
             </picture>
         </nav>
-        <p class="footer__derechos">Todos los derechos Resevados 2023 - Funkoshop &copy;</p>
+        <p class="footer__derechos container CopyMax">Todos los derechos Resevados 2023 - Funkoshop &copy;</p>
+        <p class="footer__derechos container CopyMin">Todos los derechos Resevados 2023<br>Funkoshop &copy;</p>
     </footer>
 
     
