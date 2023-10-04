@@ -8,6 +8,7 @@ img{
 /* Agregr esta variable de color*/
 :root {
     --gray-color-solid: rgba(116, 116, 116, 1.0);
+    --green-color-900: rgba(30, 136, 51, 0.9);
 }
 
 
