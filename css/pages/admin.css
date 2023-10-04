@@ -8,7 +8,7 @@ img{
 /* Agregr esta variable de color*/
 :root {
     --gray-color-solid: rgba(116, 116, 116, 1.0);
-    --green-color-900: rgba(30, 136, 51, 0.897);
+    --green-color-900: rgba(30, 136, 51, 0.9);
 }
 
 
@@ -161,6 +161,16 @@ header{
 .searchbar__iconcontainer{
     max-width: 42px;
     align-items: center;
+
+    padding: 2px 2px 0px;
+    border-radius: 6px;
+    border: solid 2px rgba(0, 0, 0, 0.0);
+    transition: all .1s ease-in-out;
+}
+
+.searchbar__iconcontainer:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: solid 2px var(--secondary-color-900);
 }
 
 .searchbar__textinput{
@@ -202,6 +212,16 @@ header{
     display: flex;
     align-items: center;
     gap: var(--spacing-18);
+
+    padding: calc(var(--spacing-8) * 0.5) var(--spacing-8);
+    border-radius: 6px;
+    border: solid 2px rgba(0, 0, 0, 0.0);
+    transition: all .1s ease-in-out;
+}
+
+.tittlebar__addbtn:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: solid 2px var(--secondary-color-900);
 }
 
 .tittlebar__addbtn-text{
@@ -273,26 +293,47 @@ header{
   }
 
 .list-table__action{
+    text-align: left;
     border-radius: 0px calc(var(--font-xsmall) * 0.5) calc(var(--font-xsmall) * 0.5) 0px;
 }
 
 .list-table__iconcontainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: var(--spacing-18);
     padding-right: var(--spacing-16);
 }
 
 .editbtnicon{
-    font-size: var(--font-xsmall);
+    font-size: calc(var(--font-xsmall) * 0.7);
     color: var(--secondary-color-solid);
-    transition: font-size 1s ease-in-out;
+
+    padding: calc(var(--spacing-8) * 0.8);
+    border-radius: 6px;
+    border: solid 2px rgba(0, 0, 0, 0.0);
+    transition: all .1s ease-in-out;
+}
+
+.editbtnicon:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: solid 2px var(--green-color-900);
 }
 
 .deletebtnicon{
-    font-size: var(--font-xsmall);
+    font-size: calc(var(--font-xsmall) * 0.7);
     color: var(--primary-color-solid);
-    transition: font-size 1s ease-in-out;
+    
+    padding: calc(var(--spacing-8) * 0.8);
+
+    border-radius: 6px;
+    border: solid 2px rgba(0, 0, 0, 0.0);
+    transition: all .1s ease-in-out;
+}
+
+.deletebtnicon:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: solid 2px var(--primary-color-900);
 }
 /* Fin Tabla para Listar Productos */
 
@@ -319,6 +360,10 @@ header{
         font-size: calc(var(--font-large) * 0.8);
     }
 
+    .list-table__iconcontainer{
+        gap: calc(var(--spacing-18) * 0.8);
+    }
+
     .editbtnicon {
         font-size: calc(var(--font-xsmall) * 0.8);
     }
@@ -349,113 +394,18 @@ header{
         font-size: calc(var(--font-large) * 0.6);
     }
 
+    .list-table__iconcontainer{
+        gap: calc(var(--spacing-18) * 0.4);
+    }
+
     .editbtnicon {
-        font-size: calc(var(--font-xsmall) * 0.6);
+        font-size: calc(var(--font-xsmall) * 0.7);
     }
 
     .deletebtnicon {
-        font-size: calc(var(--font-xsmall) * 0.6);
+        font-size: calc(var(--font-xsmall) * 0.7);
     }
 }
-
-
-
-
-
-
-/* AJUSTES PARA PROPUESTA 2 */
-
-/* Inicio Propuesta 2 */
-.searchbar__iconcontainer2{
-    max-width: 42px;
-    align-items: center;
-
-    padding: 2px 2px 0px;
-    border-radius: 6px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border: solid 2px var(--dark-color-300);
-    transition: all .1s ease-in-out;
-}
-
-.searchbar__iconcontainer2:hover{
-    border: solid 2px var(--secondary-color-900);
-}
-
-.tittlebar__addbtn2{
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-18);
-
-    padding: calc(var(--spacing-8) * 0.5) var(--spacing-8);
-    border-radius: 6px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border: solid 2px var(--dark-color-300);
-    transition: all .1s ease-in-out;
-}
-
-.tittlebar__addbtn2:hover{
-    border: solid 2px var(--secondary-color-900);
-}
-
-.editbtnicon2{
-    font-size: calc(var(--font-xsmall) * 0.7);
-    color: var(--secondary-color-solid);
-
-    padding: calc(var(--spacing-8) * 0.8);
-    border-radius: 6px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border: solid 2px var(--dark-color-300);
-    transition: all .1s ease-in-out;
-}
-
-.editbtnicon2:hover{
-    border: solid 2px var(--green-color-900);
-}
-
-.deletebtnicon2{
-    font-size: calc(var(--font-xsmall) * 0.7);
-    color: var(--primary-color-solid);
-    
-    padding: calc(var(--spacing-8) * 0.8);
-
-    border-radius: 6px;
-    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
-    /* border: solid 2px var(--dark-color-300); */
-    border: solid 2px rgba(31, 31, 31, 0.0);
-    transition: all .1s ease-in-out;
-}
-
-.deletebtnicon2:hover{
-    border: solid 2px var(--primary-color-900);
-}
-
-.list-table__action2{
-    text-align: left;
-    border-radius: 0px calc(var(--font-xsmall) * 0.5) calc(var(--font-xsmall) * 0.5) 0px;
-}
-
-.list-table__iconcontainer2{
-    /* max-width: 105px; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: var(--spacing-18);
-    padding-right: var(--spacing-16);
-}
-
-/* Reducimos el tamaño de fuentes en pantallas chicas */
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-    .list-table__iconcontainer2{
-        gap: calc(var(--spacing-18) * 0.8);
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .list-table__iconcontainer2{
-        gap: calc(var(--spacing-18) * 0.6);
-    }
-}
-/* fin Propuesta 2 */
 
 /* FIN MAIN */
 
