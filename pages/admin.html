@@ -11,174 +11,230 @@
 <body>
     
     <header>
-        <nav>
-            <picture>
-                <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+        <nav class="header__navbar container">
+            <picture class="header__logo">
+                <a href="./home.html">
+                    <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+                </a>
             </picture>
-            <ul>
-                <li>
-                    <a href="#">VER TIENDA</a>
-                </li>
-                <li>
-                    <a href="#">ADMIN</a>
-                </li>
-                <li>
-                    <a href="#">SALIR</a>
-                </li>
+            <ul class="header__menu">
+                    <li class="header__menubtn submenuopen">
+                        <a class="header__menubtn-link chevron" href="./shop.html">SHOP<iconify-icon class="chevronsize" icon="tabler:chevron-down"></iconify-icon></a>
+                        
+                            <!-- Sub Menu del boton "Shop" -->
+                            <ul class="header__submenu">
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">Funkos</a>
+                                </li>
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">Remeras</a>
+                                </li>
+                                <li class="header__submenubtn">
+                                    <a class="header__submenubtn-link" href="#">LLaveros</a>
+                                </li>
+                            </ul>                    
+                    
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="#">CONTACTO</a>
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="./login.html">LOGIN</a>
+                    </li>
+                    <li class="header__menucart">
+                        <a class="header__menu-itemicon" href="./cart.html"><img src="../images/icons/cart-icon.svg" alt=""></a>
+                    </li>
+
             </ul>
         </nav>
     </header>
 
-    <main>
-        <form action="">
-            <img src="../images/icons/search_icon.svg" alt="Search">
-            <input type="text">
-        </form>
-        
-        <div>
-            <h3>LISTADO DE PRODUCTOS</h3>
-            <a href="#">AGREGAR<i class="fa-solid fa-square-plus"></i></a>
-        </div>
-        
-        <table>
+    <main  class="container admincontainer">
+
+        <nav class="searchbar">
+            <form class="searchbar__form" action="search">
+                <div class="searchbar__iconcontainer">
+                    <a href="#">
+                        <img src="../images/icons/search_icon.svg" alt="Search">
+                    </a>
+                </div>
+                <input class="searchbar__textinput" type="text" placeholder="código, nombre o categoria">
+            </form>
+        </nav>        
+
+        <div class="tittlebar">
+            <h3 class="tittlebar__tittle">LISTADO DE PRODUCTOS</h3>
+            <a class="tittlebar__addbtn" href="#">
+                <p class="tittlebar__addbtn-text">AGREGAR</p>
+                <i class="fa-solid fa-square-plus addbtnicon"></i>
+            </a>
+        </div>  
+
+        <table class="list-table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Código</th>
-                    <th>Nombre del Producto</th>
-                    <th>Categoría</th>
+                    <th class="list-table__TH-id">ID</th>
+                    <th class="list-table__TH-code">Código</th>
+                    <th class="list-table__TH-name">Nombre del Producto</th>
+                    <th class="list-table__TH-categ">Categoría</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>STW001001</td>
-                    <td>Baby Yoda Blueball </td>
-                    <td>STAR WARS</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">1</td>
+                    <td class="list-table__code">STW001001</td>
+                    <td class="list-table__name">Baby Yoda Blueball </td>
+                    <td class="list-table__categ">STAR WARS</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>STW001002</td>
-                    <td>Boba Fett Fighter</td>
-                    <td>STAR WARS</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">2</td>
+                    <td class="list-table__code">STW001002</td>
+                    <td class="list-table__name">Boba Fett Fighter</td>
+                    <td class="list-table__categ">STAR WARS</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>STW001003</td>
-                    <td>Luke Skylwalker & Grogu</td>
-                    <td>STAR WARS</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">3</td>
+                    <td class="list-table__code">STW001003</td>
+                    <td class="list-table__name">Luke Skylwalker & Grogu</td>
+                    <td class="list-table__categ">STAR WARS</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td>STW001004</td>
-                    <td>Stormtrooper Lightsaber</td>
-                    <td>STAR WARS</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">4</td>
+                    <td class="list-table__code">STW001004</td>
+                    <td class="list-table__name">Stormtrooper Lightsaber</td>
+                    <td class="list-table__categ">STAR WARS</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>5</td>
-                    <td>PKM001001</td>
-                    <td>Charmander Smiley</td>
-                    <td>POKEMON</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">5</td>
+                    <td class="list-table__code">PKM001001</td>
+                    <td class="list-table__name">Charmander Smiley</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>6</td>
-                    <td>PKM001002</td>
-                    <td>Dragonite Hi!</td>
-                    <td>POKEMON</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">6</td>
+                    <td class="list-table__code">PKM001002</td>
+                    <td class="list-table__name">Dragonite Hi!</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>7</td>
-                    <td>PKM001003</td>
-                    <td>Pidgeotto Flying</td>
-                    <td>POKEMON</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">7</td>
+                    <td class="list-table__code">PKM001003</td>
+                    <td class="list-table__name">Pidgeotto Flying</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>8</td>
-                    <td>PKM001004</td>
-                    <td>Pikachu Smiley</td>
-                    <td>POKEMON</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">8</td>
+                    <td class="list-table__code">PKM001004</td>
+                    <td class="list-table__name">Pikachu Smiley</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>9</td>
-                    <td>PKM001005</td>
-                    <td>Vulpix Fancy</td>
-                    <td>POKEMON</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">9</td>
+                    <td class="list-table__code">PKM001005</td>
+                    <td class="list-table__name">Vulpix Fancy</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>10</td>
-                    <td>HPT001001</td>
-                    <td>Harry Potter & Hegwid</td>
-                    <td>HARRY POTTER</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">10</td>
+                    <td class="list-table__code">HPT001001</td>
+                    <td class="list-table__name">Harry Potter & Hegwid</td>
+                    <td class="list-table__categ">HARRY POTTER</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>11</td>
-                    <td>HPT001002</td>
-                    <td>Herminione Ball Dress</td>
-                    <td>HARRY POTTER</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">11</td>
+                    <td class="list-table__code">HPT001002</td>
+                    <td class="list-table__name">Herminione Ball Dress</td>
+                    <td class="list-table__categ">HARRY POTTER</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>12</td>
-                    <td>HPT001003</td>
-                    <td>Luna Lovegood Lion Mask</td>
-                    <td>HARRY POTTER</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">12</td>
+                    <td class="list-table__code">HPT001003</td>
+                    <td class="list-table__name">Luna Lovegood Lion Mask</td>
+                    <td class="list-table__categ">HARRY POTTER</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>13</td>
-                    <td>HPT001004</td>
-                    <td>Snape Patronus</td>
-                    <td>HARRY POTTER</td>
-                    <td>
-                        <img src="../images/icons/edit_pencil.svg" alt="Editar">
-                        <img src="../images/icons/delete_trash.svg" alt="Borrar">
+                    <td class="list-table__id">13</td>
+                    <td class="list-table__code">HPT001004</td>
+                    <td class="list-table__name">Snape Patronus</td>
+                    <td class="list-table__categ">HARRY POTTER</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
                     </td>
                 </tr>
             </tbody>
@@ -187,18 +243,19 @@
     </main>
 
     <footer>
-        <nav>
-            <ul>
-                <li>SHOP</li>
-                <li>REGISTRARSE</li>
-                <li>INGRESAR</li>
-                <li>CONTACTO</li>
+        <nav class="footer__navbar container">
+            <ul class="footer__menu">
+                <li class="footer__menubtn"><a class="footer__menubtn-link" href="./shop.html">SHOP</a></li>
+                <li class="footer__menubtn"><a class="footer__menubtn-link" href="./register.html">REGISTRARSE</a></li>
+                <li class="footer__menubtn"><a class="footer__menubtn-link" href="./login.html">INGRESAR</a></li>
+                <li class="footer__menubtn"><a class="footer__menubtn-link" href="#">CONTACTO</a></li>
             </ul>
+            <picture class="footer__logo">
+                <img src="../images/branding/isotype.svg" alt="Logo Funkoshop">
+            </picture>
         </nav>
-        <picture>
-            <img src="../images/branding/isotype.svg" alt="Logo Funkoshop">
-        </picture>
-        <p>Todos los derechos Resevados 2023 - Funkoshop &copy;</p>
+        <p class="footer__derechos container CopyMax">Todos los derechos Resevados 2023 - Funkoshop &copy;</p>
+        <p class="footer__derechos container CopyMin">Todos los derechos Resevados 2023<br>Funkoshop &copy;</p>
     </footer>
   
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->
