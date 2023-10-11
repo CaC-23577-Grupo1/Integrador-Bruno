@@ -300,26 +300,50 @@ header{
 .cart__item-qplusminus{
     display: flex;
     flex-direction: column;
-    gap: calc(var(--spacing-8) * 0.2);
+    gap: calc(var(--spacing-8) * 0.5);
 }
 
+/* AQUI  Eliminar ya que se paso el A a un BUTTON ----------------------------------------------------------------------------------------------------- */
+/*
 .cart__item-qplus{
     font-size: var(--font-medium);
     color: #F24E1E;
 }
+*/
 
+/* AQUI  Eliminar ya que se paso el A a un BUTTON ----------------------------------------------------------------------------------------------------- */
+/*
 .cart__item-qminus{
     font-size: var(--font-medium);
     color: #F24E1E;
 }
+*/
 
+.qplusminusbtn{
+    font-size: var(--font-large);
+    font-family: var(--alternative-font);
+    color: var(--light-color-solid);
+    font-weight: 400;
+    line-height: 1.8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color:  #F24E1E;
+}
+
+
+/* AQUI  Eliminar ya que se paso el campo de Number a Text ----------------------------------------------------------------------------------------------------- */
 /* Momentaneamente solucionado de esta forma aunque creo que lo mejor es un Text con validacion para solo numeros */
+/*
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none; /* deshabilita las flechas en Chrome y Safari */
-  appearance: none; /* deshabilita las flechas en otros navegadores */
-  margin: 0; /* evita el espacio adicional causado por la eliminar las flechas */
+  -webkit-appearance: none;     deshabilita las flechas en Chrome y Safari 
+  appearance: none;             deshabilita las flechas en otros navegadores 
+  margin: 0;                    evita el espacio adicional causado por la eliminar las flechas 
 }
+*/
 
 /* Precio */
 .cart__item-price{
@@ -331,6 +355,13 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* Eliminar */
+.deletebtn{
+    font-size: calc(var(--font-xsmall) * 0.7);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
 .cart__item-delete{
     font-size: var(--font-large);
     color: #F24E1E;
@@ -345,6 +376,7 @@ input[type="number"]::-webkit-outer-spin-button {
         position: absolute;
         right: 20px;
         top: 20px;
+        z-index: 2;
     }
 }
 
