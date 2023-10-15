@@ -442,6 +442,21 @@ input[type="number"]::-webkit-outer-spin-button {
     font-weight: 700;
 }
 
+.EnvioGratis{
+    position: relative;
+}
+
+.EnvioGratis::after{
+    content: "";
+    position: absolute;
+    top: 45%;
+    transform: translate(0%, 50%);
+    transform: scale(1.1);
+    left: 0;
+    right: 0;
+    border-bottom: 3px solid var(--dark-bg-color-solid);
+}
+
 .cart__total-listitem:not(:last-child){
     margin-bottom: var(--spacing-18);
 }
