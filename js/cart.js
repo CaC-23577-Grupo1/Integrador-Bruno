@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 2, name: 'PIDGEOTTO', category: 'POKEMON', price: 1799.99, image: 'pokemon/pidgeotto-1.webp', quantity: 1 },
         { id: 3, name: 'HARRY', category: 'HARRY POTTER', price: 1799.99, image: 'harry-potter/harry-1.webp', quantity: 3 }
     ];
+    
 
     // Datos dinamicos utiles para el codigo
     let precioEnvio = 1500;
@@ -111,9 +112,25 @@ document.addEventListener('DOMContentLoaded', function() {
         resumenCantidad.textContent = sumadorCantidad; 
         resumenSubtotal.textContent = `$ ${sumadorSubtotal.toFixed(2)}`;
         resumenTotal.textContent = mostrarTotal;
-        }
+    }
 
 
+    // Funcion que altera el Array de muestra y elimina valores (simulamos funcionamiento boton delete)
+    function funcionamientoDeleteBTN() {
+
+        const botonesDelete = document.querySelectorAll('.deletebtn');              // seleccionamos todos los elementos cuya clase sea "deletebtn"  (todos los botones tienen la misma clase)
+        botonesDelete.forEach(elementoBoton => {                                    // recorremos todos los botones
+            elementoBoton.addEventListener('click', function() {                    // "escuchamos" el evento "Click" en cualquiera de ellos
+                const idProducto = this.dataset.id;                                 // almacenamos el ID del producto proveniente del atributo "data-id" en el boton clickeado
+                const indiceDelArray = dataBD.findIndex(elementoDelArray => elementoDelArray.id === idProducto);        // buscamos en que indice del array se almacena el producto con ese ID
+                    dataBD.splice(indiceDelArray, 1);                               // hacemos un SPLICE al array al elemento en el indice correspondiente y solo de 1 elemento
+                    listarCarrito();                                                // reinvocamos para que se regenere la lista de productos
+                    actualizaTotalCarrito();                                        // reinvocamos para que se calcule el total de "RESUMEN"
+                    funcionamientoDeleteBTN();                                      // reinvocamos para que siga disponible el funcionamiento "delete"
+            });
+        });
+    
+    };
 
 
 
@@ -167,19 +184,16 @@ document.addEventListener('DOMContentLoaded', function() {
     inicializarModuloCarrito();
     // Paso seguido invocamos a la funcion para que calcule los valores del Total del Carrito
     actualizaTotalCarrito();
+    // Por ultimo invocamos la funcion para que trabajen los botones de "delete"
+    funcionamientoDeleteBTN();
 
 
-
-    // Funcion para mostrar un alert al presionar el "delete" (solo a modo Grafico)
-    const botonesDelete = document.querySelectorAll('.deletebtn');                  // seleccionamos todos los elementos cuya clase sea "deletebtn"  (todos los botones tienen la misma clase)
-    botonesDelete.forEach(elementoBoton => {                                        // recorremos todos los botones
-        elementoBoton.addEventListener('click', function() {                        // "escuchamos" el evento "Click" en cualquiera de ellos
-            const itemDeListaLI = this.closest('.cart__item');                      // almacenamos en la variable el contenedor en el cual se ha presionado el boton delete (cual item de la lista)
-            const idProducto = this.dataset.id;                                     // almacenamos el ID del producto proveniente del atributo "data-id" en el boton clickeado
-            const nombreProducto = itemDeListaLI.querySelector('.cart__item-productdet-name').textContent;      // sabiendo cual es el contenedor en el que se presiono delete, busca al nombre del producto en el elemento cuya clase es "cart__item-productdet-name"
-            alert(`Presiono Borrar producto en la Posicion: ${idProducto} \n ${nombreProducto}`);               // mostramos un alert con toda la data recopilada
-        });
-    });
-    
-    
 });
+
+
+
+
+
+
+
+
