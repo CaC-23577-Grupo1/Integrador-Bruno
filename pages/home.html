@@ -59,8 +59,8 @@
 
     <main class="container homecontainer">
         
-        <section class="articles__container">
-
+        <section  id="articles__container" class="articles__container">
+<!--
             <article class="article__item">
                 <div class="article__details">
                     <h2 class="article__detailstitle">STAR WARS & THE MANDALORIAN</h2>
@@ -93,7 +93,7 @@
                     <img src="../images/harry-potter/snape-patronus-1.webp" alt="Producto Snape Patronus">
                 </picture>
             </article>
-            
+-->            
         </section>
 
         <section class="slider__container glide">
@@ -102,11 +102,11 @@
             
             <div class="glide__track" data-glide-el="track">
 
-                <ul class="slider__list glide__slides">
-                    
-                    <li class="slider__card glide__slide"><!-- No estoy usando "slider__Card" -->
+                <ul id="jsContainer_Slider" class="slider__list glide__slides">
+<!--   --                 
+                    <li class="slider__card glide__slide">
                         <article class="card__container">
-                            <a class="card__link" href="#"><!-- No estoy usando "Card__Link" -->
+                            <a class="card__link" href="#">
                                 <picture class="card__imagecontainer">
                                     <span class="card__newprod">NUEVO</span>
                                     <img class="card__prodimage" src="../images/star-wars/trooper-1.webp" alt="Producto StormTrooper">
@@ -155,7 +155,7 @@
                             </a>
                         </article>
                     </li>
-
+!--   -->   
                 </ul>
 
                 <div data-glide-el="controls">
@@ -192,6 +192,7 @@
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-    <script src="../js/slider-glide.js"></script>
+    <!-- <script src="../js/slider-glide.js"></script> Anulado este SCRIPT ya que lo inclui en el archivo "home.js (Era la creacion de la instancia para que funcione Glide)"-->
+    <script src="../js/home.js"></script>
 </body>
 </html>
