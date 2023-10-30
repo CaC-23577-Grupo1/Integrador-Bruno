@@ -51,15 +51,15 @@
 
     <main  class="container admincontainer">
 
-        <nav class="searchbar">
-            <form class="searchbar__form" action="search">
+        <nav class="searchbar__container">
+            
                 <div class="searchbar__iconcontainer">
-                    <a href="#">
+                    <!-- <a href="#"> -->
                         <img src="../images/icons/search_icon.svg" alt="Search">
-                    </a>
+                    <!-- </a> -->
                 </div>
-                <input class="searchbar__textinput" type="text" placeholder="código, nombre o categoria">
-            </form>
+                <input id="search-textinput" class="searchbar__textinput" type="text" placeholder="código, nombre o categoria">
+            
         </nav>        
 
         <div class="tittlebar">
@@ -80,7 +80,8 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="list-table-items">
+<!--                
                 <tr>
                     <td class="list-table__id">1</td>
                     <td class="list-table__code">STW001001</td>
@@ -237,8 +238,10 @@
                         </div>
                     </td>
                 </tr>
+-->
             </tbody>
         </table>
+        <div id="negative-search"></div>
         
     </main>
 
@@ -260,5 +263,6 @@
   
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script src="../js/admin.js"></script>
 </body>
 </html>
