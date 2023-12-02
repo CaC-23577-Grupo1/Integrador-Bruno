@@ -1,12 +1,27 @@
 // Primero nos aseguramos que todos los elementos HTML esten disponibles para ser manipulados con "DOMContentLoaded"
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Array de muestra para generar el contenido
-    const dataBD = [
-        { id: 1, name: 'BABY YODA BLUEBALL', category: 'STAR WARS', price: 1799.99, image: 'star-wars/baby-yoda-1.webp', quantity: 2 },
-        { id: 2, name: 'PIDGEOTTO', category: 'POKEMON', price: 1799.99, image: 'pokemon/pidgeotto-1.webp', quantity: 1 },
-        { id: 3, name: 'HARRY', category: 'HARRY POTTER', price: 1799.99, image: 'harry-potter/harry-1.webp', quantity: 3 }
-    ];
+
+    // Conjunto de elementos que simula ITEMS cargados al carrito
+    const cartContent = [
+        { cart_id: 1, prod_id: 1, prod_cant: 2},
+        { cart_id: 2, prod_id: 7, prod_cant: 1},
+        { cart_id: 3, prod_id: 10, prod_cant: 3}
+    ]
+
+
+     //  Creamos una funcion asincrona que sera la que leera los datos del JSON de Productos
+    async function cargarDatosJSON() {
+
+        // hacemos la solicitud  mediante FETCH para obtener los datos que contiene el archivo "products.json"
+        const respuestaFetch = await fetch('../data/products.json');
+        // utilizamos el metodo ".json" para extraer unicamente el BODY de dicha respuesta
+        dataRespuestaLimpia = await respuestaFetch.json();
+        // por ultimo, "entregamos" a quien invoco esta funcion los datos obtenidos
+        return dataRespuestaLimpia;
+        
+        //(NOTA: al ser una funcion asincrona se utiliza el AWAIT para esperar a que se resuelva la promesa)
+    };
     
 
     // Datos dinamicos utiles para el codigo
@@ -19,38 +34,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Funcion para recorrer el ARRAY que contiene los productos en carrito y listarlos
-    function listarCarrito() {
+    function listarCarrito(dataRespuestaJSON) {
 
         // Inicializamos el Template Vacio
         let templateListar = '';
 
         // Recorremos el Array por todos sus elementos
-        dataBD.forEach(elementoDelArray => {
+        cartContent.forEach(contenidoCarrito => {
+
+            // recorremos el array con los datos "Provenientes de la BD" para almacenar en "datosProducto" los datos de aquel cuyo ID coincida con el del ID de los "Agregados en carrito"
+            let datosProducto = dataRespuestaJSON.find(todosLosProductos => todosLosProductos.prod_id == contenidoCarrito.prod_id);
 
             // En cada elemento asignamos los datos y lo "sumamos" al template
             templateListar += `
                 <li class="cart__item">
                     <article class="cart__item-product">
                         <picture class="cart__item-productimg">
-                            <img src="../images/${elementoDelArray.image}" alt="Producto Baby Yoda Blueball">
+                            <img src="../${datosProducto.prod_imagen_frontal}" alt="${datosProducto.prod_descripcion}">
                         </picture>
                         <div class="cart__item-productdet">
-                            <h2 class="cart__item-productdet-name">${elementoDelArray.name}</h2>
-                            <h3 class="cart__item-productdet-categ">${elementoDelArray.category}</h3>
-                            <p class="cart__item-productdet-price">Precio: $ ${elementoDelArray.price}</p>
+                            <h2 class="cart__item-productdet-name">${datosProducto.prod_nombre}</h2>
+                            <h3 class="cart__item-productdet-categ">${datosProducto.prod_licencia}</h3>
+                            <p class="cart__item-productdet-price">Precio: $ ${datosProducto.prod_precio}</p>
                         </div>
                     </article>
                     <div class="cart__item-q">
-                        <input data-id="${elementoDelArray.id}" class="cart__item-qnum" type="text" id="quant${elementoDelArray.id}" value="${elementoDelArray.quantity}">
+                        <input data-id="${contenidoCarrito.cart_id}" class="cart__item-qnum" type="text" id="quant${contenidoCarrito.cart_id}" value="${contenidoCarrito.prod_cant}">
                         <div class="cart__item-qplusminus">
-                            <button data-id="${elementoDelArray.id}" id="plus" class="qplusminusbtn plus">+</button>
-                            <button data-id="${elementoDelArray.id}" id="minus" class="qplusminusbtn minus">-</button>
+                            <button data-id="${contenidoCarrito.cart_id}" id="plus" class="qplusminusbtn plus">+</button>
+                            <button data-id="${contenidoCarrito.cart_id}" id="minus" class="qplusminusbtn minus">-</button>
                         </div>
                     </div>
-                    <p class="cart__item-price" id="total${elementoDelArray.id}">$ ${(elementoDelArray.price * elementoDelArray.quantity).toFixed(2)}</p>
+                    <p class="cart__item-price" id="total${contenidoCarrito.cart_id}">$ ${(datosProducto.prod_precio * contenidoCarrito.prod_cant).toFixed(2)}</p>
                     <div>
-                        <button data-id="${elementoDelArray.id}" class="deletebtn OutItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
-                        <button data-id="${elementoDelArray.id}" class="deletebtn InItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                        <button data-id="${contenidoCarrito.cart_id}" class="deletebtn OutItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                        <button data-id="${contenidoCarrito.cart_id}" class="deletebtn InItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
                     </div>
                 </li>
                 `
@@ -62,12 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Funcion para actualizar el valor total del producto dependiendo de las cantidades que figuran
-    function actualizaTotalProducto(idProducto, cantidadInput) {                                        // Funcion que recibe 2 parametros, el identificador del producto y la cantidad que indica el Input Box
-    const producto = dataBD.find(elementoDelArray => elementoDelArray.id === parseInt(idProducto));     // Buscamos si existe algun elemento en el array con el ID recibido como argumento  (parseint lo usamos para convertir el argumento recibido en numero, ya que el dato leido desde el DOM se recibe como cadena de texto)
-    const totalElement = document.querySelector(`#total${idProducto}`);                                 // Seleccionamos el contenedor que muestra el total del producto cuyo nombre se forma con el ID
-        if (producto) {                                                                                 // si el elemento en el array existe (es decir, hay un producto con dicho ID)
-            const totalPrice = producto.price * cantidadInput;                                          // multiplicamos el valor de "price" de dicho producto por la cantidad recibida como argumento
-            totalElement.textContent = `$ ${totalPrice.toFixed(2)}`;                                    // actualizamos el contenido del contenedor que muestr el total (toFixed(2) para mostrar 2 decimales en el numero)
+    function actualizaTotalProducto(idProducto, cantidadInput, dataRespuestaJSON) {                                             // Funcion que recibe 2 parametros, el identificador del producto y la cantidad que indica el Input Box
+    const datosProducto = dataRespuestaJSON.find(todosLosProductos => todosLosProductos.prod_id === parseInt(idProducto));      // Buscamos si existe algun elemento en el array con el ID recibido como argumento  (parseint lo usamos para convertir el argumento recibido en numero, ya que el dato leido desde el DOM se recibe como cadena de texto)
+    const totalElement = document.querySelector(`#total${idProducto}`);                                                         // Seleccionamos el contenedor que muestra el total del producto cuyo nombre se forma con el ID
+        if (datosProducto) {                                                                                                    // si el elemento en el array existe (es decir, hay un producto con dicho ID)
+            const totalPrice = datosProducto.prod_precio * cantidadInput;                                                       // multiplicamos el valor de "price" de dicho producto por la cantidad recibida como argumento
+            totalElement.textContent = `$ ${totalPrice.toFixed(2)}`;                                                            // actualizamos el contenido del contenedor que muestr el total (toFixed(2) para mostrar 2 decimales en el numero)
         }
     }
 
@@ -116,17 +134,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Funcion que altera el Array de muestra y elimina valores (simulamos funcionamiento boton delete)
-    function funcionamientoDeleteBTN() {
+    function funcionamientoDeleteBTN(dataRespuestaJSON) {
 
         const botonesDelete = document.querySelectorAll('.deletebtn');              // seleccionamos todos los elementos cuya clase sea "deletebtn"  (todos los botones tienen la misma clase)
         botonesDelete.forEach(elementoBoton => {                                    // recorremos todos los botones
             elementoBoton.addEventListener('click', function() {                    // "escuchamos" el evento "Click" en cualquiera de ellos
                 const idProducto = this.dataset.id;                                 // almacenamos el ID del producto proveniente del atributo "data-id" en el boton clickeado
-                const indiceDelArray = dataBD.findIndex(elementoDelArray => elementoDelArray.id === idProducto);        // buscamos en que indice del array se almacena el producto con ese ID
-                    dataBD.splice(indiceDelArray, 1);                               // hacemos un SPLICE al array al elemento en el indice correspondiente y solo de 1 elemento
-                    listarCarrito();                                                // reinvocamos para que se regenere la lista de productos
-                    actualizaTotalCarrito();                                        // reinvocamos para que se calcule el total de "RESUMEN"
-                    funcionamientoDeleteBTN();                                      // reinvocamos para que siga disponible el funcionamiento "delete"
+                const indiceDelArray = cartContent.findIndex(contenidoCarrito => contenidoCarrito.cart_id === idProducto);        // buscamos en que indice del array se almacena el producto con ese ID
+                cartContent.splice(indiceDelArray, 1);                               // hacemos un SPLICE al array al elemento en el indice correspondiente y solo de 1 elemento
+                    listarCarrito(dataRespuestaJSON);                                // reinvocamos para que se regenere la lista de productos
+                    actualizaTotalCarrito(dataRespuestaJSON);                        // reinvocamos para que se calcule el total de "RESUMEN"
+                    funcionamientoDeleteBTN(dataRespuestaJSON);                      // reinvocamos para que siga disponible el funcionamiento "delete"
             });
         });
     
@@ -135,57 +153,73 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Esta es la funcion principal, la que inicia y hace que todo aparezca y se ejecute llamando a otras funciones en caso de ser necesario
-    function inicializarModuloCarrito() {
-
-        // Invocamos la funcion para listar los items del carrito
-        listarCarrito();
-        
-        // Capturamos todos los inputs de cantidad existentes para "escuchar" el evento "change" de cualquiera de ellos
-        const inputsDeCantidad = document.querySelectorAll('.cart__item-qnum');   // Seleccionamos todos los inputs de cantidad con su clase en comun que es "cart__item-qnum"
-        inputsDeCantidad.forEach(elementoInput => {                               // mediante un ForEach recorremos cada uno de esos inputs
-            elementoInput.addEventListener('change', function() {                 // aqui estamos "escuchando" cualquier "change" que ocurra en cualquiera de ellos y reaccionaremos ante ello
-                if (isNaN(this.value) || this.value < 0) {                        // si el valor del input no es numero O es menor a cero
-                    this.value = 0;                                               // el valor del input se establece en cero
-                } 
-                actualizaTotalProducto(this.dataset.id, this.value);              // llamamos a la funcion para actualizar el total pasando como parametro al atributo "data-id" para identificar cual de los inputs fue el que tuvo el "change" y ademas pasamos el valor de dicho input
-                actualizaTotalCarrito()
-            });
-        });
+    async function inicializarModuloCarrito() {
 
 
-        // Aqui estaremos "escuchando" cualquier click que se haga dentro del contenedor cuyo DOM sea el de "cartList" que como mas arriba definimos es el contenedor "cart_list"
-        cartList.addEventListener('click', function(event) {
+        try {
+
+            // Ejecutamos la funcion para traer los datos del JSON con el AWAIT para esperar que nos llegue toda la info de esa funcion
+            const dataRespuestaJSON = await cargarDatosJSON();
+
+            // Invocamos la funcion para listar los items del carrito
+            listarCarrito(dataRespuestaJSON);
+
+            // Por ultimo invocamos la funcion para que trabajen los botones de "delete"
+            funcionamientoDeleteBTN(dataRespuestaJSON);
+
+            // Paso seguido invocamos a la funcion para que calcule los valores del Total del Carrito
+            actualizaTotalCarrito();
             
-            // Aqui almacenaremos cual fue el "target" de dicho click, que elemento fue "clickeado"
-            const elementoClickeado = event.target;
-            
-            if (elementoClickeado.classList.contains('plus')) {                          // SI el TARGET clickado tiene la clase "plus" entonces...
-                const idProducto = elementoClickeado.dataset.id;                         // almacenamos el ID del producto proveniente del atributo "data-id"
-                const cantidadInput = document.querySelector(`#quant${idProducto}`);     // seleccionamos el input cuya nombre de clase corresponda al ID del boton clickeado
-                cantidadInput.value = Number(cantidadInput.value) + 1;                   // sumamos 1 al valor de dicho input
-                actualizaTotalProducto(idProducto, parseInt(cantidadInput.value));       // llamamos a la funcion para actualizar el total pasando como parametro al atributo "data-id" para identificar en cual de los inputs fue clickeado el boton, por ende cambio su valor y ademas pasamos el valor de dicho input
-                actualizaTotalCarrito()
-                        
-            } else if (elementoClickeado.classList.contains('minus')) {                  // SI el TARGET clickado tiene la clase "minus" entonces...
-                const idProducto = elementoClickeado.dataset.id;                         // almacenamos el ID del producto proveniente del atributo "data-id"
-                const cantidadInput = document.querySelector(`#quant${idProducto}`);     // seleccionamos el input cuya nombre de clase corresponda al ID del boton clickeado
-                if (cantidadInput.value > 0) {                                           // si el valor del input es mayor a CERO
-                    cantidadInput.value = Number(cantidadInput.value) - 1;               // restamos 1 al valor de dicho input
-                    actualizaTotalProducto(idProducto, parseInt(cantidadInput.value));   // llamamos a la funcion para actualizar el total pasando como parametro al atributo "data-id" para identificar en cual de los inputs fue clickeado el boton, por ende cambio su valor y ademas pasamos el valor de dicho input
+            // Capturamos todos los inputs de cantidad existentes para "escuchar" el evento "change" de cualquiera de ellos
+            const inputsDeCantidad = document.querySelectorAll('.cart__item-qnum');   // Seleccionamos todos los inputs de cantidad con su clase en comun que es "cart__item-qnum"
+            inputsDeCantidad.forEach(elementoInput => {                               // mediante un ForEach recorremos cada uno de esos inputs
+                elementoInput.addEventListener('change', function() {                 // aqui estamos "escuchando" cualquier "change" que ocurra en cualquiera de ellos y reaccionaremos ante ello
+                    if (isNaN(this.value) || this.value < 0) {                        // si el valor del input no es numero O es menor a cero
+                        this.value = 0;                                               // el valor del input se establece en cero
+                    } 
+                    actualizaTotalProducto(this.dataset.id, this.value, dataRespuestaJSON);              // llamamos a la funcion para actualizar el total pasando como parametro al atributo "data-id" para identificar cual de los inputs fue el que tuvo el "change" y ademas pasamos el valor de dicho input
                     actualizaTotalCarrito()
+                });
+            });
+
+
+            // Aqui estaremos "escuchando" cualquier click que se haga dentro del contenedor cuyo DOM sea el de "cartList" que como mas arriba definimos es el contenedor "cart_list"
+            cartList.addEventListener('click', function(event) {
+                
+                // Aqui almacenaremos cual fue el "target" de dicho click, que elemento fue "clickeado"
+                const elementoClickeado = event.target;
+                
+                if (elementoClickeado.classList.contains('plus')) {                          // SI el TARGET clickado tiene la clase "plus" entonces...
+                    const idProducto = elementoClickeado.dataset.id;                         // almacenamos el ID del producto proveniente del atributo "data-id"
+                    const cantidadInput = document.querySelector(`#quant${idProducto}`);     // seleccionamos el input cuya nombre de clase corresponda al ID del boton clickeado
+                    cantidadInput.value = Number(cantidadInput.value) + 1;                   // sumamos 1 al valor de dicho input
+                    actualizaTotalProducto(parseInt(idProducto), parseInt(cantidadInput.value), dataRespuestaJSON);       // llamamos a la funcion para actualizar el total pasando como parametro al atributo "data-id" para identificar en cual de los inputs fue clickeado el boton, por ende cambio su valor y ademas pasamos el valor de dicho input
+                    actualizaTotalCarrito()
+                           
+                } else if (elementoClickeado.classList.contains('minus')) {                  // SI el TARGET clickado tiene la clase "minus" entonces...
+                    const idProducto = elementoClickeado.dataset.id;                         // almacenamos el ID del producto proveniente del atributo "data-id"
+                    const cantidadInput = document.querySelector(`#quant${idProducto}`);     // seleccionamos el input cuya nombre de clase corresponda al ID del boton clickeado
+                    if (cantidadInput.value > 0) {                                           // si el valor del input es mayor a CERO
+                        cantidadInput.value = Number(cantidadInput.value) - 1;               // restamos 1 al valor de dicho input
+                        actualizaTotalProducto(parseInt(idProducto), parseInt(cantidadInput.value), dataRespuestaJSON);   // llamamos a la funcion para actualizar el total pasando como parametro al atributo "data-id" para identificar en cual de los inputs fue clickeado el boton, por ende cambio su valor y ademas pasamos el valor de dicho input
+                        actualizaTotalCarrito()
+                    }
                 }
-            }
-        });
+            });
+
+        } catch (error) {
+
+        };
 
     }
 
 
+
+
     // Invocamos la funcion para que todo se ejecute, es decir, "el modulo del carrito"
     inicializarModuloCarrito();
-    // Paso seguido invocamos a la funcion para que calcule los valores del Total del Carrito
-    actualizaTotalCarrito();
-    // Por ultimo invocamos la funcion para que trabajen los botones de "delete"
-    funcionamientoDeleteBTN();
+
+
 
 
 });

@@ -1,0 +1,23 @@
+[
+    { 
+        "id": 1, 
+        "colection_name": "STAR WARS & THE MANDALORIAN",
+        "colection_image": "/images/star-wars/baby-yoda-1.webp",
+        "colection_altimage": "Producto Baby Yoda", 
+        "colection_descript": "Disfruta de una saga que sigue agregando personajes a su colección."
+    },
+    { 
+        "id": 2, 
+        "colection_name": "POKEMON INDIGO",
+        "colection_image": "/images/pokemon/vulpix-1.webp",
+        "colection_altimage": "Producto Vulpix", 
+        "colection_descript": "Atrapa todos los que puedas y disfruta de una colección llena de amigos."
+    },
+    { 
+        "id": 3, 
+        "colection_name": "HARRY POTTER",
+        "colection_image": "/images/harry-potter/snape-patronus-1.webp",
+        "colection_altimage": "Producto Snape Patronus", 
+        "colection_descript": "Revive los recuerdos de una saga llena de magia y encanto."
+    }
+]
