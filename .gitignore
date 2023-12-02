@@ -9,3 +9,12 @@
 
 # Directorio para guardar archivos utiles pero no necesarios para la funcionalidad
 _MaterialExtra/
+
+# Directorio de VS Code que se genera automaticamente en alguna ocasiones   
+.vscode/
+
+# Carpeta de los Node Modules que no debe subirse a GitHub
+node_modules/
+
+# Archivo para guardar informacion sensible
+.env
