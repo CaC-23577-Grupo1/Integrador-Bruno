@@ -6,8 +6,12 @@ const express = require('express');
 /* Ahora ejecutamos express creando una Instancia, estamos "levantando el servidor" y ahora podremos utilizar sus metodos */
 const app = express();
 
+/* requerimos el middleware para poder usar los metodos PUT y DELETE pasados mediante post */
+const methodOverride = require('method-override');
+
 /* Requerimos la dependencia "Dotenv" para poder sacar los datos sensibles de los archivos */
 require('dotenv').config();
+
 
 /* requerimos nuestro "paquete creado por nosotros" en el archivo tal y lo asignamos a determinada variable */
 const mainRoutes = require('./src/routes/mainRoutes');
@@ -20,9 +24,12 @@ const errorRoutes = require('./src/routes/errorRoutes');
 const PORT = process.env.SERVERPORT || process.env.AUXSERVERPORT;
 
 /* Middlewares de Configuracion */
+app.use(express.urlencoded());              // parseamos los datos para nuestro JS pueda comprender los datos recibidos en el body
+app.use(express.json());                    // parseamos los datos para nuestro JS pueda comprender los datos recibidos en el body
+app.use(methodOverride('_method'));         // configuramos el metodo override para el uso de los metodos PUT y DELETE
+
 app.use(express.static('public'));          // definimos una carpeta de archivos que seran "levantados" para ser mostrados por el server
-app.use(express.urlencoded());              // parseamos los datos para que el servidor pueda comprender los datos recibidos en el body
-app.use(express.json());                    // parseamos los datos para que el servidor pueda comprender los datos recibidos en el body
+
 
 /* Middlewares de Rutas  */
 app.use('/', mainRoutes);
