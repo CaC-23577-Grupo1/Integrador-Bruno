@@ -1,58 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Vinculacion con Libreria Font Awesome 6.4.2 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Baby Yoda Blueball - Funkoshop</title>
-    <link rel="stylesheet" href="../css/index.css">
-</head>
-
-<body>
-
-
-    <!-- Cabecera del Sitio con menú -->
-    <header>
-        <nav class="header__navbar container">
-            <picture class="header__logo">
-                <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
-            </picture>
-            <ul class="header__menu">
-                    <li class="header__menubtn submenuopen">
-                        <a class="header__menubtn-link chevron" href="./shop.html">SHOP<iconify-icon class="chevronsize" icon="tabler:chevron-down"></iconify-icon></a>
-                        
-                            <!-- Sub Menu del boton "Shop" -->
-                            <ul class="header__submenu">
-                                <li class="header__submenubtn">
-                                    <a class="header__submenubtn-link" href="#">Funkos</a>
-                                </li>
-                                <li class="header__submenubtn">
-                                    <a class="header__submenubtn-link" href="#">Remeras</a>
-                                </li>
-                                <li class="header__submenubtn">
-                                    <a class="header__submenubtn-link" href="#">LLaveros</a>
-                                </li>
-                            </ul>                    
-                    
-                    </li>
-                    <li class="header__menubtn">
-                        <a class="header__menubtn-link" href="#">CONTACTO</a>
-                    </li>
-                    <li class="header__menubtn">
-                        <a class="header__menubtn-link" href="./login.html">LOGIN</a>
-                    </li>
-                    <li class="header__menucart">
-                        <a class="header__menu-itemicon" href="./cart.html"><img src="../images/icons/cart-icon.svg" alt=""></a>
-                    </li>
-
-            </ul>
-        </nav>
-    </header>
-
+<%- include('../partials/header'); -%>
 
     <main class="container">
         <!-- Sección 1 - Cart principal -->
@@ -154,22 +100,7 @@
     </main>
 
 
-    <!-- Footer -->
-    <footer>
-        <nav class="footer__navbar container">
-            <ul class="footer__menu">
-                <li class="footer__menubtn"><a class="footer__menubtn-link" href="./shop.html">SHOP</a></li>
-                <li class="footer__menubtn"><a class="footer__menubtn-link" href="./register.html">REGISTRARSE</a></li>
-                <li class="footer__menubtn"><a class="footer__menubtn-link" href="./login.html">INGRESAR</a></li>
-                <li class="footer__menubtn"><a class="footer__menubtn-link" href="#">CONTACTO</a></li>
-            </ul>
-            <picture class="footer__logo">
-                <img src="../images/branding/isotype.svg" alt="Logo Funkoshop">
-            </picture>
-        </nav>
-        <p class="footer__derechos container CopyMax">Todos los derechos Reservados 2023 - Funkoshop &copy;</p>
-        <p class="footer__derechos container CopyMin">Todos los derechos Reservados 2023<br>Funkoshop &copy;</p>
-    </footer>  
+<%- include('../partials/footer'); -%>
 
 
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->

@@ -1,0 +1,218 @@
+<%- include('../partials/header'); -%>
+
+<div class="shopcontainer container">
+
+    <aside  class="asidefilter">
+        <!-- <form action=""> -->
+            <label class="asidefilter__tags" for="">BUSCAR</label>
+            <input id="search-textinput" class="asidefilter__textinput" type="text" placeholder="Nombre o Categoria">
+            
+            <label class="asidefilter__tags" for="">ORDENAR POR</label>
+            <select class="asidefilter__select selectempty" name="order" id="order">
+                <option value="opc1">Mayor a Menor</option>
+                <option value="opc2">Menor a Mayor</option>
+            </select>
+            
+            <label class="asidefilter__tags" for="">PRECIO</label>
+            <span class="asidefilter__tagsMM">MIN</span>
+            <input class="asidefilter__textinputMM" type="text" placeholder="0">
+            <span class="asidefilter__tagsMM">- MAX</span>
+            <input class="asidefilter__textinputMM" type="text" placeholder="0">
+            
+            <label class="asidefilter__tags" for="">FILTRAR</label>
+            <p class="asidefilter__checkoptions"><input class="asidefilter_checkbox" type="checkbox">NUEVOS</p>
+            <p class="asidefilter__checkoptions"><input class="asidefilter_checkbox" type="checkbox">OFERTAS</p>
+            <p class="asidefilter__checkoptions"><input class="asidefilter_checkbox" type="checkbox">EDICION ESPECIAL</p>
+            <p class="asidefilter__checkoptions"><input class="asidefilter_checkbox" type="checkbox">FAVORITOS</p>
+        <!-- </form> -->
+    </aside> 
+
+
+    <main class="main__articles">
+        <section>
+
+            <ul id="shop-items-list" class="card__container">
+<!--
+                <li class="slider__card">
+                    <article class="card__container">
+                        <a class="card__link" href="#">
+                                <picture class="card__imagecontainer">
+                                    <span class="card__newprod">NUEVO</span>
+                                    <img class="card__prodimage" src="../images/star-wars/trooper-1.webp" alt="Producto StormTrooper">
+                                    <img class="card__boximage" src="../images/star-wars/trooper-box.webp" alt="Caja StormTrooper">
+                                </picture>
+                                <div class="card__detailscontainer">
+                                    <h3 class="card__prodfamily">STAR WARS</h3>
+                                    <h2 class="card__prodname">STORMTROOPER LIGHTSABER</h2>
+                                    <p class="card__prodprice">$ 1799,99</p>
+                                    <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
+                                </div>
+                            </a>                                
+                    </article>
+                </li>
+                <li class="slider__card">
+                    <article class="card__container">
+                        <a class="card__link" href="#">
+                            <picture class="card__imagecontainer">
+                                <span class="card__newprod">NUEVO</span>
+                                <img class="card__prodimage" src="../images/pokemon/pidgeotto-1.webp" alt="Producto Pidgeotto">
+                                <img class="card__boximage" src="../images/pokemon/pidgeotto-box.webp" alt="Caja Pidgeotto">
+                            </picture>
+                            <div class="card__detailscontainer">
+                                <h3 class="card__prodfamily">POKEMON</h3>
+                                <h2 class="card__prodname">PIDGEOTTO</h2>
+                                <p class="card__prodprice">$ 1799,99</p>
+                                <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="slider__card">
+                    <article class="card__container">
+                        <a class="card__link" href="#">
+                            <picture class="card__imagecontainer">
+                                <span class="card__newprod">NUEVO</span>
+                                <img class="card__prodimage" src="../images/harry-potter/luna-1.webp" alt="Producto Luna Lovegood">
+                                <img class="card__boximage" src="../images/harry-potter/luna-box.webp" alt="Caja Luna Lovegood">
+                            </picture>
+                            <div class="card__detailscontainer">
+                                <h3 class="card__prodfamily">HARRY POTTER</h3>
+                                <h2 class="card__prodname">LUNA LOVEGOOD LION MASK</h2>
+                                <p class="card__prodprice">$ 1799,99</p>
+                                <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="slider__card">
+                    <article class="card__container">
+                        <a class="card__link" href="#">
+                                <picture class="card__imagecontainer">
+                                    <span class="card__newprod">NUEVO</span>
+                                    <img class="card__prodimage" src="../images/star-wars/trooper-1.webp" alt="Producto StormTrooper">
+                                    <img class="card__boximage" src="../images/star-wars/trooper-box.webp" alt="Caja StormTrooper">
+                                </picture>
+                                <div class="card__detailscontainer">
+                                    <h3 class="card__prodfamily">STAR WARS</h3>
+                                    <h2 class="card__prodname">STORMTROOPER LIGHTSABER</h2>
+                                    <p class="card__prodprice">$ 1799,99</p>
+                                    <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
+                                </div>
+                            </a>                                
+                    </article>
+                </li>
+                <li class="slider__card">
+                    <article class="card__container">
+                        <a class="card__link" href="#">
+                            <picture class="card__imagecontainer">
+                                <span class="card__newprod">NUEVO</span>
+                                <img class="card__prodimage" src="../images/pokemon/pidgeotto-1.webp" alt="Producto Pidgeotto">
+                                <img class="card__boximage" src="../images/pokemon/pidgeotto-box.webp" alt="Caja Pidgeotto">
+                            </picture>
+                            <div class="card__detailscontainer">
+                                <h3 class="card__prodfamily">POKEMON</h3>
+                                <h2 class="card__prodname">PIDGEOTTO</h2>
+                                <p class="card__prodprice">$ 1799,99</p>
+                                <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="slider__card">
+                    <article class="card__container">
+                        <a class="card__link" href="#">
+                            <picture class="card__imagecontainer">
+                                <span class="card__newprod">NUEVO</span>
+                                <img class="card__prodimage" src="../images/harry-potter/luna-1.webp" alt="Producto Luna Lovegood">
+                                <img class="card__boximage" src="../images/harry-potter/luna-box.webp" alt="Caja Luna Lovegood">
+                            </picture>
+                            <div class="card__detailscontainer">
+                                <h3 class="card__prodfamily">HARRY POTTER</h3>
+                                <h2 class="card__prodname">LUNA LOVEGOOD LION MASK</h2>
+                                <p class="card__prodprice">$ 1799,99</p>
+                                <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="slider__card">
+                    <article class="card__container">
+                        <a class="card__link" href="#">
+                                <picture class="card__imagecontainer">
+                                    <span class="card__newprod">NUEVO</span>
+                                    <img class="card__prodimage" src="../images/star-wars/trooper-1.webp" alt="Producto StormTrooper">
+                                    <img class="card__boximage" src="../images/star-wars/trooper-box.webp" alt="Caja StormTrooper">
+                                </picture>
+                                <div class="card__detailscontainer">
+                                    <h3 class="card__prodfamily">STAR WARS</h3>
+                                    <h2 class="card__prodname">STORMTROOPER LIGHTSABER</h2>
+                                    <p class="card__prodprice">$ 1799,99</p>
+                                    <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
+                                </div>
+                            </a>                                
+                    </article>
+                </li>
+                <li class="slider__card">
+                    <article class="card__container">
+                        <a class="card__link" href="#">
+                            <picture class="card__imagecontainer">
+                                <span class="card__newprod">NUEVO</span>
+                                <img class="card__prodimage" src="../images/pokemon/pidgeotto-1.webp" alt="Producto Pidgeotto">
+                                <img class="card__boximage" src="../images/pokemon/pidgeotto-box.webp" alt="Caja Pidgeotto">
+                            </picture>
+                            <div class="card__detailscontainer">
+                                <h3 class="card__prodfamily">POKEMON</h3>
+                                <h2 class="card__prodname">PIDGEOTTO</h2>
+                                <p class="card__prodprice">$ 1799,99</p>
+                                <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li class="slider__card">
+                    <article class="card__container">
+                        <a class="card__link" href="#">
+                            <picture class="card__imagecontainer">
+                                <span class="card__newprod">NUEVO</span>
+                                <img class="card__prodimage" src="../images/harry-potter/luna-1.webp" alt="Producto Luna Lovegood">
+                                <img class="card__boximage" src="../images/harry-potter/luna-box.webp" alt="Caja Luna Lovegood">
+                            </picture>
+                            <div class="card__detailscontainer">
+                                <h3 class="card__prodfamily">HARRY POTTER</h3>
+                                <h2 class="card__prodname">LUNA LOVEGOOD LION MASK</h2>
+                                <p class="card__prodprice">$ 1799,99</p>
+                                <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+-->                    
+            </ul>
+
+            <div id="negative-search"></div>
+
+        </section>
+
+        <nav class="paginator__navbar">
+
+            <a href="#" class="paginator__button" ><iconify-icon class="paginator__buttonicon" icon="material-symbols:chevron-left"></iconify-icon></a>
+            <a href="#" class="paginator__button shopselectedpage" ><span class="paginator__buttoncontent shopselectedpagecontent">1</span></a>
+            <a href="#" class="paginator__button" ><span class="paginator__buttoncontent">2</span></iconify-icon></a>
+            <a href="#" class="paginator__button" ><span class="paginator__buttoncontent">...</span></iconify-icon></a>
+            <a href="#" class="paginator__button" ><span class="paginator__buttoncontent">9</span></iconify-icon></a>
+            <a href="#" class="paginator__button" ><span class="paginator__buttoncontent">10</span></iconify-icon></a>
+            <a href="#" class="paginator__button" ><iconify-icon class="paginator__buttonicon" icon="material-symbols:chevron-right"></iconify-icon></a>
+
+        </nav>
+
+    </main>
+
+</div>
+
+<%- include('../partials/footer'); -%>
+
+    <!-- Vinculacion con Libreria Iconify 1.0.7 -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script src="../js/shop.js"></script>
+</body>
+</html>

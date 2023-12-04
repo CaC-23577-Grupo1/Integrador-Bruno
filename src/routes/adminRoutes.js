@@ -12,12 +12,12 @@ const router = express.Router();
 const adminControllers = require('../controllers/adminControllers');
 
 /* Definimos las rutas de "ADMIN" */
-router.get('/admin', adminControllers.admin);               // para la ruta "/admin" la respuesta sera la contenida en el objeto "adminControllers" en la propiedad "admin" y asi sucesivamente
-router.get('/admin/create', adminControllers.create);
-router.post('/admin/create', adminControllers.createAdd);
-router.get('/admin/edit/:id', adminControllers.edit);
-router.put('/admin/edit/:id', adminControllers.editSave);
-router.delete('/admin/delete/:id', adminControllers.delete);
+router.get('/', adminControllers.admin);               // para la ruta "/admin" la respuesta sera la contenida en el objeto "adminControllers" en la propiedad "admin" y asi sucesivamente
+router.get('/create', adminControllers.create);
+router.post('/create', adminControllers.createAdd);
+router.get('/edit/:id', adminControllers.edit);
+router.put('/edit/:id', adminControllers.editSave);
+router.delete('/delete/:id', adminControllers.delete);
 
 /* exportamos el "enrrutador" que hemos creado para tenerlo disponible donde querramos importarlo */
 module.exports = router;

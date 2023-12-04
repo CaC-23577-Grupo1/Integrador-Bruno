@@ -1,2 +1,205 @@
+/* - - - - - - - - - - - - - - - - - - -  INICIO DEL CSS PARA LA SECCION ITEM - - - - - - - - - - - - - - - - - - -  */
 
-/* Desarrollo de Estilos para la Seccion:  */
+.collection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.collection__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+.collection__text__superior {
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 500;
+    color: var(--dark-color-800);
+}
+
+.collection__title {
+    font-family: var(--primary-font);
+    font-size: var(--font-jumbo);
+    font-weight: 700;
+    color: var(--dark-color-solid);
+}
+
+.collection__text {
+    font-family: var(--primary-font);
+    font-size: var(--font-large);
+    font-weight: 400;
+}
+
+.collection__text__inferior {
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    font-weight: 700;
+    color: var(--secondary-color-900);
+}
+
+.collection__link_pago {
+    display: inline-block;
+    text-decoration-line: underline;
+}
+
+.collection__price {
+    font-family: var(--primary-font);
+    font-size: var(--font-jumbo);
+    font-weight: 400;
+}
+
+.collection__form {
+    display: flex;
+}
+
+.collection__input {
+    flex-shrink: 0;
+    width: 107px;
+    height: 37px;
+    stroke: var(--light-color-300);
+    text-align: center;
+    font-size: var(--font-large);
+}
+
+.collection__form__buttons {
+
+    /* gap:4px; */
+    margin-left: 8.79px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* PARA ELIMINAR LOS BOTONES ADENTRO DEL INPUT */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.collection__button {
+    color: var(--light-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-medium);
+    font-weight: 400;
+    padding: 8px 15px;
+    border: 0;
+    flex-shrink: 0;
+    margin-left: 30px;
+    width: 181px;
+    height: 37.91px;
+    background-color: var(--primary-color-solid);
+}
+
+/* SLIDER */
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-36);
+    margin: var(--spacing-68) auto;
+}
+
+.slider__title {
+    font-family: var(--alternative-font);
+    color: var(--dark-color-solid);
+    font-size: var(--font-display);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.slider__items {
+    display: flex;
+    gap: var(--spacing-24);
+}
+
+.card-item {
+    position: relative;
+}
+
+.card-item__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+    padding: var(--spacing-16);
+}
+
+.card-item__license {
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    font-weight: 500;
+    color: var(--dark-color-900);
+}
+
+
+.card-item__name {
+    font-family: var(--primary-font);
+    font-size: var(--font-medium);
+    font-weight: 700;
+    color: var(--dark-color-solid);
+}
+
+.card-item__price {
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 400;
+    color: var(--dark-color-solid);
+}
+
+.card-item__promo {
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    font-weight: 700;
+    color: var(--secondary-color-solid);
+}
+
+.card-item__cover {
+    display: flex;
+
+}
+
+.card-item__tag {
+    right: 0;
+    position: absolute;
+    text-transform: uppercase;
+    color: var(--light-color-solid);
+    font-size: var(--font-xsmall);
+    font-weight: 500;
+    background-color: var(--primary-color-solid);
+    padding: var(--spacing-8) var(--spacing-12);
+}
+
+
+.card-item__cover img {
+    animation: fade 0.7s;
+}
+
+.card-item__img--back {
+    display: none;
+}
+
+.card-item__cover:hover .card-item__img--back {
+    display: block;
+}
+
+.card-item__cover:hover .card-item__img--front {
+    display: none;
+}
+
+/* ANIMATIONS */
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* - - - - - - - - - - - - - - - - - - -  FINAL DEL CSS PARA LA SECCION ITEM - - - - - - - - - - - - - - - - - - -  */

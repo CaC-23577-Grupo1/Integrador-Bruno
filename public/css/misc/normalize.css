@@ -17,7 +17,6 @@ html {
 a {
     font-family: inherit;
     text-decoration: none;
-    /* font-size: 2em; */
     color: inherit;
 }
 
@@ -25,11 +24,11 @@ ul, ol {
     list-style-type: none;
 }
 
-p{
-    font-size: 1.8em;
-}
-
 .container{
     max-width: 1200px;
     margin: 0px auto;
+}
+
+img{
+    width: 100%;
 }

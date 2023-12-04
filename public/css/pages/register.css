@@ -1,2 +1,121 @@
+/* - - - - - - - - - - - - - - - - - - -  INICIO DEL CSS PARA LA SECCION REGISTER - - - - - - - - - - - - - - - - - - -  */ 
+  
+.register__main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-36);
+  margin: var(--spacing-36) auto;
+  text-align: center;
+}
 
-/* Desarrollo de Estilos para la Seccion:  */
+.register__tittle{
+  font-size: var(--font-large);
+  text-align: center;
+
+  font-family: var(--alternative-font);
+  color: var(--dark-color-solid);
+  font-size: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.168em;
+}
+
+.register__parraf{
+  font-family: var(--alternative-font);
+  color: var(--dark-color-solid);
+  font-size: var(--font-xlarge);
+  font-weight: 500;
+  letter-spacing: 0.128em;
+}
+
+
+
+/* Formulario */
+.register__form{
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-36);
+}
+
+
+/* Contenedor de cada input y su label */
+.form-group{
+  display: flex;
+  align-items: center;
+}
+
+
+
+.register__labels{
+  flex: 1;
+  font-family: var(--primary-font);
+  font-size: var(--font-large);
+  font-weight: 400;
+  letter-spacing: 0.096em;
+  margin-right: var(--spacing-16);
+}
+
+
+.register__inputs{
+  border: none;
+  border-bottom: 0.25rem solid var(--primary-color-solid);
+  font-family: var(--primary-font);
+  font-size: var(--font-small);
+  font-weight: 400;
+  letter-spacing: 0.096em;
+  padding-bottom: var(--spacing-8);
+}
+
+.register__inputs:focus-visible{
+  outline: none;
+}
+
+
+/* Contenedor de botón registrar y checkbox */
+.boton-y-checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-68);
+}
+
+.register__checkbox{
+  transform: scale(1.25);
+  margin-right: var(--spacing-8);
+}
+
+
+/* Botón registrar */
+.boton-registrar {
+  color: white;
+  background-color: var(--primary-color-solid);
+  border-style: none;
+  padding: var(--spacing-12) var(--spacing-24);
+  transition: all 0.3s ease-in-out;
+}
+
+.boton-registrar:hover {
+  background-color: var(--primary-color-900);
+}
+
+
+/* Texto términos y condiciones */
+.termcond__acepto{
+  font-family: var(--primary-font);
+  font-size: var(--font-medium);
+  color: var(--dark-color-solid);
+  font-weight: 400;
+}
+
+.termcond__terminos{
+  color: var(--secondary-color-solid);
+
+}
+
+.termcond__terminos:hover{
+  color: var(--secondary-color-900);
+}
+
+/* - - - - - - - - - - - - - - - - - - -  INICIO DEL CSS PARA LA SECCION REGISTER - - - - - - - - - - - - - - - - - - -  */

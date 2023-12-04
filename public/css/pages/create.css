@@ -1,2 +1,116 @@
 
-/* Desarrollo de Estilos para la Seccion:  */
+/* Desarrollo de Estilos para la Seccion Create:  */
+
+ /*Estilos del main de CREATE*/
+ .create {
+    padding: var(--spacing-36) 0 ;
+    font-family: var(--primary-font);
+}
+
+.create_form__row {
+    display: flex;
+    margin-top: var(--spacing-28);
+    margin-bottom: var(--spacing-28);
+}
+
+.create_form__title {
+    font-size: var(--font-jumbo);
+    font-family: var(--alternative-font);
+}
+
+.create_form__select, .create_form__input {
+    padding-right: var(--spacing-68);
+}
+
+.create_form__imagenes {
+   padding-top: var(--spacing-28);
+}
+
+.create_form__input input {
+    border: none;
+    border-bottom: 2px solid var(--primary-color-solid);
+}
+
+.create_label {
+    font-size: var(--font-large);
+    padding-right: 15px;
+}
+
+.create_select, .create_input, .create_textarea {
+    font-size: var(--font-medium);
+    color: var(--dark-color-solid);
+
+}
+
+.create_select {
+    width: 250px;
+    border-radius: 6px;
+    margin-right: var(--spacing-36);
+}
+
+.create_img_producto {
+    font-family: var(--primary-font);
+    border-color: var(--dark-color-solid); 
+}
+
+.create_select:hover,.create_input:hover,.create_textarea:hover {
+    color: var(--dark-color-900);
+    font-size: var(--font-medium);
+}
+
+
+.create_textarea {
+    margin-top: 2rem;
+    width: 83rem;
+    padding-left: var(--spacing-8);
+    font-family: var(--primary-font);
+}
+.create_textarea::placeholder {
+    font-family: var(--primary-font);
+    color: var(--dark-color-300); 
+}
+
+.action__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-28);
+    margin-bottom: 36px;
+    margin-top: 36px;
+}
+
+.create_button {
+    font-size: var(--font-xsmall);
+    font-family: var(--primary-font);
+    color: #ffffff;
+    width: 17.5rem;
+    border: none;
+    background-color: var(--primary-color-solid);
+    padding: var(--spacing-12) var(--spacing-12);
+}
+
+.create_nombre_prod {
+    width: 300px;
+}
+
+.create_cuadro1 {
+    width: 130px;
+ }
+
+.create_cuadro2 {
+    width: 55px;
+}
+
+
+
+@media screen and (max-width: 450px)  {
+    
+     .container {
+       padding-left: 10px;
+     }
+     .create_textarea {
+        margin-top: 2rem;
+        width: 100%;
+        padding-left: var(--spacing-8);
+    }
+}

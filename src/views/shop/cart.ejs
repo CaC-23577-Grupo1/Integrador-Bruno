@@ -1,0 +1,138 @@
+<%- include('../partials/header'); -%>
+    
+    <main class="container cartcontainer">
+        
+        <h2 class="cart__titles">CARRITO DE COMPRAS</h2>
+        
+        <div class="cart__itemstittles">
+            <p class="cart__itemstittles-det">DETALLE DE PRODUCTO</p>
+            <p class="cart__itemstittles-qt">CANTIDAD</p>
+            <p class="cart__itemstittles-tot">TOTAL</p>
+            <p class="cart__itemstittles-act"></p>
+        </div>
+
+        <ul id="cart_list" class="cart__item-list">
+
+         
+        <!--
+            <li class="cart__item">
+
+                    <article class="cart__item-product">
+                        <picture class="cart__item-productimg">
+                            <img src="../images/star-wars/baby-yoda-1.webp" alt="Producto Baby Yoda Blueball">
+                        </picture>
+                        <div class="cart__item-productdet">
+                            <h2 class="cart__item-productdet-name">BABY YODA BLUEBALL</h2>
+                            <h3 class="cart__item-productdet-categ">STAR WARS</h3>
+                            <p class="cart__item-productdet-price">Precio: $ 1799,99</p>
+                        </div>
+                    </article>
+                    <div class="cart__item-q">
+                        <input class="cart__item-qnum" type="text"  id="quant" value="2">
+                        <div class="cart__item-qplusminus">
+                            <button id="plus" class="qplusminusbtn">+</button>
+                            <button id="minus" class="qplusminusbtn">-</button>
+                        </div>
+                    </div>
+                    <p class="cart__item-price">$ 3599.98</p>
+                    <div>
+                        <button class="deletebtn OutItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                        <button class="deletebtn InItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                    </div>
+            </li>
+
+            <li class="cart__item">
+
+                <article class="cart__item-product">
+                    <picture class="cart__item-productimg">
+                        <img src="../images/pokemon/pidgeotto-1.webp" alt="Producto Pidgeotto">
+                    </picture>
+                    <div class="cart__item-productdet">
+                        <h2 class="cart__item-productdet-name">PIDGEOTTO</h2>
+                        <h3 class="cart__item-productdet-categ">POKEMON</h3>
+                        <p class="cart__item-productdet-price">Precio: $ 1799,99</p>
+                    </div>
+                </article>
+                    <div class="cart__item-q">
+                        <input class="cart__item-qnum" type="text"  id="quant" value="1">
+                        <div class="cart__item-qplusminus">
+                            <button id="plus" class="qplusminusbtn">+</button>
+                            <button id="minus" class="qplusminusbtn">-</button>
+                        </div>
+                    </div>
+                    <p class="cart__item-price">$ 1799.99</p>
+                    <div>
+                        <button class="deletebtn OutItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                        <button class="deletebtn InItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                    </div>
+            </li>
+
+            <li class="cart__item">
+                <article class="cart__item-product">
+                    <picture class="cart__item-productimg">
+                        <img src="../images/pokemon/pidgeotto-1.webp" alt="Producto Pidgeotto">
+                    </picture>
+                    <div class="cart__item-productdet">
+                        <h2 class="cart__item-productdet-name">PIDGEOTTO</h2>
+                        <h3 class="cart__item-productdet-categ">POKEMON</h3>
+                        <p class="cart__item-productdet-price">Precio: $ 1799,99</p>
+                    </div>
+                </article>
+                <div class="cart__item-q">
+                    <input class="cart__item-qnum" type="text" value="1">
+                    <div class="cart__item-qplusminus">
+                        <a href="#"><iconify-icon class="cart__item-qplus" icon="ph:plus-fill"></iconify-icon></a>
+                        <a href="#"><iconify-icon class="cart__item-qminus" icon="ph:minus-fill"></iconify-icon></a>
+                    </div>
+                </div>
+                <p class="cart__item-price">$ 1799.99</p>
+                <a href="">
+                    <iconify-icon class="cart__item-delete InItem" icon="zondicons:close-outline"></iconify-icon>
+                    <iconify-icon class="cart__item-delete OutItem" icon="zondicons:close-outline"></iconify-icon>
+                </a>
+            </li>
+
+        -->
+
+        </ul>
+
+        
+        <section class="cart__total-container">
+
+            <div class="cart__total-position">
+
+                <h3 class="cart__titles">RESUMEN</h3>
+
+                <ul class="cart__total-listdetail">
+                    <li class="cart__total-listitem">
+                        <span class="cart__total-listitemDet">CANTIDAD DE ELEMENTOS</span>
+                        <span id="cantidad" class="cart__total-listitemNum"></span>
+                    </li>
+                    <li class="cart__total-listitem">
+                        <span class="cart__total-listitemDet">SUBTOTAL</span>
+                        <span id="subtotal" class="cart__total-listitemNum"></span>
+                    </li>
+                    <li class="cart__total-listitem">
+                        <span class="cart__total-listitemDet">ENVIO</span>
+                        <span id="envio" class="cart__total-listitemNum"></span>
+                    </li>
+                    <li class="cart__total-listitem">
+                        <span class="cart__total-listitemDetF">TOTAL</span>
+                        <span id="total" class="cart__total-listitemNumF"></span>
+                    </li>
+                </ul>
+
+                <a class="cart__total-paybtn" href="#">IR A PAGAR</a>
+
+            </div>
+        </section>    
+        
+    </main>
+    
+<%- include('../partials/footer'); -%>
+
+    <!-- Vinculacion con Libreria Iconify 1.0.7 -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+</html>

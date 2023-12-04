@@ -1,0 +1,205 @@
+<%- include('../partials/header'); -%>
+
+    <main  class="container admincontainer">
+
+        <nav class="searchbar__container">
+            
+                <div class="searchbar__iconcontainer">
+                    <!-- <a href="#"> -->
+                        <img src="../images/icons/search_icon.svg" alt="Search">
+                    <!-- </a> -->
+                </div>
+                <input id="search-textinput" class="searchbar__textinput" type="text" placeholder="código, nombre o categoria">
+            
+        </nav>        
+
+        <div class="tittlebar">
+            <h3 class="tittlebar__tittle">LISTADO DE PRODUCTOS</h3>
+            <a class="tittlebar__addbtn" href="#">
+                <p class="tittlebar__addbtn-text">AGREGAR</p>
+                <i class="fa-solid fa-square-plus addbtnicon"></i>
+            </a>
+        </div>  
+
+        <table class="list-table">
+            <thead>
+                <tr>
+                    <th class="list-table__TH-id">ID</th>
+                    <th class="list-table__TH-code">Código</th>
+                    <th class="list-table__TH-name">Nombre del Producto</th>
+                    <th class="list-table__TH-categ">Categoría</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="list-table-items">
+<!--                
+                <tr>
+                    <td class="list-table__id">1</td>
+                    <td class="list-table__code">STW001001</td>
+                    <td class="list-table__name">Baby Yoda Blueball </td>
+                    <td class="list-table__categ">STAR WARS</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">2</td>
+                    <td class="list-table__code">STW001002</td>
+                    <td class="list-table__name">Boba Fett Fighter</td>
+                    <td class="list-table__categ">STAR WARS</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">3</td>
+                    <td class="list-table__code">STW001003</td>
+                    <td class="list-table__name">Luke Skylwalker & Grogu</td>
+                    <td class="list-table__categ">STAR WARS</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">4</td>
+                    <td class="list-table__code">STW001004</td>
+                    <td class="list-table__name">Stormtrooper Lightsaber</td>
+                    <td class="list-table__categ">STAR WARS</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">5</td>
+                    <td class="list-table__code">PKM001001</td>
+                    <td class="list-table__name">Charmander Smiley</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">6</td>
+                    <td class="list-table__code">PKM001002</td>
+                    <td class="list-table__name">Dragonite Hi!</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">7</td>
+                    <td class="list-table__code">PKM001003</td>
+                    <td class="list-table__name">Pidgeotto Flying</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">8</td>
+                    <td class="list-table__code">PKM001004</td>
+                    <td class="list-table__name">Pikachu Smiley</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">9</td>
+                    <td class="list-table__code">PKM001005</td>
+                    <td class="list-table__name">Vulpix Fancy</td>
+                    <td class="list-table__categ">POKEMON</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">10</td>
+                    <td class="list-table__code">HPT001001</td>
+                    <td class="list-table__name">Harry Potter & Hegwid</td>
+                    <td class="list-table__categ">HARRY POTTER</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">11</td>
+                    <td class="list-table__code">HPT001002</td>
+                    <td class="list-table__name">Herminione Ball Dress</td>
+                    <td class="list-table__categ">HARRY POTTER</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">12</td>
+                    <td class="list-table__code">HPT001003</td>
+                    <td class="list-table__name">Luna Lovegood Lion Mask</td>
+                    <td class="list-table__categ">HARRY POTTER</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="list-table__id">13</td>
+                    <td class="list-table__code">HPT001004</td>
+                    <td class="list-table__name">Snape Patronus</td>
+                    <td class="list-table__categ">HARRY POTTER</td>
+                    <td class="list-table__action">
+                        <div class="list-table__iconcontainer">
+                            <a href="#"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                        </div>
+                    </td>
+                </tr>
+-->
+            </tbody>
+        </table>
+        <div id="negative-search"></div>
+        
+    </main>
+
+<%- include('../partials/footer'); -%>
+  
+    <!-- Vinculacion con Libreria Iconify 1.0.7 -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

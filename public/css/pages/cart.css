@@ -1,150 +1,5 @@
-/* Corresponde a correcciones en normalize.css */
+/* - - - - - - - - - - - - - - - - - - -  INICIO DEL CSS PARA LA SECCION CART - - - - - - - - - - - - - - - - - - -  */
 
-/* Agregar esta normalizacion */
-img{
-    width: 100%;
-}
-
-/* Agregr esta variable de color*/
-:root {
-    --gray-color-solid: rgba(116, 116, 116, 1.0);
-    --green-color-900: rgba(30, 136, 51, 0.9);
-}
-
-
-/* en la normalizacion del elemento "a" debi anular la propiedad "font-size */
-/* ya que el elemento A me heredaba el tamaño sobre los H2 H3 y P teniendo mayor precedencia */
-/*
-a{
-    font-size: 2em;
-} */
-
-
-
-
-
-/* INICIO HEADER */
-
-/* Esta primer propiedad se suma a las que se encuentran en header.css */
-header{
-    padding: var(--spacing-36);
-}
-
-
-.header__navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.header__logo{
-    max-width: 372px;
-    /* Activamos si queremos que el logo no desaparezca al achicar el ancho, */
-    /* pero no seria "compatible" con el wrap aplicado al "header__navbar" */
-    /* min-width: 60px; */
-}
-
-/* Al wrappear la navbar la centramos y asignamos espaciado */
-@media (max-width: 980px){
-    .header__navbar{
-        justify-content: center;
-        gap: var(--spacing-24);
-    }
-}
-
-.header__menu{
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-36);
-    position: relative;
-}
-
-.header__menubtn-link{
-    font-size: var(--font-inter);
-    font-family: var(--alternative-font);
-    padding: var(--spacing-8) var(--spacing-18);
-    transition: all .3s ease-in-out;
-}
-
-.header__menubtn-link:hover{
-    background-color: var(--primary-color-900);
-}
-
-.header__menu-itemicon{
-    font-size: var(--font-inter);
-}
-
-.header__menucart{
-    position: relative;
-}
-
-.header__menu-itemicon-cant{
-    display: inline-block;
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    font-family: var(--primary-font);
-    font-size: var(--font-xsmall);
-    color: var(--light-color-solid);
-    background-color: var(--primary-color-solid);
-    text-align: center;
-}
-
-@media screen and (max-width: 600px){
-    .header__menu-itemicon-cant{
-        display: none;
-    }
-}
-
-.chevron{
-    padding: calc(var(--spacing-8) / 4) var(--spacing-18);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-8);
-}
-
-.chevronsize{
-    font-size: var(--font-medium);
-}
-
-.submenuopen:hover .header__submenu{
-    display: inline-block;
-}
-
-.header__submenu{
-    display: none;
-    position: absolute;
-    z-index: 1;
-}
-
-.header__submenubtn{
-    width: 300px;
-    background-color: var(--dark-bg-color-solid);
-    padding: var(--spacing-8) var(--spacing-18);
-    transition: all .3s ease-in-out;
-}
-
-.header__submenubtn:hover{
-    background-color: var(--primary-color-900);
-}
-
-.header__submenubtn-link{
-    font-size: var(--font-inter);
-    font-family: var(--alternative-font);
-}
-
-/* FIN HEADER */
-
-
-
-
-/* INICIO MAIN */
-
-/* Padding que actuara al achicarse el ancho para que no quede pegado al lateral el Main */
 .cartcontainer{
     padding: var(--spacing-128) 0px;
 }
@@ -183,6 +38,10 @@ header{
     background: var(--light-bg-color-solid);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 
+    color: var(--dark-color-solid); 
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 700
 }
 
 .cart__itemstittles-det{
@@ -300,50 +159,26 @@ header{
 .cart__item-qplusminus{
     display: flex;
     flex-direction: column;
-    gap: calc(var(--spacing-8) * 0.5);
+    gap: calc(var(--spacing-8) * 0.2);
 }
 
-/* AQUI  Eliminar ya que se paso el A a un BUTTON ----------------------------------------------------------------------------------------------------- */
-/*
 .cart__item-qplus{
     font-size: var(--font-medium);
     color: #F24E1E;
 }
-*/
 
-/* AQUI  Eliminar ya que se paso el A a un BUTTON ----------------------------------------------------------------------------------------------------- */
-/*
 .cart__item-qminus{
     font-size: var(--font-medium);
     color: #F24E1E;
 }
-*/
 
-.qplusminusbtn{
-    font-size: var(--font-large);
-    font-family: var(--alternative-font);
-    color: var(--light-color-solid);
-    font-weight: 400;
-    line-height: 1.8rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    width: 1.8rem;
-    height: 1.8rem;
-    background-color:  #F24E1E;
-}
-
-
-/* AQUI  Eliminar ya que se paso el campo de Number a Text ----------------------------------------------------------------------------------------------------- */
 /* Momentaneamente solucionado de esta forma aunque creo que lo mejor es un Text con validacion para solo numeros */
-/*
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;     deshabilita las flechas en Chrome y Safari 
-  appearance: none;             deshabilita las flechas en otros navegadores 
-  margin: 0;                    evita el espacio adicional causado por la eliminar las flechas 
+  -webkit-appearance: none; /* deshabilita las flechas en Chrome y Safari */
+  appearance: none; /* deshabilita las flechas en otros navegadores */
+  margin: 0; /* evita el espacio adicional causado por la eliminar las flechas */
 }
-*/
 
 /* Precio */
 .cart__item-price{
@@ -355,13 +190,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* Eliminar */
-.deletebtn{
-    font-size: calc(var(--font-xsmall) * 0.7);
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
 .cart__item-delete{
     font-size: var(--font-large);
     color: #F24E1E;
@@ -376,7 +204,6 @@ input[type="number"]::-webkit-outer-spin-button {
         position: absolute;
         right: 20px;
         top: 20px;
-        z-index: 2;
     }
 }
 
@@ -442,21 +269,6 @@ input[type="number"]::-webkit-outer-spin-button {
     font-weight: 700;
 }
 
-.EnvioGratis{
-    position: relative;
-}
-
-.EnvioGratis::after{
-    content: "";
-    position: absolute;
-    top: 45%;
-    transform: translate(0%, 50%);
-    transform: scale(1.1);
-    left: 0;
-    right: 0;
-    border-bottom: 3px solid var(--dark-bg-color-solid);
-}
-
 .cart__total-listitem:not(:last-child){
     margin-bottom: var(--spacing-18);
 }
@@ -478,60 +290,25 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: var(--primary-color-solid);
 }
 
-/* FIN MAIN */
+/* - - - - - - - - - - - - - - - - - - -  FINAL DEL CSS PARA LA SECCION CART - - - - - - - - - - - - - - - - - - -  */
 
-
-
-
-/* INICIO FOOTER */
-
-/* Esta primer propiedad se suma a las que se encuentran en footer.css */
-footer{
-    padding: var(--spacing-68);
+.qplusminusbtn{
+    font-size: var(--font-large);
+    font-family: var(--alternative-font);
+    color: var(--light-color-solid);
+    font-weight: 400;
+    line-height: 1.8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color:  #F24E1E;
 }
 
-
-.footer__navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.deletebtn{
+    font-size: calc(var(--font-xsmall) * 0.7);
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
-
-.footer__menu{
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-16);
-}
-
-.footer__menubtn-link{
-    font-size: var(--font-inter);
-    padding: var(--spacing-8) var(--spacing-18);
-    transition: all .3s ease-in-out;
-}
-
-.footer__menubtn-link:hover{
-    background-color: var(--primary-color-900);
-}
-
-.footer__logo{
-    max-width: 140px;
-}
-
-    .footer__derechos{
-        text-align: center;
-        margin-top: var(--spacing-36);
-    }
-
-@media screen and (max-width: 589px){
-    .CopyMax{
-        display: none;
-    }
-}
-
-@media screen and (min-width: 590px){
-    .CopyMin{
-        display: none;
-    }
-}
-
-/* FIN FOOTER */

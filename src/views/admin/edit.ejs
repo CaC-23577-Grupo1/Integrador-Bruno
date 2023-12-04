@@ -1,0 +1,96 @@
+<%- include('../partials/header'); -%>
+
+    <main>
+        <section class="edit container">
+            <article class="edit_form">
+                <h1 class="edit_form__title">EDITAR ITEM</h1>
+                <form action="">
+                    <div class="edit_form__row">
+                        <div class="edit_form__select">
+                            <label class="edit_label" for="categoria">Categoría:</label>
+                            <select class="edit_select" name="categoria" id="categoria">
+                                <!--<option value="" disabled selected>Seleccionar</option>-->
+                                <option value="1">Figura</option>
+                                <option value="2">Figura</option>
+                                <option value="3">Figura</option>
+                            </select>
+
+                            <label class="edit_label" for="licencia">Licencia:</label>
+                            <select class="edit_select" name="licencia" id="licencia">
+                                <!--<option value="" disabled selected>Seleccionar</option>-->
+                                <option value="1">STAR WARS</option>
+                                <option value="2">POKEMON</option>
+                                <option value="3">HARRY POTTER</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="edit_form__input">
+                        <label class="edit_label" for="nombre_producto">Nombre del producto:</label>
+                        <input class="edit_input edit_nombre_prod" type="text" name="nombre_producto" id="nombre_producto">
+                    </div>
+                    <div class="edit_form__textarea">
+                        <textarea class="edit_textarea" name="comentario" rows="10" cols="40"
+                            placeholder="Descripción del producto"></textarea>
+                    </div>
+                    <div class="edit_form__row">
+                        <div class="edit_form__input">
+                            <label class="edit_label" for="sku">SKU:</label>
+                            <input class="edit_input edit_cuadro1" type="text" name="sku" id="sku">
+                        </div>
+                        <div class="edit_form__input">
+                            <label class="edit_label" for="precio">Precio:</label>
+                            <input class="edit_input edit_cuadro1" type="text" name="precio" id="precio">
+                        </div>
+                        <div class="edit_form__input">
+                            <label class="edit_label" for="stock">Stock:</label>
+                            <input class="edit_input edit_cuadro2" type="number" name="stock" id="stock">
+                        </div>
+                    </div>
+                    <div class="edit_form__row">
+                        <div class="edit_form__input">
+                            <label class="edit_label" for="descuento">Descuento:</label>
+                            <input class="edit_input edit_cuadro2" type="number" name="descuento" id="descuento">
+                        </div>
+                        <div class="edit_form__select">
+                            <label class="edit_label" for="cuotas">Cuotas:</label>
+                            <select class="edit_select" name="cuotas" id="cuotas">
+                                <option value="">6 Cuotas sin interés</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="edit_form__imagenes">
+                        <div class="edit_form__row">
+                            <label class="edit_label" for="imagenes_producto">Imágenes:</label>
+                            <input class="edit_input edit_img_producto" type="file" name="imagenes_producto"
+                                id="imagenes_producto">
+                        </div>
+                        <div class="img-preview_grid">
+                            <picture class="edit_picture">
+                                <img id="img-preview__frente" src="../images/harry-potter/snape-patronus-1.webp"
+                                    alt="Imagen del frente del producto">
+                            </picture>
+                            <picture class="edit_picture">
+                                <img id="img-preview__dorso" src="../images/harry-potter/snape-patronus-box.webp"
+                                    alt="Imagen del dorso del producto">
+                            </picture>
+                            <div class="edit_label-line-top">
+                                <p class="edit_label_img">Frente</p>
+                            </div>
+                            <div class="edit_label-line-top">
+                                <p class="edit_label_img">Dorso</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button_modificarProducto" type="submit">Modificar Producto</button>
+                </form>
+        </section>
+    </main>
+
+<%- include('../partials/footer'); -%>
+    
+    <!-- Vinculacion con Libreria Iconify 1.0.7 -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+</body>
+</html>

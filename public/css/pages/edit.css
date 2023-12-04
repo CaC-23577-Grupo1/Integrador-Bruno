@@ -1,2 +1,153 @@
 
 /* Desarrollo de Estilos para la Seccion:  */
+
+
+/*Estilos de main*/
+.edit {
+    padding: var(--spacing-36) 0 ;
+    font-family: var(--primary-font);
+}
+
+.edit_form__row {
+    display: flex;
+    gap: var(--spacing-12) ;
+    margin-top: var(--spacing-28);
+    margin-bottom: var(--spacing-28);
+}
+
+.edit_form__title {
+    font-size: var(--font-jumbo);
+    font-family: var(--alternative-font);
+}
+
+.edit_form__select, .edit_form__input {
+    padding-right: var(--spacing-68);
+   
+}
+
+.edit_form__imagenes {
+   padding-top: var(--spacing-28);
+   padding-bottom: var(--spacing-36);
+}
+
+.edit_form__input input {
+    border: none;
+    border-bottom: 2px solid var(--primary-color-solid);
+}
+
+.edit_label {
+    font-size: var(--font-large);
+    margin-right: var(--spacing-12);
+}
+
+.edit_label_img {
+    font-size: var(--font-large);
+}
+
+
+
+.edit_select, .edit_input {
+    font-family: var(--primary-font);
+    font-size: var(--font-medium);
+    color: var(--dark-color-solid);
+}
+
+
+.edit_textarea {
+    font-family: var(--primary-font);
+    font-size: var(--font-inter);
+    color: var(--dark-color-solid);
+    margin-top: 2rem;
+    width: 83rem;
+}
+
+.edit_nombre_prod {
+    width: 30rem;
+}
+
+.edit_cuadro1 {
+    width: 13rem;
+ }
+
+.edit_cuadro2 {
+    width: 5.5rem;
+}
+
+.edit_select {
+    width: 25rem;
+    border-radius: 6px;
+    margin-right: var(--spacing-12);
+}
+
+
+.img-preview_grid {
+    display: grid;
+    grid-template-columns: 15rem 15rem;
+    grid-template-rows: 15rem 3rem;
+    justify-items: center;
+    column-gap: var(--spacing-12);
+}
+
+.edit_picture {
+    max-width: 150px;
+}
+
+.edit_img_producto{
+    font-family: var(--primary-font);
+    border-color: var(--dark-color-solid);
+    width: 100%;  
+}
+
+.edit_label-line-top{
+    border-top: 1px solid var(--primary-color-solid);
+    width: 15rem;
+    text-align: center; 
+}
+
+/* .select_edit:hover,.input_edit:hover {
+    color: var(--dark-color-900);
+    font-size: var(--font-medium);
+    font-family: var(--primary-font);
+}
+
+.textarea_edit:hover{
+    color: var(--dark-color-900);
+    font-size: var(--font-large);
+    font-family: var(--primary-font);
+}*/
+
+::placeholder {
+    font-family: var(--primary-font);
+    color: var(--dark-color-500);
+}
+.button_modificarProducto {
+    font-size: var(--font-xsmall);
+    font-family: var(--primary-font);
+    color: #ffffff;
+    width: 17.5rem;
+    border: none;
+    background-color: var(--primary-color-solid);
+    padding: var(--spacing-12) var(--spacing-12);
+}
+
+
+
+
+
+
+@media screen and (max-width: 450px)  {
+   
+     .container {
+       padding-left: 10px;
+     }
+     .edit_textarea {
+        margin-top: 2rem;
+        width: 100%;
+        padding-left: var(--spacing-8);
+    }
+    .edit_form__select {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+

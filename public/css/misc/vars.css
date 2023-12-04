@@ -23,7 +23,7 @@
     --dark-color-300: rgba(31, 31, 31, 0.3);
 
     /* FFFFFF - Color Claro - Blanco */
-    --light-color-solid: rgba(255, 255, 255, 1.0);
+    --light-color-solid: rgbA(255, 255, 255, 1.0);
     --light-color-900: rgba(255, 255, 255, 0.9);
     --light-color-500: rgba(255, 255, 255, 0.5);
     --light-color-300: rgba(255, 255, 255, 0.3);
@@ -33,6 +33,12 @@
 
     /* Color de Fondo Claro - Blanco */
     --light-bg-color-solid: #FAFAFF;
+
+    /* Color para los Inputs - Gris Claro */
+    --gray-color-solid: rgba(116, 116, 116, 1.0);
+    
+    /* Color Verde Claro llamativo */
+    --green-color-900: rgba(30, 136, 51, 0.9);
 
 
     /* Tipografia */

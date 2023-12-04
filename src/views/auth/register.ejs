@@ -1,0 +1,43 @@
+<%- include('../partials/header'); -%>
+
+<main class="register__main container">
+  <h2 class="register__tittle">CREA TU CUENTA</h2>
+  <p class="register__parraf">Completa el formulario para ser parte del mundo de los Funkos</p>
+  <form class="register__form">
+    <div class="form-group">
+      <label class="register__labels" for="name">Nombre:</label>
+      <input class="register__inputs" type="text" name="nombre" id="nombre" placeholder="John">
+    </div>
+    </div>
+    <div class="form-group">
+      <label class="register__labels" for="apellido">Apellido:</label>
+      <input class="register__inputs" type="text" name="apellido" id="apellido" placeholder="Doe">
+    </div>
+    <div class="form-group">
+      <label class="register__labels" for="email">Email:</label>
+      <input class="register__inputs" type="email" name="email" id="email" placeholder="Johndoe@correo.com">
+    </div>
+    <div class="form-group">
+      <label class="register__labels" for="contrasenha">Contraseña:</label>
+      <input class="register__inputs" type="password" name="contrasenha" id="contrasenha" placeholder=".........">
+    </div>
+    <div class="form-group">
+      <label class="register__labels" for="repetir-contrasenha">Repita contraseña:</label>
+      <input class="register__inputs" type="password" name="repetir-contrasenha" id="repetir-contrasenha"
+        placeholder=".........">
+    </div>
+    <div class="boton-y-checkbox">
+      <input class="boton-registrar" type="submit" value="Registrar">
+      <p class="termcond__acepto"><input class="register__checkbox" type="checkbox" name="terminos"
+          id="terminos">Acepto&nbsp;<a class="termcond__terminos" href="#">Términos y Condiciones</a></p>
+    </div>
+  </form>
+</main>
+  
+<%- include('../partials/footer'); -%>
+
+<!-- Vinculacion con Libreria Iconify 1.0.7 -->
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>

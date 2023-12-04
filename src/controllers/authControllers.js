@@ -3,10 +3,19 @@
 
 /* creamos un objeto que contendra diferentes propiedades y cada una de ellas sera una "funcion" para dar logica de respuesta a cada ruta */
 const authControllers = {
-    loginView: (req, res) => res.send('Ruta para la vista Iniciar Sesion.'),
+
+    loginView: (req, res) => res.render('auth/login', {
+      title: "Login | Funkoshop"
+    }),
+
     loginSend:(req, res) => res.send('Ruta para la accion Iniciar Sesion.'),
-    registerView:(req, res) => res.send('Ruta para la vista Registrarse.'),
+
+    registerView:(req, res) => res.render('auth/register', {
+      title: "Register | Funkoshop"
+    }),
+
     registerSend:(req, res) => res.send('Ruta para la accion Registrarse'),
+
     logout:(req, res) => res.send('Ruta para la accion Cerrar Sesion'),
   };
 

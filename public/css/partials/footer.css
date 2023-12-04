@@ -4,4 +4,49 @@ footer{
     font-family: var(--alternative-font);
     color: var(--light-color-solid);
     background-color: var(--dark-bg-color-solid);
+    padding: var(--spacing-68);
+}
+
+.footer__navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__menu{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+}
+
+.footer__menubtn-link{
+    font-size: var(--font-inter);
+    padding: var(--spacing-8) var(--spacing-18);
+    transition: all .3s ease-in-out;
+}
+
+.footer__menubtn-link:hover{
+    background-color: var(--primary-color-900);
+}
+
+.footer__logo{
+    max-width: 140px;
+}
+
+.footer__derechos{
+    text-align: center;
+    margin-top: var(--spacing-36);
+    font-size: var(--font-inter); 
+}
+
+@media screen and (max-width: 589px){
+    .CopyMax{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 590px){
+    .CopyMin{
+        display: none;
+    }
 }

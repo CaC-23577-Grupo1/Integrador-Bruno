@@ -1,0 +1,85 @@
+<%- include('../partials/header'); -%>
+
+<main>
+    <section class="create container">
+       <article class="create_form" >
+          <h1 class="create_form__title">CREAR NUEVO ITEM</h1>
+          
+          <form action="">
+             <div class="create_form__row">
+                <div class="create_form__select">
+                   <label class="create_label"  for="categoria">Categoría</label>
+                   <select class="create_select" #row_one name="categoria" id="categoria">
+                      <option value="" disabled selected>Seleccionar</option>
+                      <option value="1">STAR WARS</option>
+                      <option value="2">POKEMON</option>
+                      <option value="3">HARRY POTTER</option>
+                   </select>
+                              
+                   <label class="create_label" for="licencia">Licencia</label>
+                   <select class="create_select" name="licencia" id="licencia">
+                      <option value="" disabled selected>Seleccionar</option>
+                      <option value="1">STAR WARS Saga</option>
+                      <option value="2">POKEMON</option>
+                      <option value="3">HARRY POTTER Saga</option>
+                   </select>
+                </div>
+             </div>
+             <div class="create_form__input">
+                <label class="create_label" for="nombre_producto">Nombre del producto:</label>
+                <input class="create_input create_nombre_prod" type="text" name="nombre_producto" id="nombre_producto">
+             </div>
+             <div class="create_form__textarea">
+                <textarea class="create_textarea" name="comentario" rows="10" cols="40" placeholder="Descripción del producto"></textarea>
+             </div>
+             <div class="create_form__row">
+                <div class="create_form__input">
+                   <label class="create_label" for="sku">SKU:</label>
+                   <input class="create_input create_cuadro1" type="text" name="sku" id="sku">
+                </div>
+                <div class="create_form__input">
+                   <label class="create_label" for="precio">Precio:</label>
+                   <input class="create_input create_cuadro1" type="text" name="precio" id="precio">
+                </div>
+                <div class="create_form__input">
+                <label class="create_label" for="stock">Stock:</label>
+                <input class="create_input create_cuadro2" type="number" name="stock" id="stock">
+                </div>
+             </div>
+             <div class="create_form__row">
+                <div class="create_form__input">
+                   <label class="create_label" for="descuento">Descuento:</label>
+                   <input class="create_input create_cuadro2" type="number" name="descuento" id="descuento">
+                </div>
+                <div class="create_form__select">
+                   <label class="create_label" for="cuotas">Cuotas:</label>
+                   <select class="create_select" name="cuotas" id="cuotas">
+                      <option value="" disabled selected>Seleccionar</option>
+                      <option value="">Sin cuotas</option>
+                      <option value="">3 Cuotas sin interés</option>
+                      <option value="">6 Cuotas sin interés</option>
+                   </select>
+                </div>
+             </div>
+             <div class="create_form__imagenes">
+                <label class="create_label" for="imagenes_producto">Imágenes:</label>
+                <input class="create_input create_img_producto" type="file" name="imagenes_producto" id="imagenes_producto">
+             </div>
+           <div class="action__buttons">
+              <button class="create_button">Agregar Producto</button>
+              <button class="create_button">Limpiar</button>
+           </div>
+          </form>
+       </article>
+    </section>
+  </main>
+  
+<%- include('../partials/footer'); -%>
+ 
+
+
+   
+   <!-- Vinculacion con Libreria Iconify 1.0.7 -->
+   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+</body>
+</html>

@@ -12,11 +12,11 @@ const router = express.Router();
 const authControllers = require('../controllers/authControllers');
 
 /* Definimos las rutas de "AUTENTICACION" */
-router.get('/auth/login', authControllers.loginView);           // para la ruta "/auth/login" la respuesta sera la contenida en el objeto "authControllers" en la propiedad "loginView" y asi sucesivamente
-router.post('/auth/login', authControllers.loginSend);
-router.get('/auth/register', authControllers.registerView);
-router.post('/auth/register', authControllers.registerSend);
-router.get('/auth/logout', authControllers.logout);
+router.get('/login', authControllers.loginView);           // para la ruta "/auth/login" la respuesta sera la contenida en el objeto "authControllers" en la propiedad "loginView" y asi sucesivamente
+router.post('/login', authControllers.loginSend);
+router.get('/register', authControllers.registerView);
+router.post('/register', authControllers.registerSend);
+router.get('/logout', authControllers.logout);
 
 /* exportamos el "enrrutador" que hemos creado para tenerlo disponible donde querramos importarlo */
 module.exports = router;

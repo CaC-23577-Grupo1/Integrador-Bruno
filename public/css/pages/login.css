@@ -1,2 +1,100 @@
+/* - - - - - - - - - - - - - - - - - - -  INICIO DEL CSS PARA LA SECCION LOGIN - - - - - - - - - - - - - - - - - - -  */
 
-/* Desarrollo de Estilos para la Seccion:  */
+.login__main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-28);
+    margin: var(--spacing-36) auto;
+}
+
+.login__tittle{
+    top: 180px;
+    left: 462.5px;
+    color: var(--dark-color-solid);
+    font-family: var(--alternative-font);
+    font-size: var(--font-jumbo);
+    font-weight: 700;
+    letter-spacing: 0.168em;
+    text-align: center;    
+}
+
+.login__form{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 3rem;
+  }
+
+.login__form-row{
+    display: flex;
+    align-items: center;
+}
+
+.login__form-label{
+    flex: 1;
+    font-size: var(--font-large);
+    font-family: var(--primary-font);
+    font-weight: 400;
+    letter-spacing: 0.096em;
+    margin-right: 15px;
+}
+
+.login__inputs{
+    width: 18em;
+    border: none;
+    background-color: var(--light-bg-color-solid);
+    border-bottom: 0.25rem solid var(--primary-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 400;
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+
+.login__inputs:focus {
+    outline: none;
+}
+
+
+.login__button-login{
+    color: var(--light-bg-color-solid);
+    background-color: var(--primary-color-solid);
+    border-style: none;
+    font-size: var(--font-xsmall);
+    font-family: var(--primary-font);
+    font-weight: 400;
+    padding: var(--spacing-12) var(--spacing-28);
+    width: fit-content;
+}
+
+.login__form-rowBtnChk{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.login__recordarme{
+    color: var(--dark-color-solid); 
+    font-family: var(--primary-font);
+    font-size: var(--font-medium);
+    font-weight: 400;
+}
+
+.checkbox{
+    transform: scale(1.25);
+    margin-right: var(--spacing-8);
+}
+
+.login__forgot-password{
+    color: var(--secondary-color-solid); 
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    font-weight: 400;
+    text-align: center;
+}
+
+  /* - - - - - - - - - - - - - - - - - - -  FINAL DEL CSS PARA LA SECCION LOGIN - - - - - - - - - - - - - - - - - - -  */

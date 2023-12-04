@@ -12,11 +12,11 @@ const router = express.Router();
 const shopControllers = require('../controllers/shopControllers');
 
 /* Definimos las rutas de "SHOP" */
-router.get('/shop', shopControllers.shop);                  // para la ruta "/shop" la respuesta sera la contenida en el objeto "shopControllers" en la propiedad "shop" y asi sucesivamente
-router.get('/shop/item/:id', shopControllers.item);
-router.post('/shop/item/:id/add', shopControllers.itemAdd);
-router.get('/shop/cart', shopControllers.cart);
-router.post('/shop/cart', shopControllers.payment);
+router.get('/', shopControllers.shop);                  // para la ruta "/shop" la respuesta sera la contenida en el objeto "shopControllers" en la propiedad "shop" y asi sucesivamente
+router.get('/item/:id', shopControllers.item);
+router.post('/item/:id/add', shopControllers.itemAdd);
+router.get('/cart', shopControllers.cart);
+router.post('/cart', shopControllers.payment);
 
 /* exportamos el "enrrutador" que hemos creado para tenerlo disponible donde querramos importarlo */
 module.exports = router;

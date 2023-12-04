@@ -11,53 +11,63 @@
 <body>
     
     <header>
-        <nav>
-            <picture>
-                <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+        <nav class="header__navbar container">
+            <picture class="header__logo">
+                <a href="./home.html">
+                    <img src="../images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+                </a>
             </picture>
-            <ul>
-                <li>
-                    <a href="#">VER TIENDA</a>
-                </li>
-                <li>
-                    <a href="#">ADMIN</a>
-                </li>
-                <li>
-                    <a href="#">SALIR</a>
-                </li>
+            <ul class="header__menu">
+                    <li class="header__menubtn submenuopen">
+                        <a class="header__menubtn-link" href="./home.html">VER TIENDA</a>                            
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="./admin.html">ADMIN</a>
+                    </li>
+                    <li class="header__menubtn">
+                        <a class="header__menubtn-link" href="#">SALIR</a>
+                    </li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h1>INGRESAR A MI CUENTA</h1>
-                <label for="">Email:</label>
-                <input type="email">
-                <label for="">Contraseña:</label>
-                <input type="password">
-                <a href="#">INGRESAR</a>
-                <p><input type="checkbox">Recordarme</p>
-                <p>Olvide mi Contraseña</p>
-        </section>
+    <main class="login__main">
+        <h1 class="login__tittle">INGRESAR A MI CUENTA</h1>
+        <form class="login__form" action="login.js" method="POST">
+            <div class="login__form-row">
+                <label class="login__form-label" for="user">Email:</label>
+                <input class="login__inputs" type="text" name="user" id="user" placeholder="johndoe@correo.com">
+            </div>
+            <div class="login__form-row">
+                <label class="login__form-label" for="password">Contraseña:</label>
+                <input class="login__inputs" type="password" name="password" id="password" placeholder=".......">
+            </div>
+            <div class="login__form-rowBtnChk">
+                <input class="login__button-login" type="submit" value="Ingresar">
+                <p class="login__recordarme"><input class="checkbox" type="checkbox" name="recordarme">Recordarme</p>
+            </div>
+                <a class="login__forgot-password" href="#">Olvide mi Contraseña</a>
+        </form>
     </main>
 
     <footer>
-        <nav>
-            <ul>
-                <li>SHOP</li>
-                <li>REGISTRARSE</li>
-                <li>INGRESAR</li>
-                <li>CONTACTO</li>
+        <nav class="footer__navbar container">
+            <ul class="footer__menu">
+                <li class="footer__menubtn"><a class="footer__menubtn-link" href="./shop.html">SHOP</a></li>
+                <li class="footer__menubtn"><a class="footer__menubtn-link" href="./register.html">REGISTRARSE</a></li>
+                <li class="footer__menubtn"><a class="footer__menubtn-link" href="./login.html">INGRESAR</a></li>
+                <li class="footer__menubtn"><a class="footer__menubtn-link" href="#">CONTACTO</a></li>
             </ul>
+            <picture class="footer__logo">
+                <img src="../images/branding/isotype.svg" alt="Logo Funkoshop">
+            </picture>
         </nav>
-        <picture>
-            <img src="../images/branding/isotype.svg" alt="Logo Funkoshop">
-        </picture>
-        <p>Todos los derechos Resevados 2023 - Funkoshop &copy;</p>
-    </footer>
-    
+        <p class="footer__derechos container CopyMax">Todos los derechos Reservados 2023 - Funkoshop &copy;</p>
+        <p class="footer__derechos container CopyMin">Todos los derechos Reservados 2023<br>Funkoshop &copy;</p>
+    </footer>  
+
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+   
 </body>
 </html>

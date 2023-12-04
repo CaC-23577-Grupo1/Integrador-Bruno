@@ -3,12 +3,31 @@
 
 /* creamos un objeto que contendra diferentes propiedades y cada una de ellas sera una "funcion" para dar logica de respuesta a cada ruta */
 const mainControllers = {
-    indexpage: (req, res) => res.send('Ruta para la vista de la Pagina de Inicio (Deberia ser la misma del Home).'),
-    home: (req, res) => res.send('Ruta para la vista Home.'),
+  
+    indexpage: (req, res) => res.render('shop/home', { 
+        title: "Home | Funkoshop"
+    }),
+
+    home: (req, res) => res.render('shop/home', { 
+      title: "Home | Funkoshop"
+    }),
+
     contact:(req, res) => res.send('Ruta para la vista Contacto.'),
+
     about:(req, res) => res.send('Ruta para la vista Sobre Nosotros.'),
+
     faqs:(req, res) => res.send('Ruta para la vista FAQs.'),
+
   };
 
 /* exportamos el objeto con todas sus propiedades que serian las "funciones" */
 module.exports = mainControllers;
+
+
+
+
+
+
+
+
+
