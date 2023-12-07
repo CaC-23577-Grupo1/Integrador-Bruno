@@ -1,10 +1,23 @@
 <%- include('../partials/header'); -%>
 
+
+<section style="border: 3px solid crimson; display: inline-block; padding: 10px; margin: 10px;">
+    <% dataParaVista.forEach(character => { %>
+            <h3><%= character.prod_nombre %> &nbsp;&nbsp;(<%= character.prod_id %>) </h3>
+            <b>
+                <p><%= character.prod_licencia %></p>
+                <p><%= character.prod_descripcion %></p>
+                <p><%= character.prod_precio %></p>
+            </b>
+    <% }) %>
+</section>
+
+
     <main class="container">
         <!-- Sección 1 - Cart principal -->
         <section class="collection container">
             <picture class="collection__cover">
-                <img src="../images/star-wars/baby-yoda-1.webp"
+                <img src="/images/star-wars/baby-yoda-1.webp"
                     alt="Figura coleccionable de Baby Yoda (Groku) - The Mandalorian Saga">
             </picture>
             <article class="collection__content">
@@ -41,9 +54,9 @@
                         <span class="card-item__tag">NUEVO</span>
                         <a class="card-item__link" href="#">
                             <picture class="card-item__cover">
-                                <img class="card-item__img--front" src="../images/star-wars/trooper-1.webp"
+                                <img class="card-item__img--front" src="/images/star-wars/trooper-1.webp"
                                     alt="Figura coleccionable Funko de un Stormtroope">
-                                <img class="card-item__img--back" src="../images/star-wars/trooper-box.webp"
+                                <img class="card-item__img--back" src="/images/star-wars/trooper-box.webp"
                                     alt="Figura coleccionable Funko de un Stormtroope en caja">
                             </picture>
                             <div class="card-item__content">
@@ -60,9 +73,9 @@
                         <span class="card-item__tag">NUEVO</span>
                         <a class="card-item__link" href="#">
                             <picture class="card-item__cover">
-                                <img class="card-item__img--front" src="../images/pokemon/pidgeotto-1.webp"
+                                <img class="card-item__img--front" src="/images/pokemon/pidgeotto-1.webp"
                                     alt="Figura coleccionable Funko de un Pidgeotto">
-                                <img class="card-item__img--back" src="../images/pokemon/pidgeotto-box.webp"
+                                <img class="card-item__img--back" src="/images/pokemon/pidgeotto-box.webp"
                                     alt="Figura coleccionable Funko de un Pidgeotto en caja">
                             </picture>
                             <div class="card-item__content">
@@ -80,9 +93,9 @@
                             <span class="card-item__tag">NUEVO</span>
                             <a class="card-item__link" href="#">
                                 <picture class="card-item__cover">
-                                    <img class="card-item__img--front" src="../images/harry-potter/luna-1.webp"
+                                    <img class="card-item__img--front" src="/images/harry-potter/luna-1.webp"
                                         alt="Figura coleccionable Funko de Luna">
-                                    <img class="card-item__img--back" src="../images/harry-potter/luna-box.webp"
+                                    <img class="card-item__img--back" src="/images/harry-potter/luna-box.webp"
                                         alt="Figura coleccionable Funko de Luna en caja">
                                 </picture>
                         </div>
