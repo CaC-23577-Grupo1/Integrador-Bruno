@@ -1,14 +1,9 @@
 [
   {
-    "id": 91,
-    "codigo": "9STW001001",
-    "nombre": "9Baby Yoda Blueball",
-    "categoria": "9STAR WARS",
-    
     "prod_id": 1,
     "prod_sku": "STW001001",
     "prod_nombre": "Baby Yoda Blueball",
-    "prod_descripcion": "Figura coleccionable Baby Yoda Blueball",
+    "prod_descripcion": "Figura coleccionable de Baby Yoda (Groku) - The Mandalorian Saga, edición limitada.",
     "prod_licencia": "STAR WARS",
     "prod_categoria": "figura",
     "prod_precio": 1799.99,
@@ -20,11 +15,6 @@
     "prod_imagen_trasera": "/images/star-wars/baby-yoda-box.webp"
   },
   {
-    "id": 92,
-    "codigo": "9STW001002",
-    "nombre": "9Boba Fett Fighter",
-    "categoria": "9STAR WARS",
-
     "prod_id": 2,
     "prod_sku": "STW001002",
     "prod_nombre": "Boba Fett Fighter",
@@ -40,11 +30,6 @@
     "prod_imagen_trasera": "/images/star-wars/bobbafeth-box.webp"
   },
   {
-    "id": 93,
-    "codigo": "9STW001003",
-    "nombre": "9Luke Skylwalker & Grogu",
-    "categoria": "9STAR WARS",
-
     "prod_id": 3,
     "prod_sku": "STW001003",
     "prod_nombre": "Luke Skylwalker & Grogu",
@@ -60,11 +45,6 @@
     "prod_imagen_trasera": "/images/star-wars/luke-box.webp"
   },
   {
-    "id": 94,
-    "codigo": "9STW001004",
-    "nombre": "9Stormtrooper Lightsaber",
-    "categoria": "9STAR WARS",
-
     "prod_id": 4,
     "prod_sku": "STW001004",
     "prod_nombre": "Stormtrooper Lightsaber",
@@ -80,11 +60,6 @@
     "prod_imagen_trasera": "/images/star-wars/trooper-box.webp"
   },
   {
-    "id": 95,
-    "codigo": "9PKM001001",
-    "nombre": "9Charmander Smiley",
-    "categoria": "9POKEMON",
-
     "prod_id": 5,
     "prod_sku": "PKM001001",
     "prod_nombre": "Charmander Smiley",
@@ -100,11 +75,6 @@
     "prod_imagen_trasera": "/images/pokemon/charmander-box.webp"
   },
   {
-    "id": 96,
-    "codigo": "9PKM001002",
-    "nombre": "9Dragonite Hi!",
-    "categoria": "9POKEMON",
-
     "prod_id": 6,
     "prod_sku": "PKM001002",
     "prod_nombre": "Dragonite Hi!",
@@ -120,11 +90,6 @@
     "prod_imagen_trasera": "/images/pokemon/dragonite-box.webp"
   },
   {
-    "id": 97,
-    "codigo": "9PKM001003",
-    "nombre": "9Pidgeotto Flying",
-    "categoria": "9POKEMON",
-
     "prod_id": 7,
     "prod_sku": "PKM001003",
     "prod_nombre": "Pidgeotto Flying",
@@ -140,11 +105,6 @@
     "prod_imagen_trasera": "/images/pokemon/pidgeotto-box.webp"
   },
   {
-    "id": 98,
-    "codigo": "9PKM001004",
-    "nombre": "9Pikachu Smiley",
-    "categoria": "9POKEMON",
-
     "prod_id": 8,
     "prod_sku": "PKM001004",
     "prod_nombre": "Pikachu Smiley",
@@ -160,11 +120,6 @@
     "prod_imagen_trasera": "/images/pokemon/pikachu-box.webp"
   },
   {
-    "id": 99,
-    "codigo": "9PKM001005",
-    "nombre": "9Vulpix Fancy",
-    "categoria": "9POKEMON",
-
     "prod_id": 9,
     "prod_sku": "PKM001005",
     "prod_nombre": "Vulpix Fancy",
@@ -180,11 +135,6 @@
     "prod_imagen_trasera": "/images/pokemon/vulpix-box.webp"
   },
   {
-    "id": 910,
-    "codigo": "9HPT001001",
-    "nombre": "9Harry Potter & Hegw",
-    "categoria": "9HARRY POTTER",
-
     "prod_id": 10,
     "prod_sku": "HPT001001",
     "prod_nombre": "Harry Potter & Hegwid",
@@ -200,11 +150,6 @@
     "prod_imagen_trasera": "/images/harry-potter/harry-box.webp"
   },
   {
-    "id": 911,
-    "codigo": "9HPT001002",
-    "nombre": "9Herminione Ball Dress",
-    "categoria": "9HARRY POTTER",
-
     "prod_id": 11,
     "prod_sku": "HPT001002",
     "prod_nombre": "Herminione Ball Dress",
@@ -220,11 +165,6 @@
     "prod_imagen_trasera": "/images/harry-potter/hermione-box.webp"
   },
   {
-    "id": 912,
-    "codigo": "9HPT001003",
-    "nombre": "9Luna Lovegood Lion Mask",
-    "categoria": "9HARRY POTTER",
-
     "prod_id": 12,
     "prod_sku": "HPT001003",
     "prod_nombre": "Luna Lovegood Lion Mask",
@@ -240,11 +180,6 @@
     "prod_imagen_trasera": "/images/harry-potter/luna-box.webp"
   },
   {
-    "id": 913,
-    "codigo": "9HPT001004",
-    "nombre": "9Snape Patronus",
-    "categoria": "9HARRY POTTER",
-
     "prod_id": 13,
     "prod_sku": "HPT001004",
     "prod_nombre": "Snape Patronus",

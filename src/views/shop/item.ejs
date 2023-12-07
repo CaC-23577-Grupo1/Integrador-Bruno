@@ -1,50 +1,47 @@
 <%- include('../partials/header'); -%>
 
-
-<section style="border: 3px solid crimson; display: inline-block; padding: 10px; margin: 10px;">
-    <% dataParaVista.forEach(character => { %>
-            <h3><%= character.prod_nombre %> &nbsp;&nbsp;(<%= character.prod_id %>) </h3>
-            <b>
-                <p><%= character.prod_licencia %></p>
-                <p><%= character.prod_descripcion %></p>
-                <p><%= character.prod_precio %></p>
-            </b>
-    <% }) %>
-</section>
-
-
     <main class="container">
         <!-- Sección 1 - Cart principal -->
-        <section class="collection container">
-            <picture class="collection__cover">
-                <img src="/images/star-wars/baby-yoda-1.webp"
-                    alt="Figura coleccionable de Baby Yoda (Groku) - The Mandalorian Saga">
-            </picture>
-            <article class="collection__content">
-                <p class="collection__text__superior">STAR WARS</p>
-                <h3 class="collection__title">BABY YODA BLUEBALL</h3>
-                <p class="collection__text">Figura coleccionable de Baby Yoda (Groku) - The Mandalorian
-                    Saga, edición limitada.</p>
-                <p class="collection__price">$1799,99</p>
 
-                <form class="collection__form" action="">
-                    <!-- <span>0</span> -->
-                    <input class="collection__input" placeholder="0" type="number">
-                    <div class="collection__form__buttons">
-                        <iconify-icon icon="ic:sharp-add-box" style="color: #4f4f4f;" width="16" height="18"
-                            flip="horizontal,vertical"></iconify-icon>
-                        <iconify-icon icon="material-symbols:chips-sharp" style="color: #4f4f4f;" width="16" height="18"
-                            flip="horizontal,vertical"></iconify-icon>
+        <% if (dataRecibida && dataRecibida.length > 0) { %>
+            
+            <% dataRecibida.forEach(productoRecibido => { %>
+        
+                <section class="collection container">
+                    <picture class="collection__cover">
+                        <img src="<%= productoRecibido.prod_imagen_frontal %>" alt="<%= productoRecibido.prod_nombre %>">
+                    </picture>
+                    <article class="collection__content">
+                        <p class="collection__text__superior"><%= productoRecibido.prod_licencia %></p>
+                        <h3 class="collection__title"><%= productoRecibido.prod_nombre %></h3>
+                        <p class="collection__text"><%= productoRecibido.prod_descripcion %></p>
+                        <p class="collection__price">$&nbsp;<%= productoRecibido.prod_precio %></p>
+                        <form class="collection__form" action="">
+                            <input class="collection__input" placeholder="0" type="number">
+                            <div class="collection__form__buttons">
+                                <iconify-icon icon="ic:sharp-add-box" style="color: #4f4f4f;" width="16" height="18" flip="horizontal,vertical"></iconify-icon>
+                                <iconify-icon icon="material-symbols:chips-sharp" style="color: #4f4f4f;" width="16" height="18" flip="horizontal,vertical"></iconify-icon>
+                            </div>
+                            <button class="collection__button" type="submit">Agregar al carrito</button>
+                        </form>
+                        <p class="collection__text__inferior">
+                            <a class="collection__link_pago" href="#">Ver métodos de pago</a> - <%= productoRecibido.prod_cuotas %> <% if (productoRecibido.prod_intereses == true){ %> CUOTAS CON INTERÉS <% } else { %> CUOTAS SIN INTERÉS  <% } %>
+                        </p>
+                    </article>
+                </section>
+        
+            <% }) %>
 
-                        <!-- <a href=""></a> -->
-                        <!-- <a href=""></a> -->
-                    </div>
-                    <button class="collection__button" type="submit">Agregar al carrito</button>
-                </form>
-                <p class="collection__text__inferior"><a class="collection__link_pago" href="#">Ver métodos de pago</a>
-                    - 3 CUOTAS SIN INTERÉS</p>
-            </article>
-        </section>
+        <% } else { %>
+
+            <section style="border: 3px solid crimson; display: inline-block; padding: 30px; margin: 30px;">
+                <h3>El ID de producto solicitado No Existe</h3>
+                <h3>Rellenar este mensaje, darle formato y estilo agradable con alguna imagen y poner boton que envie a SHOP donde se ven todos los productos</h3>
+            </section> 
+
+        <% } %>
+
+
         <!-- Sección 2 - Productos relacionados -->
         <section class="slider container">
             <h2 class="slider__title">PRODUCTOS RELACIONADOS</h2>
