@@ -1,23 +1,26 @@
 [
     { 
         "id": 1, 
-        "colection_name": "STAR WARS & THE MANDALORIAN",
-        "colection_image": "/images/star-wars/baby-yoda-1.webp",
-        "colection_altimage": "Producto Baby Yoda", 
-        "colection_descript": "Disfruta de una saga que sigue agregando personajes a su colección."
+        "collection_name": "STAR WARS & THE MANDALORIAN",
+        "collection_image": "/images/star-wars/baby-yoda-1.webp",
+        "collection_altimage": "Producto Baby Yoda", 
+        "collection_descript": "Disfruta de una saga que sigue agregando personajes a su colección.",
+        "collection_license": "Star Wars"
     },
     { 
         "id": 2, 
-        "colection_name": "POKEMON INDIGO",
-        "colection_image": "/images/pokemon/vulpix-1.webp",
-        "colection_altimage": "Producto Vulpix", 
-        "colection_descript": "Atrapa todos los que puedas y disfruta de una colección llena de amigos."
+        "collection_name": "POKEMON INDIGO",
+        "collection_image": "/images/pokemon/vulpix-1.webp",
+        "collection_altimage": "Producto Vulpix", 
+        "collection_descript": "Atrapa todos los que puedas y disfruta de una colección llena de amigos.",
+        "collection_license": "Pokemon"
     },
     { 
         "id": 3, 
-        "colection_name": "HARRY POTTER",
-        "colection_image": "/images/harry-potter/snape-patronus-1.webp",
-        "colection_altimage": "Producto Snape Patronus", 
-        "colection_descript": "Revive los recuerdos de una saga llena de magia y encanto."
+        "collection_name": "HARRY POTTER",
+        "collection_image": "/images/harry-potter/snape-patronus-1.webp",
+        "collection_altimage": "Producto Snape Patronus", 
+        "collection_descript": "Revive los recuerdos de una saga llena de magia y encanto.",
+        "collection_license": "Harry Potter"
     }
 ]

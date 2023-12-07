@@ -1,18 +1,36 @@
 <%- include('../partials/header'); -%>
 
+    <!-- Seccion Banner -->
     <section class="banner__container">
             <div class="banner__bgfilter">
                 <div class="banner__contenido container">
                     <h3 class="banner__title">Nuevos Ingresos</h3>
                     <p class="banner__text"> Descubrí el próximo Funko Pop de tu colección</p>
-                    <a class="banner__button" href="#">SHOP</a>
+                    <a class="banner__button" href="/shop/?newProducts">SHOP</a>
                 </div>             
             </div>
     </section>
 
+    <!-- Comienzo Pagina Principal -->
     <main class="container homecontainer">
         
+        <!-- Colecciones -->
         <section  id="articles__container" class="articles__container">
+
+            <% dataRecibidaColecciones.forEach(coleccionRecibida => { %>
+
+                <article class="article__item">
+                    <div class="article__details">
+                        <h2 class="article__detailstitle"><%= coleccionRecibida.collection_name %></h2>
+                        <p class="article__detailstext"><%= coleccionRecibida.collection_descript %></p>
+                        <a class="article__detailsbutton" href="/shop/?license=<%= coleccionRecibida.collection_license %>">VER COLECCIÓN</a>
+                    </div>
+                    <picture class="article__image">
+                        <img src="<%= coleccionRecibida.collection_image %>" alt="<%= coleccionRecibida.collection_altimage %>">
+                    </picture>
+                </article>
+        
+            <% }) %>
 <!--
             <article class="article__item">
                 <div class="article__details">
@@ -49,80 +67,8 @@
 -->            
         </section>
 
-        <section class="slider__container glide">
-            
-            <h2 class="slider__title">úLTIMOS LANZAMIENTOS</h2>
-            
-            <div class="glide__track" data-glide-el="track">
-
-                <ul id="jsContainer_Slider" class="slider__list glide__slides">
-<!--   --                 
-                    <li class="slider__card glide__slide">
-                        <article class="card__container">
-                            <a class="card__link" href="#">
-                                <picture class="card__imagecontainer">
-                                    <span class="card__newprod">NUEVO</span>
-                                    <img class="card__prodimage" src="../images/star-wars/trooper-1.webp" alt="Producto StormTrooper">
-                                    <img class="card__boximage" src="../images/star-wars/trooper-box.webp" alt="Caja StormTrooper">
-                                </picture>
-                                <div class="card__detailscontainer">
-                                    <h3 class="card__prodfamily">STAR WARS</h3>
-                                    <h2 class="card__prodname">STORMTROOPER LIGHTSABER</h2>
-                                    <p class="card__prodprice">$ 1799,99</p>
-                                    <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
-                                </div>
-                            </a>                                
-                        </article>
-                    </li>
-                    <li class="slider__card glide__slide">
-                        <article class="card__container">
-                            <a class="card__link" href="#">
-                                <picture class="card__imagecontainer">
-                                    <span class="card__newprod">NUEVO</span>
-                                    <img class="card__prodimage" src="../images/pokemon/pidgeotto-1.webp" alt="Producto Pidgeotto">
-                                    <img class="card__boximage" src="../images/pokemon/pidgeotto-box.webp" alt="Caja Pidgeotto">
-                                </picture>
-                                <div class="card__detailscontainer">
-                                    <h3 class="card__prodfamily">POKEMON</h3>
-                                    <h2 class="card__prodname">PIDGEOTTO</h2>
-                                    <p class="card__prodprice">$ 1799,99</p>
-                                    <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
-                                </div>
-                            </a>
-                        </article>
-                    </li>
-                    <li class="slider__card glide__slide">
-                        <article class="card__container">
-                            <a class="card__link" href="#">
-                                <picture class="card__imagecontainer">
-                                    <span class="card__newprod">NUEVO</span>
-                                    <img class="card__prodimage" src="../images/harry-potter/luna-1.webp" alt="Producto Luna Lovegood">
-                                    <img class="card__boximage" src="../images/harry-potter/luna-box.webp" alt="Caja Luna Lovegood">
-                                </picture>
-                                <div class="card__detailscontainer">
-                                    <h3 class="card__prodfamily">HARRY POTTER</h3>
-                                    <h2 class="card__prodname">LUNA LOVEGOOD LION MASK</h2>
-                                    <p class="card__prodprice">$ 1799,99</p>
-                                    <p class="card__prodbill">3 CUOTAS SIN INTERÉS</p>
-                                </div>
-                            </a>
-                        </article>
-                    </li>
-!--   -->   
-                </ul>
-
-                <div data-glide-el="controls">
-                    <button data-glide-dir="<">
-                        <div class="slider__button left"><iconify-icon class="slider__buttonicon" icon="material-symbols:chevron-left"></iconify-icon></div>
-                    </button>
-                    <button data-glide-dir=">">
-                        <div class="slider__button right"><iconify-icon class="slider__buttonicon" icon="material-symbols:chevron-right"></iconify-icon></div>                
-                    </button>
-                </div>
-                
-            </div>
-
-        </section>
+    <!-- Slider -->
+    <%- include('../components/slider'); -%>
 
     </main>
     
@@ -130,8 +76,11 @@
     
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-    <!-- <script src="../js/slider-glide.js"></script> Anulado este SCRIPT ya que lo inclui en el archivo "home.js (Era la creacion de la instancia para que funcione Glide)"-->
-    <script src="../js/home.js"></script>
+
+    <!-- Estos dos SCRIPT se pasaron a la plantilla del Slider -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> -->
+    <!-- <script src="../js/slider-glide.js"></script> -->
+    
+    <!-- <script src="../js/home.js"></script> -->
 </body>
 </html>
