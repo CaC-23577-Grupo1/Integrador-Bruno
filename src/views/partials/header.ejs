@@ -13,35 +13,37 @@
     <header>
         <nav class="header__navbar container">
             <picture class="header__logo">
-                <img src="/images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+                <a href="/home">
+                    <img src="/images/branding/logo_light_horizontal.svg" alt="Funkoshop Logo">
+                </a>
             </picture>
             <ul class="header__menu">
                     <li class="header__menubtn submenuopen">
-                        <a class="header__menubtn-link chevron" href="./shop.html">SHOP<iconify-icon class="chevronsize" icon="tabler:chevron-down"></iconify-icon></a>
+                        <a class="header__menubtn-link chevron" href="/shop">SHOP<iconify-icon class="chevronsize" icon="tabler:chevron-down"></iconify-icon></a>
                         
                             <!-- Sub Menu del boton "Shop" -->
                             <ul class="header__submenu">
                                 <li class="header__submenubtn">
-                                    <a class="header__submenubtn-link" href="#">Funkos</a>
+                                    <a class="header__submenubtn-link" href="/shop/?category=figuras">Funkos</a>
                                 </li>
                                 <li class="header__submenubtn">
-                                    <a class="header__submenubtn-link" href="#">Remeras</a>
+                                    <a class="header__submenubtn-link" href="/shop/?category=remeras">Remeras</a>
                                 </li>
                                 <li class="header__submenubtn">
-                                    <a class="header__submenubtn-link" href="#">LLaveros</a>
+                                    <a class="header__submenubtn-link" href="/shop/?category=llaveros">LLaveros</a>
                                 </li>
                             </ul>                    
                     
                     </li>
                     <li class="header__menubtn">
-                        <a class="header__menubtn-link" href="#">CONTACTO</a>
+                        <a class="header__menubtn-link" href="/contact">CONTACTO</a>
                     </li>
                     <li class="header__menubtn">
-                        <a class="header__menubtn-link" href="./login.html">LOGIN</a>
+                        <a class="header__menubtn-link" href="/auth/login">LOGIN</a>
                     </li>
                     <li class="header__menucart">
                         <!-- Este Icono del carrito NO posee el circulo rojo con el Contador de Items en Carrito -->
-                        <a class="header__menu-itemicon" href="./cart.html"><img src="/images/icons/cart-icon.svg" alt=""></a>
+                        <a class="header__menu-itemicon" href="/shop/cart"><img src="/images/icons/cart-icon.svg" alt=""></a>
                         <!-- Este Icono del carrito SI posee el circulo rojo con el Contador de Items en Carrito -->
                         <!-- <a class="header__menu-itemicon" href="./cart.html"><img src="../images/icons/cart-icon.svg" alt=""></a><span id="header-cantidad" class="header__menu-itemicon-cant"></span> -->
                     </li>

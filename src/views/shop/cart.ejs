@@ -11,6 +11,8 @@
             <p class="cart__itemstittles-act"></p>
         </div>
 
+        <form action="/shop/cart" method="POST">
+
         <ul id="cart_list" class="cart__item-list">
 
             <% dataParaListarCarrito.forEach(itemCarrito => { %>
@@ -24,11 +26,11 @@
                             <h2 class="cart__item-productdet-name"><%= itemCarrito.prod_nombre %></h2>
                             <h3 class="cart__item-productdet-categ"><%= itemCarrito.prod_licencia %></h3>
                             <p class="cart__item-productdet-price">Precio: $ <%= itemCarrito.prod_precio %></p>
-                            <input type="hidden" id="price<%= itemCarrito.cart_item_id %>" value="<%= itemCarrito.prod_precio %>">
+                            <input type="hidden" name="itemPrice-<%= itemCarrito.cart_item_id %>" id="price<%= itemCarrito.cart_item_id %>" value="<%= itemCarrito.prod_precio %>">
                         </div>
                     </article>
                     <div class="cart__item-q">
-                        <input data-id="<%= itemCarrito.cart_item_id %>" class="cart__item-qnum" type="text" id="quant<%= itemCarrito.cart_item_id %>" value="<%= itemCarrito.cart_prod_cant %>">
+                        <input data-id="<%= itemCarrito.cart_item_id %>" name="itemQuant-<%= itemCarrito.cart_item_id %>" class="cart__item-qnum" type="text" id="quant<%= itemCarrito.cart_item_id %>" value="<%= itemCarrito.cart_prod_cant %>">
                         <div class="cart__item-qplusminus">
                             <button data-id="<%= itemCarrito.cart_item_id %>" id="plus" class="qplusminusbtn plus">+</button>
                             <button data-id="<%= itemCarrito.cart_item_id %>" id="minus" class="qplusminusbtn minus">-</button>
@@ -39,8 +41,8 @@
                         <button data-id="<%= itemCarrito.cart_item_id %>" class="deletebtn OutItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
                         <button data-id="<%= itemCarrito.cart_item_id %>" class="deletebtn InItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
                     </div>
-            </li>
-        
+                </li>
+                
             <% }) %>
          
 <!--
@@ -127,37 +129,45 @@
 
         </ul>
 
+        <!-- <form action="/shop/cart" method="POST"> -->
         
-        <section class="cart__total-container">
+            <section class="cart__total-container">
 
-            <div class="cart__total-position">
+                <div class="cart__total-position">
 
-                <h3 class="cart__titles">RESUMEN</h3>
+                    <h3 class="cart__titles">RESUMEN</h3>
 
-                <ul class="cart__total-listdetail">
-                    <li class="cart__total-listitem">
-                        <span class="cart__total-listitemDet">CANTIDAD DE ELEMENTOS</span>
-                        <span id="cantidad" class="cart__total-listitemNum"></span>
-                    </li>
-                    <li class="cart__total-listitem">
-                        <span class="cart__total-listitemDet">SUBTOTAL</span>
-                        <span id="subtotal" class="cart__total-listitemNum"></span>
-                    </li>
-                    <li class="cart__total-listitem">
-                        <span class="cart__total-listitemDet">ENVIO</span>
-                        <span id="envio" class="cart__total-listitemNum"></span>
-                    </li>
-                    <li class="cart__total-listitem">
-                        <span class="cart__total-listitemDetF">TOTAL</span>
-                        <span id="total" class="cart__total-listitemNumF"></span>
-                    </li>
-                </ul>
+                    <ul class="cart__total-listdetail">
+                        <li class="cart__total-listitem">
+                            <span class="cart__total-listitemDet">CANTIDAD DE ELEMENTOS</span>
+                            <span id="cantidad" class="cart__total-listitemNum"></span>
+                            <input type="hidden" id="hiddencantidad" name="cantidadItems">
+                        </li>
+                        <li class="cart__total-listitem">
+                            <span class="cart__total-listitemDet">SUBTOTAL</span>
+                            <span id="subtotal" class="cart__total-listitemNum"></span>
+                        </li>
+                        <li class="cart__total-listitem">
+                            <span class="cart__total-listitemDet">ENVIO</span>
+                            <span id="envio" class="cart__total-listitemNum"></span>
+                        </li>
+                        <li class="cart__total-listitem">
+                            <span class="cart__total-listitemDetF">TOTAL</span>
+                            <span id="total" class="cart__total-listitemNumF"></span>
+                            <input type="hidden" id="hiddentotal" name="totalCarrito">
+                        </li>
+                    </ul>
 
-                <a class="cart__total-paybtn" href="#">IR A PAGAR</a>
 
-            </div>
-        </section>    
-        
+                    <input type="submit" value="PAGAR">
+                    <a class="cart__total-paybtn" href="#">IR A PAGAR</a>
+                    
+                </div>
+
+            </section>    
+
+        </form>
+            
     </main>
     
 <%- include('../partials/footer'); -%>

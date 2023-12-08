@@ -1,0 +1,14 @@
+[
+    { 
+        "categoria_id": 1,
+        "categoria_descripcion": "Figuras"
+    },
+    { 
+        "categoria_id": 2,
+        "categoria_descripcion": "Remeras"
+    },
+    { 
+        "categoria_id": 3,
+        "categoria_descripcion": "LLaveros"
+    }
+]

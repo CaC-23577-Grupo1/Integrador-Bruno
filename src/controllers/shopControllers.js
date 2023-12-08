@@ -42,8 +42,25 @@ const shopControllers = {
   },
 
 
+  // Definimos la "funcion" que cumplira el controlador al responder a la ruta mediante el metodo POST de agregar un Item
+  itemAdd: (req, res) => {
 
-  itemAdd: (req, res) => res.send(`Ruta para agregar un Item al Carrito dependiendo el ID especificado.<br><br>En esta ruta han indicado el ID: ${req.params.id}`),
+    const idProducto = req.params.id;     // Capturamos el path param que viene en la URL que nos identifica el ID del items a agregar
+    const cantItems = req.body.quantity;  // Capturamos el valor que viene en el Body del POST que nos indica la cantidad de items a agregar
+
+    // Generamos 3 constantes con informacion para responder ya que no podemos grabarlo en ninguna BD
+    const messageTitle = "Información:";
+    const messageDescript = `El usuario presiono el boton "Agregar al Carrito" ejecutando una solicitud HTTP bajo el metodo POST a la ruta "/shop/item/:id/add" la cual ejecuta la accion de agregar un Item al Carrito.`;
+    const messageData = `Data enviada en el Body del POST: \n    ${cantItems} (Valor del Input que indica la cantidad de Items) \n    ${idProducto} (Valor del Query Param que indentifica el Producto)`;
+
+    res.render('messages',
+    { 
+      title: "Item | Funkoshop",
+      messageTitle,       // Enviamos las 3 variables a un render para mostrar la data que viajo por el Body del POST
+      messageDescript,
+      messageData
+    });
+  },
   
   
   
@@ -80,7 +97,22 @@ const shopControllers = {
 
   
 
-  payment: (req, res) => res.send('Ruta para ir a la parte de pagos del Carrito'),
+  payment: (req, res) => {
+
+    //const dataBody = req.body;
+    
+    const messageTitle = "Información:";
+    const messageDescript = `El usuario presiono el boton "IR A PAGAR" ejecutando una solicitud HTTP bajo el metodo POST a la ruta "/shop/cart" la cual ejecuta la accion de ir a la plataforma de pagos.`;
+    const messageData = `Data recibida en el Body del POST: \n ${JSON.stringify(req.body, null, 4)}`;
+
+    res.render('messages',
+    {
+      title: "Pago | Funkoshop",
+      messageTitle,       // Enviamos las 3 variables a un render para mostrar la data que viajo por el Body del POST
+      messageDescript,
+      messageData
+    });
+  },
 
 };
 

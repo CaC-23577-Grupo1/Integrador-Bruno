@@ -1,0 +1,14 @@
+[
+    { 
+        "licencia_id": 1,
+        "licencia_descripcion": "Star Wars"
+    },
+    { 
+        "licencia_id": 2,
+        "licencia_descripcion": "Pokemon"
+    },
+    { 
+        "licencia_id": 3,
+        "licencia_descripcion": "Harry Potter"
+    }
+]

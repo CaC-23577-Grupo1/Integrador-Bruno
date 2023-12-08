@@ -16,7 +16,7 @@
                         <h3 class="collection__title"><%= productoRecibido.prod_nombre %></h3>
                         <p class="collection__text"><%= productoRecibido.prod_descripcion %></p>
                         <p class="collection__price">$&nbsp;<%= productoRecibido.prod_precio %></p>
-                        <form class="collection__form" action="">
+                        <form class="collection__form" action="/shop/item/<%= productoRecibido.prod_id %>/add" method="POST">
                             <input class="collection__input" name="quantity" id="quantity" value="1" type="text" inputmode="numeric" >
                             <div class="collection__form__buttons">
                                 <!-- <iconify-icon icon="ic:sharp-add-box" style="color: #4f4f4f;" width="16" height="18" flip="horizontal,vertical"></iconify-icon> -->

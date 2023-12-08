@@ -26,9 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         //const headerCantidad = document.querySelector(`#header-cantidad`);  // Icono en el header del carrito
         const resumenCantidad = document.querySelector(`#cantidad`);
+        const hiddenCantidad = document.querySelector(`#hiddencantidad`);
         const resumenSubtotal = document.querySelector(`#subtotal`);
         const resumenEnvio = document.querySelector(`#envio`);
         const resumenTotal = document.querySelector(`#total`);
+        const hiddenTotal = document.querySelector(`#hiddentotal`);
 
         // Cantidad de Elementos
         const sumamosInputs = document.querySelectorAll('.cart__item-qnum');        // Capturamos todos los inputs de cantidad para leer sus numeros
@@ -51,16 +53,20 @@ document.addEventListener('DOMContentLoaded', function() {
         if (sumadorTotal > minimoEnvioGratis + precioEnvio){                                            // si el total supera el envio gratis entonces
             resumenEnvio.innerHTML = `<span class="EnvioGratis">$ ${precioEnvio.toFixed(2)}</span>`;    // en envio mostramos esto
             mostrarTotal = `$ ${sumadorSubtotal.toFixed(2)}`;                                           // en total mostramos esto
+            soloTotal = sumadorSubtotal.toFixed(2);
         } else {                                                                                        // sino
             resumenEnvio.textContent = `$ ${precioEnvio.toFixed(2)}`;                                   // en envio mostramos esto
             mostrarTotal = `$ ${sumadorTotal.toFixed(2)}`;                                              // en total mostramos esto
+            soloTotal = sumadorTotal.toFixed(2);
         }
 
         // Asignamos los valores a cada contenedor correspondiente
         //headerCantidad.textContent = sumadorCantidad;   // Icono en el header del carrito
         resumenCantidad.textContent = sumadorCantidad; 
+        hiddenCantidad.value = sumadorCantidad; 
         resumenSubtotal.textContent = `$ ${sumadorSubtotal.toFixed(2)}`;
         resumenTotal.textContent = mostrarTotal;
+        hiddenTotal.value = soloTotal;
     }
 
 
