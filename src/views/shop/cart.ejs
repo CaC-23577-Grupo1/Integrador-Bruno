@@ -13,10 +13,38 @@
 
         <ul id="cart_list" class="cart__item-list">
 
+            <% dataParaListarCarrito.forEach(itemCarrito => { %>
+
+                <li class="cart__item">
+                    <article class="cart__item-product">
+                        <picture class="cart__item-productimg">
+                            <img src="<%= itemCarrito.prod_imagen_frontal %>" alt="Imagen <%= itemCarrito.prod_nombre %>">
+                        </picture>
+                        <div class="cart__item-productdet">
+                            <h2 class="cart__item-productdet-name"><%= itemCarrito.prod_nombre %></h2>
+                            <h3 class="cart__item-productdet-categ"><%= itemCarrito.prod_licencia %></h3>
+                            <p class="cart__item-productdet-price">Precio: $ <%= itemCarrito.prod_precio %></p>
+                            <input type="hidden" id="price<%= itemCarrito.cart_item_id %>" value="<%= itemCarrito.prod_precio %>">
+                        </div>
+                    </article>
+                    <div class="cart__item-q">
+                        <input data-id="<%= itemCarrito.cart_item_id %>" class="cart__item-qnum" type="text" id="quant<%= itemCarrito.cart_item_id %>" value="<%= itemCarrito.cart_prod_cant %>">
+                        <div class="cart__item-qplusminus">
+                            <button data-id="<%= itemCarrito.cart_item_id %>" id="plus" class="qplusminusbtn plus">+</button>
+                            <button data-id="<%= itemCarrito.cart_item_id %>" id="minus" class="qplusminusbtn minus">-</button>
+                        </div>
+                    </div>
+                    <p class="cart__item-price" id="total<%= itemCarrito.cart_item_id %>">$ <%= itemCarrito.prod_precio * itemCarrito.cart_prod_cant %></p>
+                    <div>
+                        <button data-id="<%= itemCarrito.cart_item_id %>" class="deletebtn OutItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                        <button data-id="<%= itemCarrito.cart_item_id %>" class="deletebtn InItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                    </div>
+            </li>
+        
+            <% }) %>
          
         <!--
             <li class="cart__item">
-
                     <article class="cart__item-product">
                         <picture class="cart__item-productimg">
                             <img src="../images/star-wars/baby-yoda-1.webp" alt="Producto Baby Yoda Blueball">

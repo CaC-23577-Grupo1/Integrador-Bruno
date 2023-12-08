@@ -58,10 +58,24 @@ const traerColecciones = async () => {
 };
 
 
+
+// Creamos una "funcion" que traera los items cargados en el carrito
+const traerContenidoCarrito = async () => {
+
+    const dataDelJson =  await fs.readFileSync(path.resolve(__dirname, '../../public/data/cartContent.json'));      // Inicialmente leemos el JSON
+    const datosJsonParseados =  await JSON.parse(dataDelJson);                                                      // Parseamos la Data recibida para que su estructura/formato sea util                                                                                                   
+
+    return datosJsonParseados;                                                                                      // Retornamos la data a quien "requirio" esta funcion
+
+};
+
+
+
 // Exportamos estas "funciones" para que esten disponibles por quien requiera este modulo de la capa modelos
 module.exports = {
     traerTodosLosProductos,
     traerUnSoloProducto,
     traerProductosSlider,
-    traerColecciones
+    traerColecciones,
+    traerContenidoCarrito
 };

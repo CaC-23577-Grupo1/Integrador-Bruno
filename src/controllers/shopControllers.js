@@ -3,7 +3,7 @@
 
 const path = require('path');
 
-const { traerTodosLosProductos, traerUnSoloProducto, traerProductosSlider } = require('../models/itemsModel');
+const { traerTodosLosProductos, traerUnSoloProducto, traerProductosSlider, traerContenidoCarrito } = require('../models/itemsModel');
 //const { param } = require('../routes/mainRoutes');      //  No recuerdo haber escrito esta linea, ni veo que este utiliazada, ni tampoco tiene sentido aqui dentro
 //const { log } = require('console');                     //  Mucho menos recuerdo haber escrito esta linea (habra sido en alguno de los intentos de auto escribir "console.log")
 
@@ -46,12 +46,39 @@ const shopControllers = {
 
 
   itemAdd: (req, res) => res.send(`Ruta para agregar un Item al Carrito dependiendo el ID especificado.<br><br>En esta ruta han indicado el ID: ${req.params.id}`),
+  
+  
+  
+  cart: async (req, res) => {
+    
+    const contenidoCarrito = await traerContenidoCarrito();
+    const todosLosProductos = await traerTodosLosProductos();
+   
+    const detalleProductosEnCarrito = contenidoCarrito.map(itemDelCarrito => {    // Hacemos un MAP para recorrer cada ITEM que existe en el carrito y a cada ITEM aplicarle una funcion
+      
+        // La funcion nos permitira recorrer todos los productos buscando aquel cuyo ID coincida con el ID proveniente del ITEM que estamos analizando con el MAP
+        const detalleProductoEncontrado = todosLosProductos.find(producto => producto.prod_id === itemDelCarrito.cart_prod_id);
+        
+        if (detalleProductoEncontrado) {  // Si el FIND encontro un producto cuyo ID coincide con el ID del item que estamos recorriendo del contenido carrito
+          return {                        // usamos "spread syntax" (sintaxis de propagación) para retornar la union de 2 objetos
+            ...itemDelCarrito,            // el primero que contendra las propiedades del ITEM que estamos recorriendo en "contenidoCarrito"
+            ...detalleProductoEncontrado  // y el segundo que contendra las propiedades del Producto cuyo ID coincidio en FIND con el Item de "contenidoCarrito"
+          };
+        } else {
+          return null;  // Si el FIND no encontro coincidencias retornaremos un NULL para evitar que el UNDEFINED nos cause problemas en el MAP
+        }
 
+    });
 
+    const dataParaListarCarrito = detalleProductosEnCarrito.filter(Boolean); // Aplicamos este metodo filter para quitar el elemento de valor NULL del array
+    
+    //console.log(dataParaListarCarrito);
 
-  cart: (req, res) => res.render('./shop/cart', {
-    title: "Carrito | Funkoshop"
-  }),
+    res.render('./shop/cart', {
+      title: "Carrito | Funkoshop",
+      dataParaListarCarrito
+    })
+  },
 
   
 

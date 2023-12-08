@@ -1,0 +1,18 @@
+[
+    { 
+        "cart_item_id": 1,
+        "cart_prod_id": 1,
+        "cart_prod_cant": 2
+    },
+    { 
+        "cart_item_id": 2,
+        "cart_prod_id": 7,
+        "cart_prod_cant": 1
+    },
+    { 
+        "cart_item_id": 3,
+        "cart_prod_id": 10,
+        "cart_prod_cant": 3
+    }
+]
+
