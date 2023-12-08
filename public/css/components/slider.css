@@ -1,0 +1,55 @@
+/* - - - - - - - - - - - - - - - - - - -  INICIO DEL CSS PARA EL COMPONENTE SLIDER - - - - - - - - - - - - - - - - - - -  */
+
+/* Posicionamiento del Slider */
+
+.slider__container{
+    position: relative;
+    margin-bottom: var(--spacing-68);
+}
+
+.slider__title{
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    color: var(--dark-color-solid);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-68)
+}
+
+
+/* Botones de Control de Slider */
+
+.slider__button{
+    display: inline-block;
+    position: absolute;
+    padding: var(--spacing-8);
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    z-index: 2;
+    border: solid 2px var(--dark-color-300);
+    transition: all .1s ease-in-out;
+    background-color: var(--light-bg-color-solid);
+}
+
+.slider__button:hover{
+    border: solid 2px var(--secondary-color-900);
+    cursor: pointer;
+}
+
+.left{
+    left: 0;
+    top: 50%;
+    transform: translate(0%, 50%)
+}
+
+.right{
+    right: 0;
+    top: 50%;
+    transform: translate(0%, 50%)
+}
+
+.slider__buttonicon{
+    font-size: var(--font-large);
+}
+
+/* - - - - - - - - - - - - - - - - - - -  FINAL DEL CSS PARA EL COMPONENTE SLIDER - - - - - - - - - - - - - - - - - - -  */

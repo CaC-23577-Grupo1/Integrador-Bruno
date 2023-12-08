@@ -1,0 +1,103 @@
+/* - - - - - - - - - - - - - - - - - - -  INICIO DEL CSS PARA EL COMPONENTE CARD - - - - - - - - - - - - - - - - - - -  */
+
+.slider__card{
+    max-width: 30%;
+    margin: var(--spacing-18) 0;
+}
+
+/* Animacion para el cambio de imagen suave de la card */
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.card__imagecontainer{
+    position: relative;
+}
+
+.card__prodimage, .card__boximage{
+    max-width: 355px;
+    animation: fade 0.9s;
+}
+
+.card__prodimage{
+    display: inline-block; 
+}
+
+.card__boximage{
+    display: none;
+}
+
+.card__imagecontainer:hover{
+    .card__prodimage{
+        display: none;
+    }
+    .card__boximage{
+        display: inline-block;
+    }
+
+}
+
+.card__newprod{
+    position: absolute;
+    right: 0;
+    background-color: var(--primary-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    color: var(--light-color-solid);
+    font-weight: 500;
+    padding: var(--spacing-8) var(--spacing-24);
+    z-index: 2;
+}
+
+.card__detailscontainer{
+    min-width: 190px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+    padding: var(--spacing-16);
+}
+
+.card__prodfamily{
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    font-weight: 500;
+}
+
+.card__prodname{
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-medium);
+    font-weight: 700;
+}
+
+.card__prodprice{
+    color: var(--dark-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 400;
+}
+
+.card__prodbill{
+    color: var(--secondary-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-xsmall);
+    font-weight: 700;
+}
+
+/* - - - - - - - - - - - - - - - - - - -  FIN DEL CSS PARA EL COMPONENTE CARD - - - - - - - - - - - - - - - - - - -  */
+
+
+
+
+
+
+
+
+

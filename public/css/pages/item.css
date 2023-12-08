@@ -72,11 +72,15 @@
     flex-direction: column;
 }
 
-/* PARA ELIMINAR LOS BOTONES ADENTRO DEL INPUT */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.item__quantity {
+    font-size: 1.4em;
+    height: 16px;
+    width: 18px;
+    flex-shrink: 0;
+    background-color: #4f4f4f;
+    border: 0;
+    color: var(--light-color-900);
+
 }
 
 .collection__button {
@@ -91,115 +95,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: 181px;
     height: 37.91px;
     background-color: var(--primary-color-solid);
-}
-
-/* SLIDER */
-
-.slider {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-36);
-    margin: var(--spacing-68) auto;
-}
-
-.slider__title {
-    font-family: var(--alternative-font);
-    color: var(--dark-color-solid);
-    font-size: var(--font-display);
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-}
-
-.slider__items {
-    display: flex;
-    gap: var(--spacing-24);
-}
-
-.card-item {
-    position: relative;
-}
-
-.card-item__content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-12);
-    padding: var(--spacing-16);
-}
-
-.card-item__license {
-    font-family: var(--primary-font);
-    font-size: var(--font-xsmall);
-    font-weight: 500;
-    color: var(--dark-color-900);
-}
-
-
-.card-item__name {
-    font-family: var(--primary-font);
-    font-size: var(--font-medium);
-    font-weight: 700;
-    color: var(--dark-color-solid);
-}
-
-.card-item__price {
-    font-family: var(--primary-font);
-    font-size: var(--font-small);
-    font-weight: 400;
-    color: var(--dark-color-solid);
-}
-
-.card-item__promo {
-    font-family: var(--primary-font);
-    font-size: var(--font-xsmall);
-    font-weight: 700;
-    color: var(--secondary-color-solid);
-}
-
-.card-item__cover {
-    display: flex;
-
-}
-
-.card-item__tag {
-    right: 0;
-    position: absolute;
-    text-transform: uppercase;
-    color: var(--light-color-solid);
-    font-size: var(--font-xsmall);
-    font-weight: 500;
-    background-color: var(--primary-color-solid);
-    padding: var(--spacing-8) var(--spacing-12);
-}
-
-
-.card-item__cover img {
-    animation: fade 0.7s;
-}
-
-.card-item__img--back {
-    display: none;
-}
-
-.card-item__cover:hover .card-item__img--back {
-    display: block;
-}
-
-.card-item__cover:hover .card-item__img--front {
-    display: none;
-}
-
-/* ANIMATIONS */
-
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 /* - - - - - - - - - - - - - - - - - - -  FINAL DEL CSS PARA LA SECCION ITEM - - - - - - - - - - - - - - - - - - -  */
