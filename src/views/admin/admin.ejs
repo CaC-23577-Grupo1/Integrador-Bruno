@@ -32,7 +32,28 @@
                 </tr>
             </thead>
             <tbody id="list-table-items">
+
+                    <% listaDeProductos.forEach(producto => { %>
+
+                        <tr>
+                            <td class="list-table__id"><%= producto.prod_id %></td>
+                            <td class="list-table__code"><%= producto.prod_sku %></td>
+                            <td class="list-table__name"><%= producto.prod_nombre %></td>
+                            <td class="list-table__categ"><%= producto.prod_licencia %></td>
+                            <td class="list-table__action">
+                                <div class="list-table__iconcontainer">
+                                    <a href="/admin/edit/<%= producto.prod_id %>"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                                    <a href="#"><i class="fa-solid fa-trash-can deletebtnicon"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    <% }) %>
+
 <!--                
+
+    TODA ESTA INFORMACION ESTATICA DE LOS PRODUCTOS AHORA LA GENERA EJS DINAMICAMENTE RECIBIENDO DATA DEL BACKEND  <------------------------------
+
                 <tr>
                     <td class="list-table__id">1</td>
                     <td class="list-table__code">STW001001</td>
@@ -200,6 +221,7 @@
   
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
-    <script src="../js/admin.js"></script>
+
+    <!-- <script src="../js/admin.js"></script> -->
 </body>
 </html>
