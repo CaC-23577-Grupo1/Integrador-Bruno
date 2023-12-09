@@ -4,19 +4,72 @@
 /* creamos un objeto que contendra diferentes propiedades y cada una de ellas sera una "funcion" para dar logica de respuesta a cada ruta */
 const authControllers = {
 
+
     loginView: (req, res) => res.render('auth/login', {
       title: "Login | Funkoshop"
     }),
 
-    loginSend:(req, res) => res.send('Ruta para la accion Iniciar Sesion.'),
 
-    registerView:(req, res) => res.render('auth/register', {
+
+    loginSend: (req, res) => {
+      
+      bdEmail = "cac23577-grupo1@gmail.com";
+      bdPassword = "pass123";
+
+      let loginResultStatus = "";
+      let loginResultMessage = "";
+
+      if (req.body.user == bdEmail){
+          if (req.body.password == bdPassword) {
+            loginResultMessage = "Login Exitoso";
+            loginResultStatus = true;
+          } else {
+            loginResultMessage = "Datos Incorrectos, por favor Verifique.";
+            loginResultStatus = false;
+          }
+        } else {
+          loginResultMessage = "Su usuario no existe, Por favor Registrese";
+          loginResultStatus = false;
+      };
+
+      res.render('auth/loginresult',
+      {
+        title: "Login | Funkoshop",
+        loginResultTitle: "LOGIN",
+        loginResultMessage,
+        loginResultStatus
+      });
+    },
+
+
+    
+    registerView: (req, res) => res.render('auth/register', {
       title: "Register | Funkoshop"
     }),
 
-    registerSend:(req, res) => res.send('Ruta para la accion Registrarse'),
 
-    logout:(req, res) => res.send('Ruta para la accion Cerrar Sesion'),
+
+    registerSend: (req, res) => {
+
+      const messageTitle = "Información";
+      const messageDescript = `El usuario ha completado el formulario de registro y presionado el boton "Registrar" \n Ejecutando de esta manera una consulta HTTP del tipo POST con el siguiente contenido en el Body`;
+      const messageData = `Data recibida en el Body del POST: \n ${JSON.stringify(req.body, null, 4)}`;
+
+      res.render('messages',
+      {
+        title: "Registro Completo | Funkoshop",
+        messageTitle,
+        messageDescript,
+        messageData
+      });
+    },
+
+
+
+    logout: (req, res) => res.redirect('/home'),
+
+
+
   };
 
 /* exportamos el objeto con todas sus propiedades que serian las "funciones" */

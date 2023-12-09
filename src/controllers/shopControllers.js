@@ -98,9 +98,7 @@ const shopControllers = {
   
 
   payment: (req, res) => {
-
-    //const dataBody = req.body;
-    
+   
     const messageTitle = "Información:";
     const messageDescript = `El usuario presiono el boton "IR A PAGAR" ejecutando una solicitud HTTP bajo el metodo POST a la ruta "/shop/cart" la cual ejecuta la accion de ir a la plataforma de pagos.`;
     const messageData = `Data recibida en el Body del POST: \n ${JSON.stringify(req.body, null, 4)}`;

@@ -1,0 +1,33 @@
+<%- include('./partials/header'); -%>
+
+
+<main class="register__main container">
+    <h2 class="register__tittle">CONTACTO</h2>
+    <p class="register__parraf">Envianos tu consulta</p>
+    <form class="register__form" action="/contact" method="POST">
+      <div class="form-group">
+        <label class="register__labels">Nombre y Apellido:</label>
+        <input class="register__inputs" type="text" name="nombre" id="nombre" placeholder="John">
+      </div>
+      <div class="form-group">
+        <label class="register__labels">Email:</label>
+        <input class="register__inputs" type="email" name="email" id="email" placeholder="Johndoe@correo.com" required>
+      </div>
+      <div class="form-group">
+        <label class="register__labels">Consulta:</label>
+        <textarea class="create_textarea" name="consulta" rows="10" cols="40" placeholder="Escriba su consulta..."></textarea>
+      </div>
+      <div class="boton-y-checkbox">
+        <input class="boton-registrar" type="submit" value="Enviar">
+      </div>
+    </form>
+  </main>
+
+
+<%- include('./partials/footer'); -%> 
+
+<!-- Vinculacion con Libreria Iconify 1.0.7 -->
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+</body>
+</html>

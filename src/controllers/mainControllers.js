@@ -12,9 +12,7 @@ const { traerColecciones, traerProductosSlider } = require('../models/itemsModel
 const mainControllers = {
   
 
-    indexpage: (req, res) => res.render('shop/home', { 
-        title: "Home | Funkoshop"
-    }),
+    indexpage: (req, res) => res.redirect('/home'),
 
 
 
@@ -32,7 +30,30 @@ const mainControllers = {
 
 
 
-    contact: (req, res) => res.send('Ruta para la vista Contacto.'),
+    contact: (req, res) => {
+
+      res.render('contact',
+      {
+       title: "Contacto | Funkoshop" 
+      });
+    },
+
+
+
+    contactSend: (req, res) => {
+
+      const messageTitle = "Información";
+      const messageDescript = `El usuario ha presionado el Boton "Enviar" en el formulario de contacto \nDicha accion genero una consulta HTTP mediante el metodo POST.`;
+      const messageData = `Data Recibida en el Body del POST: \n${JSON.stringify(req.body, null, 4)}`;
+
+      res.render('messages',
+      {
+        title: "Producto Guardado | Funkoshop",
+        messageTitle,
+        messageDescript,
+        messageData
+      });
+    },
 
 
 

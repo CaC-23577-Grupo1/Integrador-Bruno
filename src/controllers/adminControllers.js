@@ -25,7 +25,21 @@ const adminControllers = {
 
 
 
-    createAdd:(req, res) => res.send('Ruta para guardar el Item Creado.'),
+    createAdd:(req, res) => {
+
+      const messageTitle = "Información";
+      const messageDescript = `El usuario ha presionado el Boton "Agregar Producto" para guardar el nuevo producto creado \nDicha accion genero una consulta HTTP mediante el metodo POST.`;
+      const messageData = `Data Recibida en el Body del POST: \n${JSON.stringify(req.body, null, 4)}`;
+
+
+      res.render('messages',
+      {
+        title: "Producto Creado | Funkoshop",
+        messageTitle,
+        messageDescript,
+        messageData
+      });
+    },
 
 
 
@@ -41,11 +55,37 @@ const adminControllers = {
 
 
 
-    editSave:(req, res) => res.send(`Ruta para guardar los datos del Item editado, tambien dependiendo el ID.<br><br>En esta ruta han indicado el ID: ${req.params.id}`),
+    editSave:(req, res) => {
+      
+      const messageTitle = "Información";
+      const messageDescript = `El usuario ha presionado el Boton "Modificar Producto" para guardar los cambios en el producto editado \nDicha accion genero una consulta HTTP mediante el metodo POST. \nUtilizando el middleware "method-override" sobreescribiremos el metodo de POST a PUT.`;
+      const messageData = `Dato recibido en el Path Param: ${req.params.id} (ID del producto) \nData Recibida en el Body del POST: \n${JSON.stringify(req.body, null, 4)}`;
+
+      res.render('messages',
+      {
+        title: "Producto Guardado | Funkoshop",
+        messageTitle,
+        messageDescript,
+        messageData
+      });
+    },
 
 
 
-    delete:(req, res) => res.send(`Ruta para eliminar un Item. dependiendo el ID especificado.<br><br>En esta ruta han indicado el ID: ${req.params.id}`),
+    delete: (req, res) => {
+
+      const messageTitle = "Información";
+      const messageDescript = `El usuario ha presionado el boton Eliminar en la vista Admin, generando asi una consulta HTTP bajo el Metodo POST. \n Utilizando el middleware "method-override" sobreescribiremos el metodo de POST a DELETE.`;
+      messageData = `Mediante el Path Param, obtenemos el ID del Producto al cual debemos aplicarle el metodo DELETE \n En este caso el ID ${req.params.id}`;
+      
+      res.render('messages',
+      {
+        title: "Eliminar Item | Funkoshop",
+        messageTitle,
+        messageDescript,
+        messageData
+      });
+    },
     
 
 

@@ -1,0 +1,77 @@
+<%- include('../partials/header'); -%>
+
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .message__container {
+        /* border: solid 2px red; */
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    
+    .message__position{
+        /* border: solid 2px blue; */
+        /* display: inline-block; */
+        /* width: 100%; */
+        display: flex;
+        align-items: center;
+        padding: 0 var(--spacing-68);
+        flex-direction: column;
+    }
+
+    .message__title{
+        font-family: var(--alternative-font);
+        font-size: var(--font-xlarge);
+        color: var(--dark-color-solid);
+        margin-bottom: var(--spacing-16);
+    }
+    
+    .message__descript, .message__data{
+        font-family: var(--alternative-font);
+        color: var(--dark-color-solid);
+        font-family: var(--primary-font);
+        font-size: var(--font-small);
+        font-weight: 400;
+        margin-bottom: var(--spacing-16);
+        white-space: pre-wrap;  /* Propiedad para que sea intepretado el Salto de linea con "/n" y ademas respete los multiples espacios seguidos */
+    }
+</style>
+
+
+<main class="message__container">
+    <section class="message__position container">
+        <h1 class="message__title"><%= loginResultTitle %></h1>
+        <p class="message__descript"><%= loginResultMessage %></p>
+        
+        <% if (loginResultStatus == true){ %>
+                <form action="/auth/logout" method="GET">
+                    <input class="login__button-login" type="submit" value="Cerrar Sesion">
+                </form>
+        <% } %>
+
+        <% if (loginResultStatus == false){ %>
+                <br><a class="login__button-login" href="/auth/login">VOLVER</a>
+        <% } %>
+
+        
+
+
+
+        
+    </section>
+</main>
+
+
+<%- include('../partials/footer'); -%> 
+
+<!-- Vinculacion con Libreria Iconify 1.0.7 -->
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+</body>
+</html>

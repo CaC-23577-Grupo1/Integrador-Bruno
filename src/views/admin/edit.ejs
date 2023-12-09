@@ -9,23 +9,23 @@
 
                         <% dataProductoEditando.forEach(producto => { %>
 
-                            <form action="">
+                            <form action="/admin/edit/<%= producto.prod_id %>?_method=PUT" method="POST">
                                 <div class="edit_form__row">
                                     <div class="edit_form__select">
                                         <label class="edit_label" for="categoria">Categoría:</label>
                                         <select class="edit_select" name="categoria" id="categoria">
                                             <!--<option value="" disabled selected>Seleccionar</option>-->
-                                            <option value="1">Figura</option>
-                                            <option value="2">Remera</option>
-                                            <option value="3">LLavero</option>
+                                            <option value="Figura">Figura</option>
+                                            <option value="Remera">Remera</option>
+                                            <option value="LLavero">LLavero</option>
                                         </select>
 
                                         <label class="edit_label" for="licencia">Licencia:</label>
                                         <select class="edit_select" name="licencia" id="licencia">
                                             <!--<option value="" disabled selected>Seleccionar</option>-->
-                                            <option value="1">STAR WARS</option>
-                                            <option value="2">POKEMON</option>
-                                            <option value="3">HARRY POTTER</option>
+                                            <option value="STAR WARS">STAR WARS</option>
+                                            <option value="POKEMON">POKEMON</option>
+                                            <option value="HARRY POTTER">HARRY POTTER</option>
                                         </select>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                                     <input class="edit_input edit_nombre_prod" type="text" name="nombre_producto" id="nombre_producto" value="<%= producto.prod_nombre %>">
                                 </div>
                                 <div class="edit_form__textarea">
-                                    <textarea class="edit_textarea" name="comentario" rows="10" cols="40" ><%= producto.prod_descripcion %></textarea>
+                                    <textarea class="edit_textarea" name="descripcion" rows="10" cols="40" ><%= producto.prod_descripcion %></textarea>
                                 </div>
                                 <div class="edit_form__row">
                                     <div class="edit_form__input">
@@ -59,8 +59,9 @@
                                     <div class="edit_form__select">
                                         <label class="edit_label" for="cuotas">Cuotas:</label>
                                         <select class="edit_select" name="cuotas" id="cuotas">
-                                            <option value="">6 Cuotas sin interés</option>
-                                            <option value=""></option>
+                                            <option value="3-Sin">3 Cuotas sin interés</option>
+                                            <option value="6-Sin">6 Cuotas sin interés</option>
+                                            <option value="12-Sin">12 Cuotas sin interés</option>
                                         </select>
                                     </div>
                                 </div>

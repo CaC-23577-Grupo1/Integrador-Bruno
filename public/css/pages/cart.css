@@ -280,6 +280,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .cart__total-paybtn{
     width: 100%;
+    border: none; 
+    cursor: pointer;
     display: inline-block;
     padding: var(--spacing-12) 0px;
     font-family: var(--primary-font);

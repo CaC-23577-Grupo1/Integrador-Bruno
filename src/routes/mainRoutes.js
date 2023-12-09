@@ -15,6 +15,7 @@ const mainControllers = require('../controllers/mainControllers');
 router.get('/', mainControllers.indexpage);         // para la ruta "/" la respuesta sera la contenida en el objeto "mainControllers" en la propiedad "indexpage" y asi sucesivamente
 router.get('/home', mainControllers.home);
 router.get('/contact', mainControllers.contact);
+router.post('/contact', mainControllers.contactSend);
 router.get('/about', mainControllers.about);
 router.get('/faqs', mainControllers.faqs);
 

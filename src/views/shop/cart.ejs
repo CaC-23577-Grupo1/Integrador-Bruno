@@ -32,14 +32,14 @@
                     <div class="cart__item-q">
                         <input data-id="<%= itemCarrito.cart_item_id %>" name="itemQuant-<%= itemCarrito.cart_item_id %>" class="cart__item-qnum" type="text" id="quant<%= itemCarrito.cart_item_id %>" value="<%= itemCarrito.cart_prod_cant %>">
                         <div class="cart__item-qplusminus">
-                            <button data-id="<%= itemCarrito.cart_item_id %>" id="plus" class="qplusminusbtn plus">+</button>
-                            <button data-id="<%= itemCarrito.cart_item_id %>" id="minus" class="qplusminusbtn minus">-</button>
+                            <button type="button" data-id="<%= itemCarrito.cart_item_id %>" id="plus" class="qplusminusbtn plus">+</button>
+                            <button type="button" data-id="<%= itemCarrito.cart_item_id %>" id="minus" class="qplusminusbtn minus">-</button>
                         </div>
                     </div>
                     <p class="cart__item-price" id="total<%= itemCarrito.cart_item_id %>">$ <%= itemCarrito.prod_precio * itemCarrito.cart_prod_cant %></p>
                     <div>
-                        <button data-id="<%= itemCarrito.cart_item_id %>" class="deletebtn OutItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
-                        <button data-id="<%= itemCarrito.cart_item_id %>" class="deletebtn InItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                        <button type="button" data-id="<%= itemCarrito.cart_item_id %>" class="deletebtn OutItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
+                        <button type="button" data-id="<%= itemCarrito.cart_item_id %>" class="deletebtn InItem"><iconify-icon class="cart__item-delete" icon="zondicons:close-outline"></iconify-icon></button>
                     </div>
                 </li>
                 
@@ -159,8 +159,7 @@
                     </ul>
 
 
-                    <input type="submit" value="PAGAR">
-                    <a class="cart__total-paybtn" href="#">IR A PAGAR</a>
+                    <input class="cart__total-paybtn" type="submit" value="IR A PAGAR">
                     
                 </div>
 

@@ -3,7 +3,7 @@
 <main class="register__main container">
   <h2 class="register__tittle">CREA TU CUENTA</h2>
   <p class="register__parraf">Completa el formulario para ser parte del mundo de los Funkos</p>
-  <form class="register__form">
+  <form class="register__form" action="/auth/register" method="POST">
     <div class="form-group">
       <label class="register__labels" for="name">Nombre:</label>
       <input class="register__inputs" type="text" name="nombre" id="nombre" placeholder="John">
@@ -11,25 +11,23 @@
     </div>
     <div class="form-group">
       <label class="register__labels" for="apellido">Apellido:</label>
-      <input class="register__inputs" type="text" name="apellido" id="apellido" placeholder="Doe">
+      <input class="register__inputs" type="text" name="apellido" id="apellido" placeholder="Doe" required>
     </div>
     <div class="form-group">
       <label class="register__labels" for="email">Email:</label>
-      <input class="register__inputs" type="email" name="email" id="email" placeholder="Johndoe@correo.com">
+      <input class="register__inputs" type="email" name="email" id="email" placeholder="Johndoe@correo.com" required>
     </div>
     <div class="form-group">
       <label class="register__labels" for="contrasenha">Contraseña:</label>
-      <input class="register__inputs" type="password" name="contrasenha" id="contrasenha" placeholder=".........">
+      <input class="register__inputs" type="password" name="contrasena" id="contrasenha" placeholder="........." required>
     </div>
     <div class="form-group">
-      <label class="register__labels" for="repetir-contrasenha">Repita contraseña:</label>
-      <input class="register__inputs" type="password" name="repetir-contrasenha" id="repetir-contrasenha"
-        placeholder=".........">
+      <label class="register__labels" for="repetir-contrasena">Repita contraseña:</label>
+      <input class="register__inputs" type="password" name="repetir-contrasena" id="repetir-contrasena" placeholder="........." required>
     </div>
     <div class="boton-y-checkbox">
       <input class="boton-registrar" type="submit" value="Registrar">
-      <p class="termcond__acepto"><input class="register__checkbox" type="checkbox" name="terminos"
-          id="terminos">Acepto&nbsp;<a class="termcond__terminos" href="#">Términos y Condiciones</a></p>
+      <p class="termcond__acepto"><input class="register__checkbox" type="checkbox" name="terminos" id="terminos">Acepto&nbsp;<a class="termcond__terminos" href="#">Términos y Condiciones</a></p>
     </div>
   </form>
 </main>
