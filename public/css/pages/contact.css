@@ -1,5 +1,109 @@
 /* - - - - - - - - - - - - - - - - - - -  INICIO DEL CSS PARA LA SECCION CONTACTO - - - - - - - - - - - - - - - - - - -  */
 
+/* Titulo y Mensaje */
+.contact__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-36);
+    margin: var(--spacing-36) auto;
+    text-align: center;
+}
+
+.contact__tittle {
+    font-size: var(--font-large);
+    text-align: center;
+
+    font-family: var(--alternative-font);
+    color: var(--dark-color-solid);
+    font-size: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.168em;
+}
+
+.contact__message {
+    font-family: var(--alternative-font);
+    color: var(--dark-color-solid);
+    font-size: var(--font-xlarge);
+    font-weight: 500;
+    letter-spacing: 0.128em;
+}
 
 
+/* Formulario */
+.contact__form {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-36);
+    margin: 0 var(--spacing-36);
+}
+
+.contact__form-row {
+    display: flex;
+    align-items: center;
+}
+
+.contact__labels {
+    flex: 0.3;
+    font-family: var(--primary-font);
+    font-size: var(--font-large);
+    font-weight: 400;
+    letter-spacing: 0.096em;
+    margin-right: var(--spacing-16);
+}
+
+.contact__row-inputs {
+    flex: 1;
+    border: none;
+    border-bottom: 0.25rem solid var(--primary-color-solid);
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 400;
+    letter-spacing: 0.096em;
+    padding-bottom: var(--spacing-8);
+}
+
+.contact__row-inputs:focus-visible {
+    outline: none;
+}
+
+.contact__row-inputs:not(:placeholder-shown) {
+    background-color: none;
+}
+
+.contact__form-consult {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+}
+
+.contact__form-textarea {
+    height: 35rem;
+    width: 60rem;
+    padding: var(--spacing-8);
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    font-weight: 400;
+    letter-spacing: 0.096em;
+}
+
+.contact__buttonarea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact__submitbtn {
+    color: white;
+    background-color: var(--primary-color-solid);
+    border-style: none;
+    padding: var(--spacing-12) var(--spacing-24);
+    transition: all 0.3s ease-in-out;
+}
+
+.contact__submitbtn {
+    background-color: var(--primary-color-900);
+}
 /* - - - - - - - - - - - - - - - - - - -  FINAL DEL CSS PARA LA SECCION CONTACTO - - - - - - - - - - - - - - - - - - -  */

@@ -41,6 +41,11 @@
         margin-bottom: var(--spacing-16);
         white-space: pre-wrap;  /* Propiedad para que sea intepretado el Salto de linea con "/n" y ademas respete los multiples espacios seguidos */
     }
+
+    .message__doblebtn{
+        display: flex;
+        gap: var(--spacing-24);
+    }
 </style>
 
 
@@ -50,9 +55,14 @@
         <p class="message__descript"><%= loginResultMessage %></p>
         
         <% if (loginResultStatus == true){ %>
-                <form action="/auth/logout" method="GET">
-                    <input class="login__button-login" type="submit" value="Cerrar Sesion">
-                </form>
+                <div class="message__doblebtn">
+                    <form action="/admin/" method="GET">
+                        <input class="login__button-login" type="submit" value="Administracion">
+                    </form>
+                    <form action="/auth/logout" method="GET">
+                        <input class="login__button-login" type="submit" value="Cerrar Sesion">
+                    </form>
+                </div>
         <% } %>
 
         <% if (loginResultStatus == false){ %>

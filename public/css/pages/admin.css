@@ -8,7 +8,7 @@
 }
 
 /* Barra de Busqueda */
-.searchbar__form{
+.searchbar__container{
     display: flex;
     gap: var(--spacing-18);
     margin: var(--spacing-36) 0;
@@ -176,6 +176,12 @@
     border: solid 2px var(--green-color-900);
 }
 
+.deletebtn{
+    background: none; 
+    border: none; 
+    cursor: pointer;
+}
+
 .deletebtnicon{
     font-size: calc(var(--font-xsmall) * 0.7);
     color: var(--primary-color-solid);
@@ -191,6 +197,16 @@
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border: solid 2px var(--primary-color-900);
 }
+
+.negative__search{
+    margin-bottom: var(--spacing-68);   
+    padding-left: var(--spacing-68);   
+    font-family: var(--primary-font);
+    font-size: var(--font-large);
+    font-weight: 500;
+    letter-spacing: 0.096em;
+    color: var(--dark-color-solid);
+  }
 /* Fin Tabla para Listar Productos */
 
 

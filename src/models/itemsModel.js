@@ -32,6 +32,24 @@ const traerUnSoloProducto = async (idBuscado) => {
 
 
 
+// Creamos una "funcion" que traera aquellos productos del JSON que coincidan con el "Valor Buscado"
+const traerProductosFiltrados = async (valorBusqueda) => {
+
+    const dataDelJson =  await fs.readFileSync(path.resolve(__dirname, '../../public/data/products.json'));     // Inicialmente leemos el JSON
+    const datosJsonParseados =  await JSON.parse(dataDelJson);                                                  // Parseamos la Data recibida para que su estructura/formato sea util
+    
+    const productosFiltrados = datosJsonParseados.filter(producto =>                            // Dentro de la data recibida filtraremos por los siguientes criterios
+            (producto.prod_sku.toLowerCase()).includes(valorBusqueda.toLowerCase()) ||          // que el valor buscado este incluido en el SKU
+            (producto.prod_nombre.toLowerCase()).includes(valorBusqueda.toLowerCase()) ||       // que el valor buscado este incluido en el NOMBRE
+            (producto.prod_licencia.toLowerCase()).includes(valorBusqueda.toLowerCase())        // que el valor buscado este incluido en la LICENCIA
+        );                                                                                      // En caso de no existir coincidencias obtendremos un Array vacio
+
+    return productosFiltrados;                                                                  // Retornamos la data a quien "requirio" esta funcion
+
+};
+
+
+
 // Creamos una "funcion" que traera SOLO aquellos productos del JSON que tengan la propiedad "prod_sliderincluir" definida como TRUE
 const traerProductosSlider = async () => {
 
@@ -75,6 +93,7 @@ const traerContenidoCarrito = async () => {
 module.exports = {
     traerTodosLosProductos,
     traerUnSoloProducto,
+    traerProductosFiltrados,
     traerProductosSlider,
     traerColecciones,
     traerContenidoCarrito

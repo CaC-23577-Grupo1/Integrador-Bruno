@@ -22,6 +22,7 @@
         </div>  
 
         <table class="list-table">
+
             <thead>
                 <tr>
                     <th class="list-table__TH-id">ID</th>
@@ -31,26 +32,29 @@
                     <th></th>
                 </tr>
             </thead>
+
             <tbody id="list-table-items">
 
-                    <% listaDeProductos.forEach(producto => { %>
+            <% if (listaDeProductos.length > 0){ %>
 
-                        <tr>
-                            <td class="list-table__id"><%= producto.prod_id %></td>
-                            <td class="list-table__code"><%= producto.prod_sku %></td>
-                            <td class="list-table__name"><%= producto.prod_nombre %></td>
-                            <td class="list-table__categ"><%= producto.prod_licencia %></td>
-                            <td class="list-table__action">
-                                <div class="list-table__iconcontainer">
-                                    <a href="/admin/edit/<%= producto.prod_id %>"><i class="fa-solid fa-pen editbtnicon"></i></a>
-                                    <form action="/admin/delete/<%= producto.prod_id %>?_method=DELETE" method="POST">
-                                        <button style="background: none; border: none; cursor: pointer;"><i class="fa-solid fa-trash-can deletebtnicon"></i></button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                            <% listaDeProductos.forEach(producto => { %>
 
-                    <% }) %>
+                                <tr>
+                                    <td class="list-table__id"><%= producto.prod_id %></td>
+                                    <td class="list-table__code"><%= producto.prod_sku %></td>
+                                    <td class="list-table__name"><%= producto.prod_nombre %></td>
+                                    <td class="list-table__categ"><%= producto.prod_licencia %></td>
+                                    <td class="list-table__action">
+                                        <div class="list-table__iconcontainer">
+                                            <a href="/admin/edit/<%= producto.prod_id %>"><i class="fa-solid fa-pen editbtnicon"></i></a>
+                                            <form action="/admin/delete/<%= producto.prod_id %>?_method=DELETE" method="POST">
+                                                <button class="deletebtn"><i class="fa-solid fa-trash-can deletebtnicon"></i></button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            <% }) %>
 
 <!--                
 
@@ -213,9 +217,20 @@
                     </td>
                 </tr>
 -->
+
             </tbody>
+
         </table>
-        <div id="negative-search"></div>
+
+        <% } else { %>
+
+            </tbody>
+
+        </table>
+
+                <div class="negative__search"><span>Ningun producto coincide con la busqueda...</span></div>
+
+        <% }; %>
         
     </main>
 
@@ -224,6 +239,6 @@
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 
-    <!-- <script src="../js/admin.js"></script> -->
+    <script src="/js/admin.js"></script>
 </body>
 </html>
