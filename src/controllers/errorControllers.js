@@ -3,7 +3,21 @@
 
 /* creamos un objeto que contendra diferentes propiedades y cada una de ellas sera una "funcion" para dar logica de respuesta a cada ruta */
 const errorControllers = {
-    error404: (req, res) => res.status(404).send('Error 404: La ruta especificada No Existe.'),
+    error404: (req, res) => {
+
+      const messageTitle = "Error 404!";
+      const messageDescript = "La ruta especificada No Existe.";
+      const messageData = "";
+
+      res.status(404).render('messages',
+      {
+        title: "Error | Funkoshop",
+        messageTitle,
+        messageDescript,
+        messageData
+      }
+      )}
+
   };
 
 /* exportamos el objeto con todas sus propiedades que serian las "funciones" */

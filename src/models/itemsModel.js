@@ -33,7 +33,7 @@ const traerUnSoloProducto = async (idBuscado) => {
 
 
 // Creamos una "funcion" que traera aquellos productos del JSON que coincidan con el "Valor Buscado"
-const traerProductosFiltrados = async (valorBusqueda) => {
+const traerProductosFiltradosAdmin = async (valorBusqueda) => {
 
     const dataDelJson =  await fs.readFileSync(path.resolve(__dirname, '../../public/data/products.json'));     // Inicialmente leemos el JSON
     const datosJsonParseados =  await JSON.parse(dataDelJson);                                                  // Parseamos la Data recibida para que su estructura/formato sea util
@@ -45,6 +45,41 @@ const traerProductosFiltrados = async (valorBusqueda) => {
         );                                                                                      // En caso de no existir coincidencias obtendremos un Array vacio
 
     return productosFiltrados;                                                                  // Retornamos la data a quien "requirio" esta funcion
+
+};
+
+
+
+// Creamos una "funcion" que traera aquellos productos del JSON que coincidan con los criterios de busqueda o filtrado
+const traerProductosFiltradosShop = async (nombreQueryParam, valorQueryParam) => {
+
+    const dataDelJson = await fs.readFileSync(path.resolve(__dirname, '../../public/data/products.json'));
+    const datosJsonParseados = await JSON.parse(dataDelJson);
+
+    let productosFiltrados = "";
+    
+    switch (nombreQueryParam) {
+        case "newProducts":
+            productosFiltrados = datosJsonParseados.filter(producto => producto.prod_nuevo == true);
+            break;
+        case "license":
+            productosFiltrados = datosJsonParseados.filter(producto => producto.prod_licencia.toLowerCase() == valorQueryParam.toLowerCase());
+            break;
+        case "category":
+            productosFiltrados = datosJsonParseados.filter(producto => producto.prod_categoria.toLowerCase() == valorQueryParam.toLowerCase());
+            break;
+        case "buscar":
+            productosFiltrados = datosJsonParseados.filter(producto => 
+                (producto.prod_nombre.toLowerCase()).includes(valorQueryParam.toLowerCase()) ||
+                (producto.prod_licencia.toLowerCase()).includes(valorQueryParam.toLowerCase())
+            );
+            break;
+        default:
+            productosFiltrados = datosJsonParseados;
+            break;
+    }
+
+    return productosFiltrados;
 
 };
 
@@ -93,7 +128,8 @@ const traerContenidoCarrito = async () => {
 module.exports = {
     traerTodosLosProductos,
     traerUnSoloProducto,
-    traerProductosFiltrados,
+    traerProductosFiltradosAdmin,
+    traerProductosFiltradosShop,
     traerProductosSlider,
     traerColecciones,
     traerContenidoCarrito

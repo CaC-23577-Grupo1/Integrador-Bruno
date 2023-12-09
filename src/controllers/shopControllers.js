@@ -1,7 +1,7 @@
 /* La responsabilidad de esta capa (Controladores) es "contener" la logica para dar respuesta a la capa de las Rutas */
 /* en otras palabras, en esta capa se ubicara toda la logica (funciones, codigo) para dar la respuesta a la capa de rutas */
 
-const { traerTodosLosProductos, traerUnSoloProducto, traerProductosSlider, traerContenidoCarrito } = require('../models/itemsModel');
+const { traerTodosLosProductos, traerProductosFiltradosShop, traerUnSoloProducto, traerProductosSlider, traerContenidoCarrito } = require('../models/itemsModel');
 //const { param } = require('../routes/mainRoutes');      //  No recuerdo haber escrito esta linea, ni veo que este utiliazada, ni tampoco tiene sentido aqui dentro
 //const { log } = require('console');                     //  Mucho menos recuerdo haber escrito esta linea (habra sido en alguno de los intentos de auto escribir "console.log")
 
@@ -15,8 +15,71 @@ const shopControllers = {
   // aqui traeremos todos los productos y los enviaremos a la vista
   shop: async (req, res) => {
 
-    const dataRecibida = await traerTodosLosProductos();  // invocamos la "funcion" que hemos definido dentro del modelo para taer todos los productos que hay en el JSON
+    /* INICIO MODO 1   (no lo veo practico porque repite codigo, hace lo mismo aqui como en el modelo)*/
+    /*
+        // Funcion para obtener el nombre del query param que recibimos en el "req.query"
+        function obtenerNombre(objeto) {
+          for (let nombre in objeto) {
+            return nombre;
+          }
+        }
+
+        const nombreQueryParam = obtenerNombre(req.query);   // llamando a la funcion podemos saber el nombre del parametro recibido
+        const valorQueryParam = req.query[nombreQueryParam];
+
+        let dataRecibida = "";
+
+        switch (nombreQueryParam) {
+          
+          case "newProducts":
+            //console.log('Mostramos los productos nuevos');
+            dataRecibida = await traerProductosFiltradosShop("newProducts", null);
+            break;
+          
+          case "license":
+            //console.log('Mostramos los de la coleccion');
+            dataRecibida = await traerProductosFiltradosShop(nombreQueryParam, valorQueryParam);
+            break;
+            
+          case "buscar":
+            console.log('Mostramos segun buscador');
+            dataRecibida = await traerProductosFiltradosShop(nombreQueryParam, valorQueryParam);
+            break;
+
+          default:
+            console.log('Mostramos Todos los productos');
+            dataRecibida = await traerTodosLosProductos();  // invocamos la "funcion" que hemos definido dentro del modelo para taer todos los productos que hay en el JSON
+            break;
+        }
+    */
+    /* FIN MODO 1 */
+
+    /* INICIO MODO 2   (me parece mejor esta forma ya que extraermos la query param con su valor y de lo pasamos al modelo para que nos devuelva la dara*/
+
+    let dataRecibida = ''     // creamos la variable para tenerla disponible fuera del Scope del condicional
+
+    if (Object.keys(req.query).length > 0) {    // Si el objeto tiene mas de 0 propiedades (es decir, recibimos "query params") se ejecutara esta parte del codigo
+
+            // Funcion para obtener el nombre del query param que recibimos en el "req.query"
+            function obtenerNombre(objeto) {
+              for (let nombre in objeto) {
+                return nombre;
+              }
+            }
+
+            const nombreQueryParam = obtenerNombre(req.query);    // llamando a la funcion podemos saber el nombre del parametro recibido
+            const valorQueryParam = req.query[nombreQueryParam];  // con el nombre del parametro obtenemos cual es su valor
+
+            dataRecibida = await traerProductosFiltradosShop(nombreQueryParam, valorQueryParam);  // pedimos productos filtrados pasando de argumento nombre y valor del query param
     
+    } else {                                                                                      // sino (es decir si no recibimos query params)
+    
+            dataRecibida = await traerTodosLosProductos();                                        // pedimos todos los datos sin filtrar (todos los productos)
+    
+    }
+
+    /* FIN MODO 2 */
+
     res.render('./shop/shop', {
       title: "Shop | Funkoshop",
       dataRecibida

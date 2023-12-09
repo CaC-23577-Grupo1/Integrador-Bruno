@@ -1,7 +1,7 @@
 /* La responsabilidad de esta capa (Controladores) es "contener" la logica para dar respuesta a la capa de las Rutas */
 /* en otras palabras, en esta capa se ubicara toda la logica (funciones, codigo) para dar la respuesta a la capa de rutas */
 
-const { traerTodosLosProductos, traerUnSoloProducto, traerProductosFiltrados } = require('../models/itemsModel');
+const { traerTodosLosProductos, traerUnSoloProducto, traerProductosFiltradosAdmin } = require('../models/itemsModel');
 
 /* creamos un objeto que contendra diferentes propiedades y cada una de ellas sera una "funcion" para dar logica de respuesta a cada ruta */
 const adminControllers = {
@@ -12,7 +12,7 @@ const adminControllers = {
       let listaDeProductos = ''     // creamos la variable para tenerla disponible fuera del Scope del condicional
 
           if (Object.keys(req.query).length > 0) {                                      // Si el objeto tiene mas de 0 propiedades (es decir, recibimos "query params")
-              listaDeProductos = await traerProductosFiltrados(req.query.buscar);       // enviaremos el valor de la query param a la funcion que nos filtrara los datos
+              listaDeProductos = await traerProductosFiltradosAdmin(req.query.buscar);  // enviaremos el valor de la query param a la funcion que nos filtrara los datos
           } else {                                                                      // sino
               listaDeProductos = await traerTodosLosProductos();                        // pediremos todos los datos sin filtrar (todos los productos)
           }

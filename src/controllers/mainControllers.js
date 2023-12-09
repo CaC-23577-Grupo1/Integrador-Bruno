@@ -32,7 +32,7 @@ const mainControllers = {
 
     contact: (req, res) => {
 
-      res.render('contact',
+      res.render('shop/contact',
       {
        title: "Contacto | Funkoshop" 
       });

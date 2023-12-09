@@ -33,25 +33,36 @@
 
             <ul id="shop-items-list" class="card__container">
            
-                    <% dataRecibida.forEach(productoRecibido => { %>
-                        <li class="slider__card">
-                            <article class="card__container">
-                                <a class="card__link" href="/shop/item/<%= productoRecibido.prod_id%>">
-                                        <picture class="card__imagecontainer">
-                                            <% if (productoRecibido.prod_nuevo == true){ %><span class="card__newprod">NUEVO</span><% } %>
-                                            <img class="card__prodimage" src="<%= productoRecibido.prod_imagen_frontal %>" alt="Producto StormTrooper">
-                                            <img class="card__boximage" src="<%= productoRecibido.prod_imagen_trasera %>" alt="Caja StormTrooper">
-                                        </picture>
-                                        <div class="card__detailscontainer">
-                                            <h3 class="card__prodfamily"><%= productoRecibido.prod_licencia %></h3>
-                                            <h2 class="card__prodname"><%= productoRecibido.prod_nombre %></h2>
-                                            <p class="card__prodprice">$&nbsp;<%= productoRecibido.prod_precio %></p>
-                                            <p class="card__prodbill"><%= productoRecibido.prod_cuotas %><% if (productoRecibido.prod_intereses == true){ %> CUOTAS CON INTERÉS <% } else { %> CUOTAS SIN INTERÉS  <% } %></p>
-                                        </div>
-                                    </a>                                
-                            </article>
-                        </li>
-                    <% }) %>
+                <% if (dataRecibida.length > 0){ %>
+
+                        <% dataRecibida.forEach(productoRecibido => { %>
+                            <li class="slider__card">
+                                <article class="card__container">
+                                    <a class="card__link" href="/shop/item/<%= productoRecibido.prod_id%>">
+                                            <picture class="card__imagecontainer">
+                                                <% if (productoRecibido.prod_nuevo == true){ %><span class="card__newprod">NUEVO</span><% } %>
+                                                <img class="card__prodimage" src="<%= productoRecibido.prod_imagen_frontal %>" alt="Producto StormTrooper">
+                                                <img class="card__boximage" src="<%= productoRecibido.prod_imagen_trasera %>" alt="Caja StormTrooper">
+                                            </picture>
+                                            <div class="card__detailscontainer">
+                                                <h3 class="card__prodfamily"><%= productoRecibido.prod_licencia %></h3>
+                                                <h2 class="card__prodname"><%= productoRecibido.prod_nombre %></h2>
+                                                <p class="card__prodprice">$&nbsp;<%= productoRecibido.prod_precio %></p>
+                                                <p class="card__prodbill"><%= productoRecibido.prod_cuotas %><% if (productoRecibido.prod_intereses == true){ %> CUOTAS CON INTERÉS <% } else { %> CUOTAS SIN INTERÉS  <% } %></p>
+                                            </div>
+                                        </a>                                
+                                </article>
+                            </li>
+                        <% }) %>
+
+                <% } else { %>
+
+                    <section style="border: 3px solid crimson; display: inline-block; padding: 30px; margin: 30px;">
+                        <h3>La busqueda no encontro productos</h3>
+                        <h3>Rellenar este mensaje, darle formato y estilo agradable con alguna imagen y poner boton que envie a SHOP donde se ven todos los productos</h3>
+                    </section> 
+
+                <% }; %>
         
 <!--
 
@@ -238,5 +249,6 @@
     <!-- Vinculacion con Libreria Iconify 1.0.7 -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 
+    <script src="/js/shop.js"></script>
 </body>
 </html>
